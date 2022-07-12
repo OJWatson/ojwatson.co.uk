@@ -1,0 +1,483 @@
+---
+slug: rdhs
+title: Interacting with The Demographic and Health Surveys (DHS) Program data
+date: '2019-01-29'
+package_version: 0.6.1
+categories:
+  - r
+author: OJ Watson
+
+---
+
+
+
+<p>This is a copy of <a href="https://ropensci.org/blog/2019/01/29/rdhs/">my article for ROpenSci</a>
+detailing the <code>rdhs</code> package:</p>
+<p>There seem to be a lot of ways to write about your R package, and rather than have
+to decide on what to focus on I thought I’d write a little bit about everything.
+To begin with I thought it best to describe what problem <code>rdhs</code> tries to solve,
+why it was developed and how I came to be involved in this project. I then give a
+brief overview of what the package can do, before continuing to
+describe how writing my first proper package and the rOpenSci
+review process was. Lastly I wanted to share a couple of things that I learnt along
+the way. These are not very clever or difficult things,
+but rather things that were difficult to Google, which now I think about it should probably
+be the best metric for a difficult problem.</p>
+<div id="motivation" class="section level3">
+<h3>Motivation</h3>
+<div id="what-is-the-dhs-program" class="section level4">
+<h4>What is the DHS Program</h4>
+<p>The <a href="https://www.dhsprogram.com">Demographic and Health Survey (DHS) Program</a>
+has collected and disseminated population survey data from
+over 90 countries for over 30 years. This amounts to over 400
+surveys that give representative data on health indicators, which in
+many countries provides the key data that mark progress towards targets such as
+the <a href="https://sustainabledevelopment.un.org/sdgs">Sustainable Development Goals (SDGs)</a>. In addition,
+DHS survey data has been used to inform health policy such as detailing trends in child mortality<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+and characterising the distribution of malaria control interventions in Africa in order to map the
+burden of malaria<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>This is all to the say that the DHS provides really useful data. However, although
+standard health indicators are routinely published in the survey final reports
+that are published by the DHS program, much of the value of the
+DHS data is derived from the ability to download and analyse the raw
+datasets for subgroup analysis, pooled multi-country analysis, and extended
+research studies.</p>
+<p>This where I got involved, in trying to create a tool that helped enable
+researchers to quickly gain access to the raw data sets.</p>
+</div>
+<div id="how-i-got-involved" class="section level4">
+<h4>How I got involved</h4>
+<p>I am fortunate enough to be a PhD student in a really large department at
+Imperial College London, which means that I get the opportunity to be
+involved in many projects that are outside the scope of my actual PhD.
+The “downside” of that is sometimes you get given “code monkey” jobs as the
+bottom rung of the monkey ladder. And so, a few months into my PhD (Nov 2016),
+I was given the job of downloading data on malaria test results from
+the DHS program that was going to be used by some collaborators.
+At the time I was very happy to be involved, however, I was
+apprehensive to spend too long on the job as I didn’t know how much time to be
+spending on side projects vs my PhD (something I still don’t know with 6 months
+to go). This combined with only having a year or so’s experience writing R meant
+that the code I wrote to do the job was a bunch of scrappy scripts that required
+manually downloading the datasets before parsing them with these R scripts. Dirty
+but it got the job done.</p>
+<p>Some time passed, and another collaborator wanted some different data collated
+from the DHS program. At this point, I had 6 more months familiarity with
+R and knew a bit more so I started writing it as an R package. However, it was
+still messy and it required manually downloading the datasets first, but I was
+happy with it and again it wasn’t a major project of mine. This would have been
+probably where the project ended if I hadn’t had a conversation (Sept 2017)
+in the tea room (prompted solely by the presence of free biscuits) with the
+other main author of <code>rdhs</code>, <a href="https://twitter.com/eatonjw">Jeff Eaton</a>.</p>
+<p>We got chatting, and realised we both had a bunch of scripts for doing bits of
+the analysis pipeline. We also realised that we had both had numerous requests
+for data sets from the DHS program at which point we thought it would be best
+to do something properly. I had also at this point been keen to start using <code>testhat</code>
+within my work as I had been told it would save me time in the future, and up till
+that point I hadn’t found a good case to get to grips with it (mainly writing code
+on my own, that was never very big and was only used by myself). And so we started
+writing <code>rdhs</code>, which was accepted by <code>rOpenSci</code> and <code>CRAN</code> in December 2018.</p>
+</div>
+</div>
+<div id="package-overview" class="section level3">
+<h3>Package overview</h3>
+<blockquote>
+<p>Disclaimer: The following section (the <strong>API</strong> and <strong>Dataset Downloads</strong>
+headings) is an overiew of the <a href="https://docs.ropensci.org/rdhs/articles/introduction.html">Introduction Vignette</a>.
+If you want a longer introduction to the package then head there, otherwise carry on and
+eventually you will get to my ramblings about the package development process.</p>
+</blockquote>
+<p>Most of the functionality of <code>rdhs</code> can be roughly summarised in the 5 main steps
+that are involved from wanting to get data on <em>x</em> to having
+a curated data set created from survey data from multiple surveys. These steps
+involve:</p>
+<ol style="list-style-type: decimal">
+<li>Accessing standard survey indicators through the <a href="https://api.dhsprogram.com/">DHS API</a>.</li>
+<li>Using the API to identifying the surveys and datasets relevant to your particular analysis, i.e.
+the ones that ask questions related to your topic of interest.</li>
+<li>Downloading survey datasets from the <a href="https://dhsprogram.com/data/available-datasets.cfm">DHS website</a>.</li>
+<li>Loading the datasets and associated metadata into R.</li>
+<li>Extracting variables and combining datasets for pooled multi-survey analyses.</li>
+</ol>
+<p>We will quickly cover these 5 main steps, with the first 2 showing how <code>rdhs</code> functions
+as an API client and the last 3 points showing how <code>rdhs</code> can be used to download
+raw data sets from the DHS website. Before we have a look at these, let’s first load <code>rdhs</code>:</p>
+<pre class="r"><code>library(rdhs)</code></pre>
+</div>
+<div id="api" class="section level3">
+<h3>API</h3>
+<div id="access-standard-indicator-data-via-the-api" class="section level4">
+<h4>1. Access standard indicator data via the API</h4>
+<p>The DHS program has published an API that gives access to 12
+different data sets. Each API endpoint represents one of the 12 data sets
+(e.g. <a href="https://api.dhsprogram.com/rest/dhs/tags" class="uri">https://api.dhsprogram.com/rest/dhs/tags</a>), and can be accessed using the <code>dhs_&lt;&gt;()</code> functions. For
+more information about this see the <a href="https://api.dhsprogram.com/#/index.html">DHS API website</a>.</p>
+<p>One of those functions, <code>dhs_data()</code>, interacts with the the published
+set of standard health indicator data calculated by the DHS. For example, to find out the
+trends in antimalarial use in Africa, and see if perhaps antimalarial prescription has
+decreased after rapid diagnostic tests were introduced (assumed 2010).</p>
+<pre class="r"><code># Make an api request
+resp &lt;- dhs_data(indicatorIds = &quot;ML_FEVT_C_AML&quot;, surveyYearStart = 2010,breakdown = &quot;subnational&quot;)
+
+# filter it to 12 countries for space
+countries  &lt;- c(&quot;Angola&quot;,&quot;Ghana&quot;,&quot;Kenya&quot;,&quot;Liberia&quot;,
+                &quot;Madagascar&quot;,&quot;Mali&quot;,&quot;Malawi&quot;,&quot;Nigeria&quot;,
+                &quot;Rwanda&quot;,&quot;Sierra Leone&quot;,&quot;Senegal&quot;,&quot;Tanzania&quot;)
+
+# and plot the results
+library(ggplot2)
+ggplot(resp[resp$CountryName %in% countries,],
+       aes(x=SurveyYear,y=Value,colour=CountryName)) +
+  geom_point() +
+  geom_smooth(method = &quot;glm&quot;) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = .5)) +
+  ylab(resp$Indicator[1]) + 
+  facet_wrap(~CountryName,ncol = 6) </code></pre>
+<p><img src="featured.jpg" /></p>
+</div>
+<div id="identify-surveys-relevant-for-further-analysis" class="section level4">
+<h4>2. Identify surveys relevant for further analysis</h4>
+<p>You may, however, wish to do more nuanced analysis than the API allows.
+The following 4 sections detail a very basic example of how to quickly
+identify, download and extract datasets you are interested in.</p>
+<p>Let’s say we want to get all DHS survey data from the Democratic Republic of
+Congo and Tanzania in the last 5 years (since 2013), which covers the use of
+rapid diagnostic tests for malaria (“RDT” below). To begin we’ll interact with the
+DHS API to identify our datasets.</p>
+<pre class="r"><code>## make a call with no arguments
+sc &lt;- dhs_survey_characteristics()
+sc[grepl(&quot;Malaria&quot;, sc$SurveyCharacteristicName), ]</code></pre>
+<pre><code>##    SurveyCharacteristicID SurveyCharacteristicName
+## 57                     96            Malaria - DBS
+## 58                     90     Malaria - Microscopy
+## 59                     89            Malaria - RDT
+## 60                     57          Malaria module 
+## 61                      8 Malaria/bednet questions</code></pre>
+<p>There are 87 different survey characteristics, with one specific survey
+characteristic for malaria rapid diagnostic tests (RDT). In this example we will use this to find the surveys
+that include this characteristic. (There are other ways to find the
+datasets with the API and other options to control how to filter the API, which are
+explored <a href="https://docs.ropensci.org/rdhs/articles/introduction.html#identify-surveys-relevant-for-further-analysis">here</a>)</p>
+<pre class="r"><code># lets find all the surveys that fit our search criteria
+survs &lt;- dhs_surveys(surveyCharacteristicIds = 89,
+                     countryIds = c(&quot;CD&quot;,&quot;TZ&quot;),
+                     surveyType = &quot;DHS&quot;,
+                     surveyYearStart = 2013)
+
+# and lastly use this to find the datasets we will want to download 
+# and let&#39;s download the flat files (.dat) datasets 
+datasets &lt;- dhs_datasets(surveyIds = survs$SurveyId, 
+                         fileFormat = &quot;flat&quot;, 
+                         fileType = &quot;PR&quot;)
+str(datasets)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    2 obs. of  13 variables:
+##  $ FileFormat          : chr  &quot;Flat ASCII data (.dat)&quot; &quot;Flat ASCII data (.dat)&quot;
+##  $ FileSize            : int  6595349 6622102
+##  $ DatasetType         : chr  &quot;Survey Datasets&quot; &quot;Survey Datasets&quot;
+##  $ SurveyNum           : int  421 485
+##  $ SurveyId            : chr  &quot;CD2013DHS&quot; &quot;TZ2015DHS&quot;
+##  $ FileType            : chr  &quot;Household Member Recode&quot; &quot;Household Member Recode&quot;
+##  $ FileDateLastModified: chr  &quot;September, 19 2016 09:58:23&quot; &quot;August, 07 2018 17:36:25&quot;
+##  $ SurveyYearLabel     : chr  &quot;2013-14&quot; &quot;2015-16&quot;
+##  $ SurveyType          : chr  &quot;DHS&quot; &quot;DHS&quot;
+##  $ SurveyYear          : int  2013 2015
+##  $ DHS_CountryCode     : chr  &quot;CD&quot; &quot;TZ&quot;
+##  $ FileName            : chr  &quot;CDPR61FL.ZIP&quot; &quot;TZPR7AFL.ZIP&quot;
+##  $ CountryName         : chr  &quot;Congo Democratic Republic&quot; &quot;Tanzania&quot;</code></pre>
+<p>We can now use this to download our datasets for further analysis.</p>
+</div>
+</div>
+<div id="dataset-downloads" class="section level3">
+<h3>Dataset Downloads</h3>
+<div id="download-survey-datasets" class="section level4">
+<h4>3. Download survey datasets</h4>
+<p>To be able to download survey datasets from the DHS website,
+we need to set up an account through the DHS website to
+enable you to request access to the datasets. Instructions on how to do this can
+be found <a href="https://dhsprogram.com/data/Access-Instructions.cfm">here</a>.</p>
+<p>Once we have created an account, we set up our credentials using the
+function <code>set_rdhs_config()</code>. See the
+<a href="https://docs.ropensci.org/rdhs/articles/introduction.html#download-survey-datasets">Introduction Vignette</a>
+for more clarity about the various options for setting up your config.</p>
+<pre class="r"><code>## set up your credentials
+set_rdhs_config(email = &quot;rdhs.tester@gmail.com&quot;,
+                project = &quot;Testing Malaria Investigations&quot;,
+                cache_path = &quot;project_one&quot;,
+                config_path = &quot;~/.rdhs.json&quot;,
+                data_frame = &quot;data.table::as.data.table&quot;,
+                global = TRUE)</code></pre>
+<p>We can now download the data sets we identified earlier from the API, using <code>get_datasets</code>:</p>
+<pre class="r"><code># download datasets
+downloads &lt;- get_datasets(datasets$FileName)</code></pre>
+</div>
+<div id="load-datasets-and-associated-metadata-into-r" class="section level4">
+<h4>4. Load datasets and associated metadata into R</h4>
+<p>We can now examine what it is we have actually downloaded, by reading in one of these datasets:</p>
+<pre class="r"><code># read in our dataset
+cdpr &lt;- readRDS(downloads$CDPR61FL)</code></pre>
+<p>The dataset returned here contains all the survey questions within the dataset.<br />
+The dataset is by default stored as a <em>labelled</em> class from the <a href="https://github.com/tidyverse/haven">haven package</a>.</p>
+<p>If we want to get the data dictionary for this dataset, we can use the function
+<code>get_variable_labels</code>:</p>
+<pre class="r"><code># let&#39;s look at the variable_names
+head(get_variable_labels(cdpr))</code></pre>
+<pre><code>##   variable                                                  description
+## 1     hhid                                          Case Identification
+## 2    hvidx                                                  Line number
+## 3    hv000                                       Country code and phase
+## 4    hv001                                               Cluster number
+## 5    hv002                                             Household number
+## 6    hv003 Respondent&#39;s line number (answering Household questionnaire)</code></pre>
+<p>The default behaviour for the function <code>get_datasets</code> was
+to download the datasets, read them in, and save the resultant <code>data.frame</code> as a
+<code>.rds</code> object within the cache directory. It also creates the data dictionary and
+caches this for you, which allows us to
+quickly query for particular <code>variables</code> or <code>variable_labels</code>:</p>
+<pre class="r"><code># rapid diagnostic test search
+questions &lt;- search_variable_labels(datasets$FileName, search_terms = &quot;malaria rapid test&quot;)</code></pre>
+<p>Or if we know what variables we want, we can identify which surveys include these:</p>
+<pre class="r"><code># and grab the questions from this now utilising the survey variables
+questions &lt;- search_variables(datasets$FileName, variables = c(&quot;hv024&quot;,&quot;hml35&quot;))
+head(questions)</code></pre>
+<pre><code>##   variable                  description dataset_filename
+## 1    hv024                     Province         CDPR61FL
+## 2    hml35 Result of malaria rapid test         CDPR61FL
+## 3    hv024                       Region         TZPR7AFL
+## 4    hml35 Result of malaria rapid test         TZPR7AFL
+##                                                                                  dataset_path
+## 1 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/CDPR61FL.rds
+## 2 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/CDPR61FL.rds
+## 3 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/TZPR7AFL.rds
+## 4 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/TZPR7AFL.rds
+##   survey_id
+## 1 CD2013DHS
+## 2 CD2013DHS
+## 3 TZ2015DHS
+## 4 TZ2015DHS</code></pre>
+<p>More information about download options and querying the survey questions can be found
+<a href="https://docs.ropensci.org/rdhs/articles/introduction.html#load-datasets-and-associated-metadata-into-r-">here</a></p>
+</div>
+<div id="extract-variables-and-combine-datasets" class="section level4">
+<h4>5. Extract variables and combine datasets</h4>
+<p>To extract our data we pass our questions object to the function <code>extract_dhs</code>,
+which will create a list with each dataset and its extracted data as a <code>data.frame</code>.</p>
+<pre class="r"><code># extract the data and add geographic information too
+extract &lt;- extract_dhs(questions, add_geo = FALSE)</code></pre>
+<p>The resultant extract is a list, with a new element for each different dataset
+that you have extracted. We can now combine our two data frames for further analysis using the <code>rdhs</code> package
+function <code>rbind_labelled()</code>:</p>
+<pre class="r"><code># first let&#39;s bind our first extraction, without the hv024
+extract_bound &lt;- rbind_labelled(extract)</code></pre>
+<pre><code>## Warning in rbind_labelled(extract): Some variables have non-matching value labels: hv024.
+## Inheriting labels from first data frame with labels.</code></pre>
+<p>The thrown warning has shown us that <em>hv024</em> did not have matching labels between
+the two lists, and the labels from the first list have been used.
+<em>hv024</em> stores the regions for these 2 countries, and we probably want to keep all
+the labels, which we can do by using the <code>labels</code> argument:</p>
+<pre class="r"><code># lets try concatenating the hv024
+better_bound &lt;- rbind_labelled(extract, labels = list(&quot;hv024&quot;=&quot;concatenate&quot;))</code></pre>
+<p>We could also specify new labels for a variable. For example, imagine the two
+datasets encoded their rapid diagnostic test responses differently, with the first one as
+<code>c("No","Yes")</code> and the other as <code>c("Negative","Positive")</code>. We can choose to
+relabel these, e.g. as <code>c("NegativeTest","PositiveTest")</code>:</p>
+<pre class="r"><code># lets try concatenating the hv024 and providing new labels
+better_bound &lt;- rbind_labelled(
+  extract,
+  labels = list(&quot;hv024&quot;=&quot;concatenate&quot;,
+                &quot;hml35&quot;=c(&quot;NegativeTest&quot;=0, &quot;PositiveTest&quot;=1))
+)
+
+# and our new label
+head(attr(better_bound$hml35,&quot;labels&quot;))</code></pre>
+<pre><code>## NegativeTest PositiveTest 
+##            0            1</code></pre>
+<p>For more information about controlling how to extract data from your downloaded
+sections, see the <a href="https://docs.ropensci.org/rdhs/articles/introduction.html#extract-variables-and-combining-datasets-for-pooled-multi-survey-analyses-">last section in the introduction vignette</a>.</p>
+<hr />
+<p>We now have managed to go from our initial request for data about the use of
+rapid diagnostic tests for malaria to a finalised data set that
+we can use going forwards for any downstream analysis (and hopefully it didn’t
+take that long to do it!). This data set includes survey responses from multiple surveys within one data frame, which in this case includes data from Tanzania and the Democratic Republic of Congo. However, it would be easy to extend our earlier API query to include more countries. For example if we had not limited our search to these 2 countries, the same code as above would have returned data from over 200,000 individuals across 21 countries. Similarly if we wanted to include more survey responses, we could have provided different search terms to <code>search_variables</code> or <code>search_variable_labels</code>. By widening our search terms, and including more datasets within the search we can easily create data sets that can be used to answer important global health questions such as:</p>
+<ol style="list-style-type: decimal">
+<li>Which malaria RDTs are performing worse in low malaria prevalence regoions?</li>
+<li>What is the link between HIV prevalence and wealth?</li>
+<li>How far apart should births occur to minmise childhood mortality?</li>
+</ol>
+</div>
+</div>
+<div id="ramblings-after-my-first-completed-package" class="section level3">
+<h3>Ramblings after my first completed package</h3>
+<p>Clichéd but the process of actually writing a package, and all that entailed,
+was a real highlight. I had made R packages before, but I had never done everything that a
+good R package should have (tests, effective continuous integration, full documentation,
+a <code>pkgdown</code> website, contribution and code of conduct guides, and so on). One particular
+highlight for me was actually having the opportunity to work
+on a code base with someone else in a collaborative way. I work in a large collaborative
+group, however, this has not translated as much to working on the same set of code
+with someone. As a result I’ve never had to properly learn how to use git outside of
+<code>clone</code>, <code>commit</code> and <code>push</code>, nor had I made use of much of the useful aspects of GitHub. So learning
+how to correctly use branches in git and realising that helpful comments are actually
+helpful (eventually) was really great. With this in mind I wanted to thank <a href="https://twitter.com/eatonjw">Jeff Eaton</a>
+again for taking on this project. He definitely helped drive it over the finish line,
+and it was nice to have a glimpse at what working as a developer would look like if
+I decide to leave pure academia.</p>
+<p>There were also a few things that before I started writing <code>rdhs</code>
+I knew I would have to figure out but I didn’t have a clue where to start, and for
+which repeated googling didn’t eventually help with. Fortunately, I work in the
+same department as <a href="https://twitter.com/rgfitzjohn">Rich FitzJohn</a>,
+so it was great having someone to point me in the right direction. The following
+are three of the things that I genuinely had no idea how to do before, so I thought I’d
+share them here (and so I can remind myself in the future):</p>
+<div id="logging-into-a-website-from-r" class="section level4">
+<h4>1. Logging into a website from R</h4>
+<p>The DHS website has a download manager that you can use to select surveys you want to
+download, and it will auto generate a list of URLs in a text file. When I saw this, I thought
+this would be great for creating a database of what data sets and the URLs a user’s login details
+can give them, which can then be cached so that <code>rdhs</code> knows whether you can download a data set
+or not. The only problem is, that to download those data sets you need to be logged in, and you
+also need to be logged in to get to the download manager. For me, I didn’t know how to translate
+being “logged in” into R code, or even what that looked like. But turns out it wasn’t too bad
+after being shown by Rich where to start looking.</p>
+<p>To know where to look I opened up Chrome and went to developer tools. From there I
+opened up the <strong>Network Tab</strong>, which then records the information being sent to the
+URL. So to know what information is required to login I simply logged in as normal,
+and then inspected what appeared in the network tab’s <strong>Headers Tab</strong>. This then
+showed me what the needed <strong>Request URL</strong> was, and what information was being
+submitted in the <strong>Form Data</strong> at the bottom of this tab.</p>
+<p><img src="login_form_data.png" /></p>
+<p>I could then use this information to <em>log in</em> from with R using an <code>httr::POST</code>
+request:</p>
+<pre class="r"><code># authentication page
+terms &lt;- &quot;https://dhsprogram.com/data/dataset_admin/login_main.cfm&quot;
+
+# create a temporary file
+tf &lt;- tempfile(fileext = &quot;.txt&quot;)
+
+# set the username and password
+values &lt;- list(
+  UserName = your_email,
+  UserPass = your_password,
+  Submitted = 1,
+  UserType = 2
+)
+
+# log in.
+message(&quot;Logging into DHS website...&quot;)
+z &lt;- httr::POST(terms, body = values) %&gt;% handle_api_response(to_json = FALSE)</code></pre>
+<p>To me, this seemed really cool, and then meant I could do the same style of
+steps to get to the Download Manager webpage and then tick all the check boxes
+in the page to generate the URL with all the download links in.</p>
+</div>
+<div id="caching-api-results-from-a-changing-api" class="section level4">
+<h4>2. Caching API results from a changing API</h4>
+<p>We wanted to be able to cache a user’s API request for them locally when designing
+<code>rdhs</code>. We felt this was important as it would reduce the burden on the API itself,
+as well as enable researchers who were without internet (e.g. currently working in
+the field), the ability to still access previous API requests. However, designing
+something neat that would be easy to respond to changes in the API version would
+I thought be outside my skill set.</p>
+<p>Again, enter Rich and this time with his package <a href="https://cran.r-project.org/web/packages/storr/index.html"><code>storr</code></a>.
+This was a lifesaver, and created an easy infrastructure for storing API responses
+in a key-value store. I could then use the specific API URL as the key and the
+response as the value. Initially I thought I would have to keep saving the response
+with explicit names (e.g. the URL), but <code>storr</code> handles all this for you, and also
+then helps get around having too long file names if your API request is very long for example.</p>
+<p>To respond to changes in the API, my solution was perhaps not the neatest, but I
+simply kept a record of the date you last made an API request and compared it to
+the API’s <a href="https://api.dhsprogram.com/#/api-dataupdates.cfm">data updates endpoint</a>.
+If I could see any recent changes, I then could clear all the API requests cached.
+This would made a lot simpler using the <code>namespaces</code> options in <code>storr</code>, which meant
+that I was able to keep all API cached data in one place, which could then be
+easily deleted on mass.</p>
+</div>
+<div id="tests-travis-authentication" class="section level4">
+<h4>3. Tests, Travis &amp; Authentication</h4>
+<p>The last thing caused me the most amount of headaches. How do I write tests that
+require authentication and can use <code>travis</code> for continuous integration. Initially,
+I made a dummy account with the DHS website for this, but realised that sharing
+the credentials of an account with access to just dummy data sets would not enable
+me to test the weird edge cases that started popping up related to certain data
+sets. The first solution that I used for a few months was to set up environment
+variables within <code>travis</code> itself, which could then be used to create a valid
+set of credentials.</p>
+<p><img src="travis_env_vars.png" /></p>
+<p>This worked, however, it meant that I would have to write a lot of the <code>rdhs</code>
+functionality to use environment variables that were the user’s email and password,
+which felt wrong and quite clunky. All I wanted was to pass to Travis a valid
+set of login credentials that would then be used within the tests, much in the same
+way that a user would. To do this I had to learn a bit more about what the <code>.travis.yml</code>
+document could actually be used for, because to begin with I had only been using it
+to specify the software language.</p>
+<p>Again, Rich pointed me to using <code>sodium</code> to create an encrypted version of a valid
+login credentials:</p>
+<pre class="r"><code># read in a key from a local file
+key &lt;- sodium::hash(charToRaw(readLines(&quot;scripts/key.txt&quot;)))
+
+# create a tat with all the necessary login credentials
+zip(&quot;rdhs.json.tar&quot;,files=c(&quot;rdhs.json&quot;, &quot;tests/testthat/rdhs.json&quot;))
+
+# read this tar in as binary data 
+dat &lt;- readBin(&quot;rdhs.json.tar&quot;,raw(),file.size(&quot;rdhs.json.tar&quot;))
+
+# encrypt the data using sodium and our key before saving it
+enc &lt;- sodium::data_encrypt(msg = dat,key = key)
+saveRDS(enc,&quot;rdhs.json.tar.enc&quot;)</code></pre>
+<p>This encrypted copy could be included in the GitHub repository, and I could
+set up the key as a Travis environment variable to decrypt it. This decryption
+step could then be written within my <code>.travis.yml</code> file, and would mean that all
+my tests had access to my login credentials in a secure way.</p>
+<hr />
+</div>
+</div>
+<div id="options-to-contribute" class="section level3">
+<h3>Options to Contribute</h3>
+<p>There are a few things that would be great to add in the future.</p>
+<ol style="list-style-type: decimal">
+<li><p>Adding a suite of tools for doing spatial mapping. A lot of the
+time, people want to know what the prevalence of x is either at a fine spatial scale,
+or grouped at administrative/county/state levels. <code>rdhs</code> helps provide the tools to
+get geolocated measures of x, and I think it would be a great next step to add
+a suite of mapping tools. It would be great if they could be used to either create a mesh
+through these points (probably using <code>INLA</code>), or calculate survey weighted means at requested
+spatial scales or match them to a provided <code>SpatialPolygons</code> object. Related to this is
+it would be good to also link in the <a href="https://spatialdata.dhsprogram.com/home/">Spatial Data Repository</a>
+from the DHS, so that users can easily download shape files for their analyses (<a href="https://github.com/ropensci/rdhs/issues/71">issue #71</a>).</p></li>
+<li><p>Not related to any specific issues, but it would be good to have a clearer set of
+downstream analysis pipelines. One example is a package in development by Jeff Eaton
+called <a href="https://github.com/mrc-ide/demogsurv"><code>demogsurv</code></a>, which is used to calculate
+common demographic indicators from household survey data, including child mortality,
+adult mortality, and fertility. This is just one example, but over time there will
+be a number of bespoke analysis tools down the line, and so it would be nice to begin
+a collection/grouping of these tools (possibly as a wiki or similar).</p></li>
+<li><p>It would be nice to have a way to manually add sources of survey data. At the
+moment the pipeline for downloading raw data sets used the DHS API a lot, however, what
+if you had some survey data (either locally or shared at a URL) that you wanted to bring
+into your analysis pipeline. Something similar to this is done for the <code>model_datasets</code>
+within <code>rdhs</code>, which is a set of dummy data sets that the DHS hosts online but
+are not included in their API.</p></li>
+</ol>
+</div>
+<div id="acknowledgements-and-final-thoughts" class="section level3">
+<h3>Acknowledgements and Final Thoughts</h3>
+<p>Firstly, I want to thank <a href="https://github.com/annakrystalli">Anna Krystalli</a> for handling
+the review, and for being incredibly patient throughout, especially at the end as we
+were fixing the last authentication bug. Also many thanks to <a href="https://github.com/LucyMcGowan">Lucy McGowan</a>
+and <a href="https://github.com/dosgillespie">Duncan Gillespie</a> for taking the time to
+review the package and for their input, which led to lots of improvements (and also
+linking the <code>add_line</code> function from <code>httr</code> was seriously helpful, and I’ve used
+that function in lots of other my other work now). I also wanted to more broadly thank
+the review process as a whole. Having the option to discuss the package and needed
+solutions with the reviewers within a <a href="https://github.com/ropensci/software-review/issues/238">GitHub issues system</a> is fantastic. It made the process
+personal and was substantially improved over review processes I have had at academic journals.
+Lastly, another big thank you <a href="https://github.com/jeffeaton">Jeff Eaton</a> and
+<a href="https://github.com/richfitz">Rich FitzJohn</a>, and also to the infectious
+disease epidemiology department at Imperial for providing a lot of really helpful
+ginuea pig testing of the numerous iterations of <code>rdhs</code>.</p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>Silva, Romesh. 2012. “Child Mortality Estimation: Consistency of Under-Five Mortality Rate Estimates Using Full Birth Histories and Summary Birth Histories.” PLoS Medicine 9: e1001296. <a href="doi:%5B10.1371/journal.pmed.1001296" class="uri">doi:[10.1371/journal.pmed.1001296</a>](<a href="https://doi.org/10.1371/journal.pmed.1001296" class="uri">https://doi.org/10.1371/journal.pmed.1001296</a>).<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Bhatt, S, D J Weiss, E Cameron, D Bisanzio, B Mappin, U Dalrymple, K E Battle, et al. 2015. “The effect of malaria control on Plasmodium falciparum in Africa between 2000 and 2015.”Nature 526: 207–11. <a href="doi:%5B10.1038/nature15535" class="uri">doi:[10.1038/nature15535</a>](<a href="https://doi.org/10.1038/nature15535" class="uri">https://doi.org/10.1038/nature15535</a>).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

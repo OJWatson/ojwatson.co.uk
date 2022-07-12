@@ -1,0 +1,50 @@
+---
+title: "ASTMH 2016 pfhrp2/3 modelling"
+author: OJ Watson
+date: '2016-12-07T18:00:00-08:00'
+slug: asthm-2016-pfhrp2-3
+categories:
+  - r
+tags:
+  - malaria
+event: "ASTMH 2016"
+event_url: ""
+location: "Atlanta, USA"
+address:
+  street: ~
+  city: ~
+  region: ~
+  postcode: ~
+  country: ~
+summary: ~
+abstract: ~
+date_end: ~
+all_day: no
+publishDate: '2016-10-20T12:48:15-08:00'
+authors: []
+featured: no
+image:
+  caption: 'Spread of pfhrp2/3 gene deletions in Africa'
+  focal_point: ''
+  preview_only: no
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: "files/pdfs/hrp2_talk.pdf"
+- icon: video
+  icon_pack: fas
+  name: video
+  url: "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/726/7ee4a2b07743153b759a4cbe178bca52ef75fcb1/elife-25008-video1.mp4"
+url_slides: ~
+url_code: ~
+url_pdf: ~
+url_video: ~
+slides: ''
+projects: []
+---
+
+Talk at ASTMH 2016 on pfhrp2/3 deletions. The talk was early discussion of findings now published at 
+eLife[^1].
+
+[^1]: https://elifesciences.org/articles/25008
