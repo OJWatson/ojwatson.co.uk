@@ -9,7 +9,7 @@ categories: [r]
 date: 2022-07-12T08:38:28-07:00
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://docs.ropensci.org/rdhs/"
+# external_link: "https://docs.ropensci.org/rdhs/"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

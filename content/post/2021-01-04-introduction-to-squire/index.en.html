@@ -1,0 +1,549 @@
+---
+title: Introduction to squire
+author: OJ Watson
+date: '2021-01-8'
+slug: introduction-to-squire
+categories:
+  - learning
+  - habits
+  - r
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-04T08:38:52-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<p>This is an overview of the <code>squire</code> package, which is a deterministic model of COVID-19 transmission. The <code>squire</code> model was developed as part of the Imperial College COVID-19 Response Team and has been key in a number of our COVID-19 projects and publications to date, including:</p>
+<p>This is a brief overview of the model, which is fully described at <a href="https://github.com/mrc-ide/squire">https://github.com/mrc-ide/squire</a></p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>squire is a package enabling users to quickly and easily generate calibrated estimates of SARS-CoV-2 epidemic trajectories under different control scenarios. It consists of the following:</p>
+<ul>
+<li>An age-structured SEIR model incorporating explicit passage through healthcare settings and explicit progression through disease severity stages.</li>
+<li>The ability to calibrate the model to different epidemic start-dates based on available death data.</li>
+<li>Simulate the impacts of different control interventions (including general social distancing, specific shielding of elderly populations, and more stringent suppression strategies).</li>
+</ul>
+<p>If you are new to squire, the best place to start is below, where we detail how to install the package, how to set up the model, and how to run it with and without control interventions.</p>
+</div>
+<div id="model-structure" class="section level2">
+<h2>Model Structure</h2>
+<div id="overall-structure" class="section level3">
+<h3>Overall Structure</h3>
+<p><img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Model_Structure.JPG" align="center" style = "border: none; float: center;" width = "600px"></p>
+<p>squire uses an age-structured SEIR model, with the infectious class divided into different stages reflecting progression through different disease severity pathways. These compartments are:<br />
+* S = Susceptibles<br />
+* E = Exposed (Latent Infection)<br />
+* I<sub>Mild</sub> = Mild Infections (Not Requiring Hospitalisation)<br />
+* I<sub>Case</sub> = Infections Requiring Hospitalisation<br />
+* I<sub>Hospital</sub> = Hospitalised (Requires Hospital Bed)<br />
+* I<sub>ICU</sub> = ICU (Requires ICU Bed)<br />
+* I<sub>Rec</sub> = Recovering from ICU Stay (Requires Hospital Bed)<br />
+* R = Recovered<br />
+* D = Dead</p>
+</div>
+<div id="decision-trees-for-healthcare-capacity" class="section level3">
+<h3>Decision Trees for Healthcare Capacity</h3>
+<p><img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Oxygen_Decision_Tree.JPG" align="center" style = "border: none; float: center;" width = "400px"></p>
+<p>Given initial inputs of hospital/ICU bed capacity and the average time cases spend in hospital, the model dynamically tracks available hospital and ICU beds over time.</p>
+<p>Individuals newly requiring hospitalisation (either a hospital or ICU bed) are then assigned to either receive care (if the relevant bed is available) or not (if maximum capacity would be exceeded otherwise). Whether or not an individual receives the required care modifies their probability of dying.</p>
+</div>
+</div>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<p><i>squire</i> utilises the package <a href="https://github.com/mrc-ide/odin">odin</a> to generate the model. <a href="https://github.com/mrc-ide/odin">odin</a> implements a high-level language for implementing mathematical models and can be installed by running the following command:</p>
+<pre class="r"><code>install.packages(&quot;odin&quot;)</code></pre>
+<p>The model generated using odin is written in C and so you will require a compiler to install dependencies for the package and to build any models with odin. Windows users should install <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a>. See the relevant section in <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-Windows-toolset">R-admin</a> for advice. Be sure to select the “edit PATH” checkbox during installation or the tools will not be found.</p>
+<p>The function <code>odin::can_compile()</code> will check if it is able to compile things, but by the time you install the package that will probably have been satisfied.</p>
+<p>After installation of odin, ensure you have the devtools package installed by running the following:</p>
+<pre class="r"><code>install.packages(&quot;devtools&quot;)</code></pre>
+<p>Then install the <i>squire</i> package directly from GitHub by running:</p>
+<pre class="r"><code>devtools::install_github(&quot;mrc-ide/squire&quot;)</code></pre>
+<p>If you have any problems installing then please raise an issue on the <i>squire</i> <a href="https://github.com/mrc-ide/squire/issues"><code>GitHub</code></a>.</p>
+<p>If everything has installed correctly, we then need to load the package:</p>
+<pre class="r"><code>library(squire)</code></pre>
+</div>
+<div id="getting-started" class="section level2">
+<h2>Getting Started</h2>
+<div id="running-the-model-unmitigated" class="section level3">
+<h3>Running the Model (Unmitigated)</h3>
+</div>
+<div id="running-the-model-using-baseline-parameters-and-no-control-interventions" class="section level3">
+<h3>1. Running the model using baseline parameters and no control interventions</h3>
+<p>The full model is referred to as the <strong>explicit_SEEIR</strong> model, with hospital
+pathways explicitly exploring whether individuals will require a general
+hospital bed providing oxygen or an ICU bed that provides ventilation.</p>
+<p>To run the model we need to provide at least one of the following arguments:</p>
+<ul>
+<li><code>country</code></li>
+<li><code>population</code> and <code>contact_matrix_set</code></li>
+</ul>
+<p>If the <code>country</code> is provided, the <code>population</code> and <code>contact_matrix_set</code>
+will be generated (if not also specified) using the demographics and matrices
+specified in the <a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-12-global-impact-covid-19/">global report</a>.</p>
+<p>To run the model by providing the <code>country</code> we use <code>run_explicit_SEEIR_model()</code>:</p>
+<pre class="r"><code>r &lt;- run_explicit_SEEIR_model(country = &quot;Afghanistan&quot;, replicates = 5)</code></pre>
+<p>The returned object is a <code>squire_simulation</code> object, which is a list of two
+ojects:</p>
+<ul>
+<li><code>output</code> - model output</li>
+<li><code>parameters</code> - model parameters</li>
+</ul>
+<p><code>squire_simulation</code> objects can be plotted as follows:</p>
+<pre class="r"><code>plot(r)
+#&gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &lt;10
+#&gt; replicates
+#&gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &lt;10
+#&gt; replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-base%20plot-1.png" width="100%" /></p>
+<p>This plot will plot each of the compartments of the model output. We can also plot specific compartments using the <code>var_select</code> argument that can be passed to <code>plot()</code>. Arguments passed to <code>var_select</code> must be one of the variables in the plot above.</p>
+<pre class="r"><code>plot(r, var_select = c(&quot;E&quot;, &quot;IMild&quot;))
+#&gt; Warning in plot.squire_simulation(r, var_select = c(&quot;E&quot;, &quot;IMild&quot;)): Summary
+#&gt; statistic estimated from &lt;10 replicates
+#&gt; Warning in plot.squire_simulation(r, var_select = c(&quot;E&quot;, &quot;IMild&quot;)): Confidence
+#&gt; bounds estimated from &lt;10 replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-subset%20variables%20plot-1.png" width="100%" /></p>
+<p>Or, you can specify one of <code>deaths</code>, <code>infections</code>, <code>hospital_occupancy</code>, <code>ICU_occupancy</code>, <code>hospital_demand</code> or <code>ICU_demand</code>, and plot these summary metrics that represent the combination of a number of different compartment e.g:</p>
+<pre class="r"><code>plot(r, var_select = &quot;deaths&quot;)
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;deaths&quot;): Summary statistic
+#&gt; estimated from &lt;10 replicates
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;deaths&quot;): Confidence bounds
+#&gt; estimated from &lt;10 replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-subset%20variables%20plot2-1.png" width="100%" /></p>
+<p>All of the plotting above makes uses of the <code>squire</code> function <code>format_output</code> which provides you with a means of manipulating and managing the output from a <code>run_explicit_SEEIR_model</code> call. Using it you can specify the model outputs (e.g. compartments) you want, as well as whether you want that output aggregated over age or not. Here we extract the latent compartment (E). The data columns correspond to the compartment name (<code>compartment</code>), timestep (<code>t</code>), model run number (<code>replicate</code>) and the model output (<code>y</code>).</p>
+<pre class="r"><code>
+output &lt;- format_output(r, var_select = &quot;E&quot;)
+head(output)
+#&gt; # A tibble: 6 × 4
+#&gt;   replicate compartment     t     y
+#&gt;       &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1         1 E             0.1    20
+#&gt; 2         1 E             0.2    20
+#&gt; 3         1 E             0.3    20
+#&gt; 4         1 E             0.4    20
+#&gt; 5         1 E             0.5    20
+#&gt; 6         1 E             0.6    20</code></pre>
+<p>If we wanted age-disaggregated data, we could set <code>reduce_age</code> to <code>FALSE</code> which will generate the same dataframe as before, but with an additional column indicating the age-group.</p>
+<pre class="r"><code>
+output &lt;- format_output(r, var_select = &quot;E&quot;, reduce_age = FALSE)
+head(output)
+#&gt; # A tibble: 6 × 5
+#&gt;   replicate age_group compartment     t     y
+#&gt;       &lt;dbl&gt;     &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1         1         1 E             0.1     0
+#&gt; 2         1         1 E             0.2     0
+#&gt; 3         1         1 E             0.3     0
+#&gt; 4         1         1 E             0.4     0
+#&gt; 5         1         1 E             0.5     0
+#&gt; 6         1         1 E             0.6     0</code></pre>
+</div>
+<div id="changing-parameters-in-the-model." class="section level3">
+<h3>2. Changing parameters in the model.</h3>
+<p>The model has a number of parameters for setting the R0, demography, contact
+matrices, the durations of each compartment and the health care outcomes and
+healthcare availability. In addition, the initial state of the population can
+be changed as well as simulation parameters, such as the number of replicates,
+length of simulation and the timestep. For a full list of model inputs, please
+see the function <a href="https://mrc-ide.github.io/squire/reference/run_explicit_SEEIR_model.html">documentation</a></p>
+<p>For example, changing the initial R0 (default = 3), number of replicates (
+default = 10), simulation length (default = 365 days) and time step (default =
+0.5 days), as well as setting the population and contact matrix manually:</p>
+<pre class="r"><code>
+# Get the population
+pop &lt;- get_population(&quot;United Kingdom&quot;)
+population &lt;- pop$n
+
+# Get the mixing matrix
+contact_matrix &lt;- get_mixing_matrix(&quot;United Kingdom&quot;)
+
+# run the model
+r &lt;- run_explicit_SEEIR_model(population = population, 
+                              contact_matrix_set = contact_matrix,
+                              R0 = 2.5, 
+                              time_period = 200,
+                              dt = 0.1,
+                              replicates = 5)
+plot(r)
+#&gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &lt;10
+#&gt; replicates
+#&gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &lt;10
+#&gt; replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-set%20params-1.png" width="100%" /></p>
+<p>We can also change the R0 and contact matrix at set time points, to reflect
+changing behaviour resulting from interventions. For example to set an 80%
+reduction in the contact matrix after 100 days :</p>
+<pre class="r"><code>
+# run the model
+r &lt;- run_explicit_SEEIR_model(population = population, 
+                              tt_contact_matrix = c(0, 100),
+                              contact_matrix_set = list(contact_matrix,
+                                                        contact_matrix*0.2),
+                              R0 = 2.5, 
+                              time_period = 200,
+                              dt = 0.1,
+                              replicates = 5)
+plot(r, var_select = &quot;infections&quot;)
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Summary
+#&gt; statistic estimated from &lt;10 replicates
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Confidence
+#&gt; bounds estimated from &lt;10 replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-set%20contact%20matrix%20decrease-1.png" width="100%" /></p>
+<p>where <code>n_E2_I</code> is the daily number of new infections.</p>
+<p>To show an 80% reduction after 80 days but only maintained for 40 days :</p>
+<pre class="r"><code>
+# run the model
+r &lt;- run_explicit_SEEIR_model(population = population, 
+                              tt_contact_matrix = c(0, 80, 120),
+                              contact_matrix_set = list(contact_matrix,
+                                                        contact_matrix*0.2,
+                                                        contact_matrix),
+                              R0 = 2.5, 
+                              time_period = 220,
+                              dt = 0.1,
+                              replicates = 5)
+plot(r, var_select = &quot;infections&quot;)
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Summary
+#&gt; statistic estimated from &lt;10 replicates
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Confidence
+#&gt; bounds estimated from &lt;10 replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-set%20contact%20matrix%20decrease%20and%20relax-1.png" width="100%" /></p>
+<p>Alternatively, we could set a changing R0, which falls below 1 after 80 days:</p>
+<pre class="r"><code>
+# run the model
+r &lt;- run_explicit_SEEIR_model(population = population, 
+                              contact_matrix_set = contact_matrix,
+                              tt_R0 = c(0, 80),
+                              R0 = c(2.5, 0.9),
+                              time_period = 200,
+                              dt = 0.1,
+                              replicates = 5)
+plot(r, var_select = &quot;infections&quot;)
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Summary
+#&gt; statistic estimated from &lt;10 replicates
+#&gt; Warning in plot.squire_simulation(r, var_select = &quot;infections&quot;): Confidence
+#&gt; bounds estimated from &lt;10 replicates
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-set%20R0%20decrease-1.png" width="100%" /></p>
+<p>The model in squire also allows you to alter healthcare capacity. Default values for the arguments <code>hosp_bed_capacity</code> and <code>ICU_capacity</code> are taken from the World Bank and a systematic review of the literature. However, you can also specify your own:</p>
+<pre class="r"><code>
+library(patchwork)
+
+r &lt;- run_explicit_SEEIR_model(population = population, 
+                              contact_matrix_set = contact_matrix,
+                              R0 = 2.5, 
+                              time_period = 200,
+                              dt = 0.1,
+                              replicates = 15,
+                              hosp_bed_capacity = 1000,
+                              ICU_bed_capacity = 100)
+
+c &lt;- plot(r, var_select = &quot;hospital_occupancy&quot;)
+d &lt;- plot(r, var_select = &quot;ICU_occupancy&quot;)
+c / d 
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &quot;none&quot;` instead.
+#&gt; It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-change%20healthcare%20capacity-1.png" width="100%" /></p>
+</div>
+<div id="extracting-and-plotting-relevant-outputs" class="section level3">
+<h3>3. Extracting and Plotting Relevant Outputs</h3>
+<p>Whilst the above provides quick and easy ways to plot relevant outputs, we recognise users might want to play around with the data themselves. This can be done with the <code>format_output</code> function.</p>
+<pre class="r"><code>library(ggplot2)
+library(patchwork)
+library(dplyr)
+#&gt; 
+#&gt; Attaching package: &#39;dplyr&#39;
+#&gt; The following objects are masked from &#39;package:stats&#39;:
+#&gt; 
+#&gt;     filter, lag
+#&gt; The following objects are masked from &#39;package:base&#39;:
+#&gt; 
+#&gt;     intersect, setdiff, setequal, union
+
+x &lt;- run_explicit_SEEIR_model(country = &quot;Afghanistan&quot;, hosp_bed_capacity = 500, ICU_bed_capacity = 200)
+
+deaths &lt;- format_output(x = x, var_select = &quot;deaths&quot;) %&gt;%
+  mutate(replicate = factor(replicate))
+a &lt;- ggplot(deaths, aes(x = t, y = y, col = replicate)) +
+  geom_line() + ylab(&quot;Daily Deaths&quot;)
+
+infections &lt;- format_output(x = x, var_select = &quot;infections&quot;) %&gt;%
+  mutate(replicate = factor(replicate))
+b &lt;- ggplot(infections, aes(x = t, y = y, col = replicate)) +
+  geom_line() + ylab(&quot;Daily Infections&quot;)
+
+hosp_bed &lt;- format_output(x = x, var_select = &quot;hospital_occupancy&quot;) %&gt;%
+  mutate(replicate = factor(replicate))
+c &lt;- ggplot(hosp_bed, aes(x = t, y = y, col = replicate)) +
+  geom_line() + ylab(&quot;Hospital Bed Occupancy&quot;)
+
+ICU_bed &lt;- format_output(x = x, var_select = &quot;ICU_occupancy&quot;) %&gt;%
+  mutate(replicate = factor(replicate))
+d &lt;- ggplot(ICU_bed, aes(x = t, y = y, col = replicate)) +
+  geom_line() + ylab(&quot;ICU Bed Occupancy&quot;)
+
+z &lt;- a + b + c + d +
+  plot_layout(guides = &#39;collect&#39;)
+z</code></pre>
+<p><img src="man/figures/README-untransformed-1.png" width="100%" /></p>
+<p>Hospital bed occupancy fluctuates very slightly above the user-specified number of hospital beds available (+1 in the above example). This is due to individuals being discharged from ICU beds into general hospital beds when general hospital bed occupancy is already at maximum capacity.</p>
+<p>We assume that these individuals newly discharged from the ICU would in reality be prioritised to receive general hospital beds and so give them a general hospital bed. Whilst this is now shown in the above panel of hospital bed occupancy, this means that less-sick individuals in general hospital beds would be discharged slightly early to make space. We assume that for these small number of the healthiest individuals in hospital, there is no excess mortality associated with this early discharge.</p>
+<p>Future work will explore a range of bed-prioritisation structures to consider how results might be shaped by who gets a bed and when.</p>
+</div>
+<div id="calibrating-the-model-to-observed-deaths-data" class="section level3">
+<h3>4. Calibrating the Model to Observed Deaths Data</h3>
+<p>The model can be simply calibrated to time series of deaths reported in settings. This can be done using the <code>calibrate</code> function. For example, let’s use the time series of deaths in Algeria up to the 22nd April 2020:</p>
+<pre class="r"><code>df &lt;- read.csv(squire:::squire_file(&quot;extdata/example_DZA.csv&quot;), stringsAsFactors = FALSE)
+head(df)
+#&gt;   X                 date deaths cases
+#&gt; 1 1 2020-02-26T00:00:00Z      0     1
+#&gt; 2 2 2020-03-01T00:00:00Z      0     2
+#&gt; 3 3 2020-03-04T00:00:00Z      0     2
+#&gt; 4 4 2020-03-05T00:00:00Z      0     7
+#&gt; 5 5 2020-03-06T00:00:00Z      0     5
+#&gt; 6 6 2020-03-09T00:00:00Z      0     3</code></pre>
+<p>We can calibrate the model to this data. This calibration will infer the most likely start date of the epidemic and the R0 at the start of the epidemic. Calibration occurs by scanning across a range of possible R0 values and start dates. Fitting works using a particle filter, which can be parallelised using <code>future::plan(future::multiprocess())</code> before running <code>calibrate</code>.</p>
+<pre class="r"><code># set up for parallelisation
+future::plan(future::multiprocess())
+
+# Fit model
+out &lt;- calibrate(
+      data = df,
+      R0_min = 2,
+      R0_max = 4,
+      R0_step = 0.5,
+      first_start_date = &quot;2020-02-10&quot;,
+      last_start_date = &quot;2020-02-22&quot;,
+      day_step = 4,
+      replicates = 10,
+      n_particles = 20,
+      country = &quot;Algeria&quot;
+    )</code></pre>
+<p><code>calibrate</code> returns the same output as <code>run_explicit_SEEIR_model</code>, with the first
+three elements in <code>out</code> being the simulation outputs, the model and model parameters. Note that simulation replicates are aligned to the maximum date in the data provided, and as a result we can use the same plotting functions as before:</p>
+<pre class="r"><code>plot(out, &quot;deaths&quot;, date_0 = max(df$date), x_var = &quot;date&quot;)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-plot%20particle%20deaths-1.png" width="100%" /></p>
+<p>With default parameters, <code>calibrate</code> will simulate up to the maximum date in the data
+provided. The fit to this data can be shown using the plotting function and specifying <code>particle_fit</code>
+to be <code>TRUE</code></p>
+<pre class="r"><code>plot(out, particle_fit = TRUE)</code></pre>
+<p><img src="man/figures/README-particle%20fit%20no%20ints-1.png" width="100%" /></p>
+<p>We can see that this is not the best fit, capturing only the beginning of the data points. We can also diagnose
+the fitting further by looking at the <code>scan_results</code> of the grid search.</p>
+<pre class="r"><code>plot(out$scan_results)</code></pre>
+<p><img src="man/figures/README-show%20grid%20fits-1.png" width="100%" /></p>
+<p>This grid shows the negative log likeihood for each parameter pair. We can also plot the
+related probability for each pair as follows:</p>
+<pre class="r"><code>plot(out$scan_results, what = &quot;probability&quot;)</code></pre>
+<p><img src="man/figures/README-show%20grid%20fits%20probs-1.png" width="100%" /></p>
+<p>The reason for the poor fits to the data shown earlier is because Algeria has implemented
+interventions prior to today. These can also be incorporated into <code>calibrate</code>.
+For example, we can grab the assumed changes to transmission based on government intervention
+for Algeria.</p>
+<pre class="r"><code>interventions &lt;- read.csv(squire:::squire_file(&quot;extdata/example_DZA_intervention.csv&quot;))
+int_unique &lt;- squire:::interventions_unique(interventions)
+int_unique
+#&gt; $dates_change
+#&gt; [1] &quot;2020-03-12&quot; &quot;2020-03-18&quot; &quot;2020-03-22&quot; &quot;2020-03-23&quot;
+#&gt; 
+#&gt; $change
+#&gt; [1] 0.900 0.850 0.550 0.225</code></pre>
+<p>We can then provide these to <code>calibrate</code> as the dates (<code>date_R0_change</code>) and relative reductions
+to R0 (<code>R0_change</code>). We will also specify for model fits to be continued for 14 days into the future with
+<code>forceast = 14</code>:</p>
+<pre class="r"><code>out &lt;- calibrate(
+      data = df,
+      R0_min = 2,
+      R0_max = 4,
+      R0_step = 0.5,
+      first_start_date = &quot;2020-02-10&quot;,
+      last_start_date = &quot;2020-02-22&quot;,
+      day_step = 4,
+      replicates = 10,
+      n_particles = 20,
+      forecast = 14,
+      R0_change = int_unique$change,
+      date_R0_change = int_unique$dates_change,
+      country = &quot;Algeria&quot;
+    )</code></pre>
+<p>Let’s see if that is any better.</p>
+<pre class="r"><code>plot(out, particle_fit = TRUE)</code></pre>
+<p><img src="man/figures/README-particle%20fit%20ints-1.png" width="100%" /></p>
+<p>That is a much better fit.</p>
+<p>Any parameter that you could provide to <code>run_explicit_SEEIR_model</code> can be passed to <code>calibrate</code>. This
+includes time varying arguments such as <code>contact_matrix_set</code>, <code>ICU_bed_capacity</code> and <code>hosp_bed_capacity</code>. To incorporate these into model fitting correctly, the date at which these change must be provided (similarly to how <code>date_R0_change</code> was provided above) using <code>date_ICU_bed_capacity_change</code>, <code>date_ICU_bed_capacity_change</code> and <code>date_hosp_bed_capacity_change</code> respectively. In addition, the user must provide a baseline value for these, i.e. the contact matrix and bed capacity at the beginning of the epidemic:</p>
+<pre class="r"><code>out &lt;- calibrate(
+      data = df,
+      R0_min = 2,
+      R0_max = 4,
+      R0_step = 0.5,
+      first_start_date = &quot;2020-02-10&quot;,
+      last_start_date = &quot;2020-02-22&quot;,
+      day_step = 4,
+      replicates = 10,
+      n_particles = 20,
+      forecast = 14,
+      R0_change = int_unique$change,
+      date_R0_change = int_unique$dates_change,
+      baseline_contact_matrix = get_mixing_matrix(&quot;Algeria&quot;),
+      contact_matrix_set = list(get_mixing_matrix(&quot;Algeria&quot;)*0.9),
+      date_contact_matrix_set_change = &quot;2020-03-16&quot;,
+      baseline_hosp_bed_capacity = squire:::get_hosp_bed_capacity(&quot;Algeria&quot;),
+      hosp_bed_capacity = squire:::get_hosp_bed_capacity(&quot;Algeria&quot;)*c(1.1,1.2),
+      date_hosp_bed_capacity_change = c(&quot;2020-04-02&quot;, &quot;2020-04-08&quot;),
+      baseline_ICU_bed_capacity = squire:::get_ICU_bed_capacity(&quot;Algeria&quot;),
+      ICU_bed_capacity = squire:::get_ICU_bed_capacity(&quot;Algeria&quot;)*c(1.05),
+      date_ICU_bed_capacity_change = c(&quot;2020-04-10&quot;),
+      country = &quot;Algeria&quot;
+    )</code></pre>
+<p>(N.B. Given the potentially long running time for the grid search, the model state is returned at the end of every day rather than every time step (provided by <code>dt</code>). As a result model outputs such as <code>n_E2_I</code> (number of infections in a time step) and <code>delta_D</code> (number of deaths in a time step) reflect the outputs in the last time step rather than in all the time steps in the last day. The plotting functions and <code>format_output</code> provided in <code>squire</code> handle this correctly and work out the correct number for these in the last day.)</p>
+</div>
+<div id="conducting-scenario-projections-to-fitted-data" class="section level3">
+<h3>5. Conducting scenario projections to fitted data</h3>
+<p>Once you have calibrated the model to death data, it is possible to then implement mitigation strategies forwards in time from the point of calibration. This is achieved using the <code>projections</code> function. For example, let’s consider a country that as of 28th April 2020 is yet to experience an epidemic take off but may be about to. Guinea reported its first COVID-19 death on 16th April 2020 and has reported 7 deaths by the 28th April 2020 according to data from the <a href="https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide">European CDC</a>.</p>
+<p>First let’s calibrate to this data with no interventions in place (there are likely some interventions in place but nothing major, such as a lockdown, has been implemented by 2020-04-28) and simulate forward for 180 days:</p>
+<pre class="r"><code>df &lt;- read.csv(squire:::squire_file(&quot;extdata/example_GIN.csv&quot;), stringsAsFactors = FALSE)
+
+out &lt;- calibrate(
+      data = df,
+      R0_min = 2.5,
+      R0_max = 4,
+      R0_step = 0.5,
+      first_start_date = &quot;2020-03-10&quot;,
+      last_start_date = &quot;2020-03-25&quot;,
+      day_step = 5,
+      replicates = 10,
+      n_particles = 20,
+      forecast = 180,
+      country = &quot;Guinea&quot;
+    )</code></pre>
+<p>Firstly, let’s plot the fit up to the current day</p>
+<pre class="r"><code>plot(out, particle_fit = TRUE) + 
+    ggplot2::xlim(as.Date(c(&quot;2020-04-10&quot;,&quot;2020-04-28&quot;))) + 
+    ggplot2::ylim(c(0,10))</code></pre>
+<p><img src="man/figures/README-particle%20gin%20plots-1.png" width="100%" /></p>
+<p>The fit is good and captures the stuttering chains at the beginning of the epidemic. However, if we plot the forecasted deaths we can see the epidemic is likely to take off:</p>
+<pre class="r"><code>plot(out, &quot;deaths&quot;)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-particle%20gin%20forecast-1.png" width="100%" /></p>
+<p>We can now use the output of <code>calibrate</code> to explore different scenario projections using <code>projections</code>. For example, to contast this unmitigated epidemic against a mitigation scenario with a 50% reduction in R0 today and a further 30% in 2 weeks time:</p>
+<pre class="r"><code># create our projections
+p &lt;- projections(r = out, R0_change = c(0.5, 0.2), tt_R0 = c(0, 14))</code></pre>
+<p>The output generated from <code>projections</code> is the same class and structure as from <code>calibrate</code> and can be plotted against the unmitigated scenario using <code>projection_plotting</code>:</p>
+<pre class="r"><code>ggproj &lt;- projection_plotting(r_list = list(out,p),
+                    scenarios = c(&quot;Unmitigated&quot;,&quot;Mitigation&quot;),
+                    var_select = c(&quot;ICU_occupancy&quot;, &quot;ICU_demand&quot;),
+                    add_parms_to_scenarios = TRUE,ci = FALSE,summarise = TRUE)
+
+# and lets add in the ICU capacity
+ggproj + ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-projection%20plotting-1.png" width="100%" /></p>
+<p>We can see above that the intervention introduced is nearly sufficient to prevent ICU demand (solid line red) from exceeding the supply, whereas in the unmitigated strategy this did occur.</p>
+<p>We can also model changing interventions by changing the contact matrix over time as well as the availability of ICU and hospital beds. E.g. decreasing contacts by 75% in a week before relaxing it to 80% in 30 days time, while increasing hospital and ICU beds by 200% in 30 days time. (N.B. We can turn off the automatic scenario parameter labelling with <code>add_parms_to_scenarios = FALSE</code>):</p>
+<pre class="r"><code># create our projections
+p &lt;- projections(r = out, 
+                  contact_matrix_set_change = c(1, 0.25, 0.8), 
+                  tt_contact_matrix = c(0, 7, 30), 
+                  hosp_bed_capacity_change = c(1, 3),
+                  tt_hosp_beds = c(0, 30),
+                  ICU_bed_capacity_change = c(1, 3),
+                  tt_ICU_beds = c(0,30))
+
+projection_plotting(r_list = list(out, p),
+                    scenarios = c(&quot;Unmitigated&quot;,&quot;Mitigation&quot;),
+                    var_select = c(&quot;ICU_occupancy&quot;, &quot;ICU_demand&quot;,&quot;deaths&quot;),
+                    add_parms_to_scenarios = FALSE,
+                    ci = FALSE,summarise = TRUE) + 
+ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-projection%20relative%20beds-1.png" width="100%" /></p>
+<p>Above we can see that the increase in bed causes the mitigation strategy to plateau at a higher bed occupancy, however, not high enough to meet the demand. However, the impacts to the contact matrix and beds have caused both a shift and a decrease in the daily deaths, which in turn causes a noticable decrease in total deaths:</p>
+<pre class="r"><code>projection_plotting(r_list = list(out,p),
+                    scenarios = c(&quot;Unmitigated&quot;,&quot;Mitigation&quot;),
+                    var_select = c(&quot;D&quot;),
+                    add_parms_to_scenarios = FALSE,
+                    ci = FALSE,summarise = TRUE)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-total%20deaths%20projection-1.png" width="100%" /></p>
+<p>Rather than using relative changes to the interventions, we can provide absolute measures. For example, to change the R0 to 2 today and add 500 ICU beds in 40 days time:</p>
+<pre class="r"><code># what is the current capacity
+icu &lt;- tail(out$parameters$ICU_bed_capacity,1)
+
+# create our projections
+p &lt;- projections(r = out, 
+                  R0 = 2,
+                  tt_R0 = 0,
+                  ICU_bed_capacity = c(icu, icu + 500),
+                  tt_ICU_beds = c(0,40))
+
+projection_plotting(r_list = list(out,p),
+                    scenarios = c(&quot;Unmitigated&quot;,&quot;Mitigation&quot;),
+                    var_select = c(&quot;ICU_occupancy&quot;, &quot;ICU_demand&quot;,&quot;deaths&quot;),
+                    add_parms_to_scenarios = FALSE,
+                    ci = FALSE,summarise = TRUE)
+#&gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&gt; use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="man/figures/README-projection%20plotting%20absolute-1.png" width="100%" /></p>
+<p>Lastly, in order to run simulations for longer than the number set in <code>calibrate(forecast = x)</code>, we can use the argument <code>time_period</code> to set the numbers of days that <code>projections</code> should simulate for. For example, we could redo our calibration and have it only run up the current day:</p>
+<pre class="r"><code>df &lt;- read.csv(squire:::squire_file(&quot;extdata/example_GIN.csv&quot;), stringsAsFactors = FALSE)
+
+out &lt;- calibrate(
+      data = df,
+      R0_min = 2.5,
+      R0_max = 4,
+      R0_step = 0.5,
+      first_start_date = &quot;2020-03-10&quot;,
+      last_start_date = &quot;2020-03-25&quot;,
+      day_step = 5,
+      replicates = 10,
+      n_particles = 20,
+      forecast = 0,
+      country = &quot;Guinea&quot;
+    )
+
+plot(out, particle_fit = TRUE)</code></pre>
+<p><img src="man/figures/README-particle%20gin%20alt-1.png" width="100%" /></p>
+<p>We can now use this to project 90 days forwards with the current level of interventions, as well as a projection of 90 days with a 50% reduction in R0:</p>
+<pre class="r"><code>p_no_change &lt;- projections(out, time_period = 90)
+p_change &lt;- projections(out, R0_change = 0.5, tt_R0 = 0, time_period = 90)
+
+projection_plotting(list(p_no_change, p_change), 
+                    scenarios = c(&quot;No Change&quot;, &quot;50% R0&quot;), 
+                    add_parms_to_scenarios = FALSE,
+                    var_select = &quot;deaths&quot;,
+                    date_0 = max(df$date), 
+                    x_var = &quot;date&quot;)</code></pre>
+<p><img src="man/figures/README-particle%20gin%20alt%20proj-1.png" width="100%" /></p>
+</div>
+</div>

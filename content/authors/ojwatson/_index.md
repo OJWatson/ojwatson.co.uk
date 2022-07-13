@@ -1,8 +1,9 @@
 ---
 authors:
 - admin
-bio: | 
-  I am an infectious disease modeller, data scientist, epidemiologist and an R developer. My academic work has focussed on modelling the spread of malaria and COVID-19. This work has been conducted at Imperial College London, Brown University and the London School of Hygiene and Tropical Medicine. 
+bio: |
+  I am a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) working as an infectious disease modeller, data scientist, epidemiologist and an R developer. My academic work has focussed on modelling the spread of malaria and COVID-19, based at Imperial College London, Brown University and the London School of Hygiene and Tropical Medicine.
+
 education: 
   courses:
   - course: PhD in Infectious Disease Modelling
@@ -43,4 +44,6 @@ user_groups:
 - Visitors
 ---
 
-I am an infectious disease modeller, data scientist, epidemiologist and an R developer. My academic work has focussed on modelling the spread of malaria and COVID-19. This work has been conducted at Imperial College London, Brown University and the London School of Hygiene and Tropical Medicine.
+  I am a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) working at the intersection of infectious disease modelling and mortality estimation. I am motivated by reducing global health inequalities, using my skills as a data scientist, epidemiologist and an R developer to address key policy questions related to the control of malaria and COVID-19. 
+
+  I am currently conducting my fellowship at the London School of Hygiene and Tropical Medicine. Before that I completed postdoctoral research at Brown University and completed my DPhil in Infectious Disease Modelling at Imperial College London on a Wellcome Trust funded PhD.
