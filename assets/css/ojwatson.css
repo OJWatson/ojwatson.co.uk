@@ -358,6 +358,10 @@ table {
   text-align: left!important;
 }
 
+.card h4 {
+  text-transform: none;
+}
+
 .card .card-image.hover-overlay:after {
   display: block;
   position: absolute;
@@ -398,6 +402,10 @@ table {
 }
 
 .col-lg-8 a {
+  text-decoration: underline !important;
+}
+
+.article-style a {
   text-decoration: underline !important;
 }
 

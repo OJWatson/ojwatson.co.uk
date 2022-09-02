@@ -33,14 +33,14 @@ subtitle = ""
     name = "Malaria"
     tag = "malaria"
     
-  # [[content.filter_button]]
-  #   name = "COVID-19"
-  #   tag = "covid"
-  #   
-  # [[content.filter_button]]
-  #   name = "Other Projects"
-  #   tag = "other"
-  #   
+  [[content.filter_button]]
+    name = "COVID-19"
+    tag = "covid"
+
+  [[content.filter_button]]
+    name = "Other Projects"
+    tag = "other"
+
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
