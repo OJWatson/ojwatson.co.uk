@@ -1,7 +1,7 @@
 ---
 header:
   caption: ""
-  image: ""
-title: Recent Talks and Workshops
+  image: "headers/transparent.png"
+title: Select Talks
 view: 2
 ---

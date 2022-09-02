@@ -1,10 +1,9 @@
 ---
 title: "ASTMH 2016 pfhrp2/3 modelling"
 author: OJ Watson
-date: '2016-12-07T18:00:00-08:00'
+date: '2016-10-20T18:00:00-08:00'
 slug: asthm-2016-pfhrp2-3
 categories:
-  - r
 tags:
   - malaria
 event: "ASTMH 2016"
@@ -44,7 +43,7 @@ slides: ''
 projects: []
 ---
 
-Talk at ASTMH 2016 on pfhrp2/3 deletions. The talk was early discussion of findings now published at 
+Talk at ASTMH 2016 on malaria pfhrp2/3 deletions. The talk was early discussion of findings now published at 
 eLife[^1].
 
 [^1]: https://elifesciences.org/articles/25008
