@@ -41,14 +41,15 @@ local_business_type = ""
 
 # Organization name (optional)
 # Enter an organization or project name. Defaults to the site title from `config.toml`.
-org_name = ""
+org_name = "OJ Watson"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = ""
+description = "Personal website and portfolio of Dr. OJ Watson."
 
 # Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-logo = ""
+favicon = "/favicon.ico"
+# logo = "/tortoise.png"
 
 ############################
 ## Site Features
@@ -110,9 +111,9 @@ email = "oj.watson92@gmail.com"
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 contact_links = [
-  {icon = "twitter", icon_pack = "fab", name = "Follow Me in Twitter", link = "https://twitter.com/ojwatson"},
+  {icon = "twitter", icon_pack = "fab", name = "Follow Me on Twitter", link = "https://twitter.com/ojwatson"},
   {icon = "github", icon_pack = "fab", name = "Follow Me on GitHub", link = "https://github.com/ojwatson"},
-  {icon = "envelope", icon_pack = "fas", name = "Email me directly", link = "mailto:oj.watson92@gmail.com"}
+  {icon = "envelope", icon_pack = "fas", name = "Email Me directly", link = "mailto:oj.watson92@gmail.com"}
   ]
 
 ############################
@@ -120,7 +121,7 @@ contact_links = [
 ############################
 
 # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-sharing_image = "headers/tree.jpg"
+sharing_image = "headers/newyork.jpg"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
 twitter = "ojwatson92"

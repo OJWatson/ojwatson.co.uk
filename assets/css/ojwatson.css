@@ -13,6 +13,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #474747;
 }
 
+p {
+  font-size: smaller;
+}
+
+
 body {
   color: #474747;
 }
@@ -24,14 +29,28 @@ body {
 /* fix padding of profile description */
 
 section#profile-page.pt-5 div.container div.row div.col-12.col-lg-8{
-  padding-top: 30px !important;
+  padding-top: 10px !important;
+}
+
+#profile {
+  padding-top: 10px;
+}
+
+.portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 25%;
+}
+
+#navbar-main img {
+  padding-left: 4rem;
 }
 
 /* Navbar */
 
 /* set max height of logo */
 
-.navbar-brand img {
+.navbar- img {
   max-height: 44px;
 }
 
@@ -91,6 +110,10 @@ a.hero-cta-alt:hover {
 .btn.btn-outline-primary.my-1.mr-1 {
   border-radius: 0px; /*undo rounded corners*/
   font-size: 0.8rem;
+}
+
+.btn.btn-outline-primary.my-1.mr-1:hover {
+  color: #B18F4D !important;
 }
 
 .btn-slider {
@@ -241,15 +264,99 @@ table {
 }
 
 .aboutme-header {
-  position:relative;height: 400px;
+  position:relative;
+  height: 300px;
   padding: 3em 0;
-  clear: both; 
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: center;
 }
 
+.article-banner {
+  position:relative;
+  height: 300px;
+  padding: 3em 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/headers/vines.jpg)
+}
+
+
+.aboutpage{
+  padding-top: 0rem;
+}
+
+.aboutpage .col-lg-8 {
+  margin: 0px;
+}
+
+.aboutpage .row {
+  flex-direction: row-reverse!important;
+}
+
+@media screen and (max-width: 991px) {
+.aboutpage .row {
+  flex-direction: column-reverse!important;
+}
+}
+
+/* OLD ABOUT
+.aboutpage  {
+  padding-top: 15px !important;
+  padding-left: 1rem;
+}
+
+.aboutpage #about {
+  padding-top: 15px !important;
+  padding-left: 0rem!important
+}
+
+.aboutpage .col-lg-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-top: -110px;
+}
+
+*/
+
+/* RESEARCH */
+
+#research .section-heading {
+  display: none;
+}
+
+#research #research  {
+  padding-top: 15px !important;
+  padding-left: 0rem;
+}
+
+#research  {
+  padding-top: 15px !important;
+  padding-left: 1rem;
+}
+
+#research .col-lg-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-top: -110px;
+}
+
+
+#contact {
+  padding-top: 2rem;
+}
+
 /* project cards */
+
+#projects  {
+  padding-top: 2rem !important;
+}
+
+#projects .mt-0 {
+  
+  text-align: left!important;
+}
 
 .card .card-image.hover-overlay:after {
   display: block;
@@ -286,7 +393,16 @@ table {
   margin-top: 25px;
   margin-bottom: 20px;
   background-color: #2d4269;
+  text-decoration: underline;
   color: #FFF;
+}
+
+.col-lg-8 a {
+  text-decoration: underline !important;
+}
+
+.col-lg-8 a:hover {
+  color: #B18F4D !important;
 }
 
 .btn-sponsor:hover {
@@ -296,10 +412,10 @@ table {
   color: #FFF;
 }
 
-.fas, .fab {
+.fas, .fab, .ai {
   color: #2d4269 !important;
 }
 
-.fas:hover, .fab:hover {
+.fas:hover, .fab:hover, .ai:hover {
   color: #B18F4D !important;
 }

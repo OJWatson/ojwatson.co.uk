@@ -81,6 +81,6 @@ subtitle = ""
  css_style = ""
  
  # CSS class.
- css_class = ""
+ css_class = "projects"
 +++
 
