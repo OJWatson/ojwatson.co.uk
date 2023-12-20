@@ -22,6 +22,8 @@ copyright = "&copy; {year} OJ Watson"
 # Name of Academic theme folder in `themes/`.
 theme = "hugo-academic"
 
+googleAnalytics = "G-8X56EST7X2"
+
 # Get last modified date for content from Git?
 enableGitInfo = false
 

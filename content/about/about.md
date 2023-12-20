@@ -41,7 +41,7 @@ css_class = "aboutpage"
 
 # About
 
-I'm a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am Visiting Researcher in the Department of Infectious Disease Epidemiology, working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and hold a position at Brown University in the [Bailey Lab](http://www.baileylab.org/) working on malaria population genetics.  
+I am an Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship, working within Imperial's new AI Initiative: [I-X](https://ix.imperial.ac.uk/). Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am part of the Department of Infectious Disease Epidemiology, working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and hold a position at Brown University in the [Bailey Lab](http://www.baileylab.org/) working on malaria population genetics.  
 
 My undergraduate degree was in Natural Sciences at Pembroke College, Cambridge before completing a master's degree in Systems Biology, working on multi-omic computational methods for identifying new biochemical reactions indicative of disease.
 
