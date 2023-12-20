@@ -2,7 +2,7 @@
 authors:
 - admin
 bio: |
-  I am a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) working as an infectious disease modeller, data scientist, epidemiologist and an R developer. My academic work has focussed on modelling the spread of malaria and COVID-19, based at Imperial College London, Brown University and the London School of Hygiene and Tropical Medicine.
+  I am an Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship, working within Imperial's new AI Initiative: [I-X](https://ix.imperial.ac.uk/). My primary focus is as an infectious disease modeller, data scientist, epidemiologist and an R developer. My academic work has focussed on modelling the spread of malaria and COVID-19, based at Imperial College London, Brown University and the London School of Hygiene and Tropical Medicine.
 
 education: 
   courses:
@@ -26,9 +26,9 @@ interests:
 - Baking
 name: OJ Watson
 organizations:
-- name: London School of Hygiene and Tropical Medicine
+- name: Imperial College London
   url: ""
-role: Schmidt Science Fellow
+role: Imperial College Research Fellow
 social:
 - icon: envelope
   icon_pack: fas
@@ -51,6 +51,6 @@ user_groups:
 - Visitors
 ---
 
-  I am a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) working at the intersection of infectious disease modelling and mortality estimation. I am motivated by reducing global health inequalities, using my skills as a data scientist, epidemiologist and an R developer to generate sustainable systems for improving data equity and using these to address key policy questions related to food insecurity and the control of infectious diseases, such as malaria and COVID-19. 
+  I am an Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship[Schmidt Science Fellow](https://schmidtsciencefellows.org/) working at the intersection of infectious disease modelling and mortality estimation. I am motivated by reducing global health inequalities, using my skills as a data scientist, epidemiologist and an R developer to generate sustainable systems for improving data equity and using these to address key policy questions related to food insecurity and the control of infectious diseases, such as malaria and COVID-19. 
 
-  I am currently conducting my fellowship at the London School of Hygiene and Tropical Medicine. Before that I completed postdoctoral research at Brown University and completed my PhD in Infectious Disease Modelling at the MRC Centre for Global Infectious Disease Analysis, Imperial College London on a Wellcome Trust funded PhD.
+  Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine. Before that I completed postdoctoral research at Brown University and completed my PhD in Infectious Disease Modelling at the MRC Centre for Global Infectious Disease Analysis, Imperial College London on a Wellcome Trust funded PhD.
