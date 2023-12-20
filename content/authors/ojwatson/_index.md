@@ -51,6 +51,8 @@ user_groups:
 - Visitors
 ---
 
-  I am an Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship, working within Imperial's new AI Initiative: [I-X](https://ix.imperial.ac.uk/) working at the intersection of infectious disease modelling and mortality estimation. I am motivated by reducing global health inequalities, using my skills as a data scientist, epidemiologist and an R developer to generate sustainable systems for improving data equity and using these to address key policy questions related to food insecurity and the control of infectious diseases, such as malaria and COVID-19. 
+  I am an Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship, working within Imperial's new AI Initiative, [I-X](https://ix.imperial.ac.uk/), at the intersection of infectious disease modelling and mortality estimation. 
+  
+  I am motivated by reducing global health inequalities, using my skills as a data scientist, epidemiologist and an R developer to generate sustainable systems for improving data equity and using these to address key policy questions related to food insecurity and the control of infectious diseases, such as malaria and COVID-19. 
 
   Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine. Before that I completed postdoctoral research at Brown University and completed my PhD in Infectious Disease Modelling at the MRC Centre for Global Infectious Disease Analysis, Imperial College London on a Wellcome Trust funded PhD.
