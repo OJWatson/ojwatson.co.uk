@@ -1,10 +1,10 @@
 ```pm-status
 milestone: M0
 state: running
-headSha: 
+headSha: 34068b0
 ciRunUrl: 
-updatedAtUtc: 2026-02-12T12:00:00Z
-nextStep: Replace ROADMAP with the approved 8-milestone plan and begin M1 (positioning/home) content edits once build/preview is confirmed.
+updatedAtUtc: 2026-02-12T12:02:00Z
+nextStep: Begin M1 (positioning/home) content edits now that local build/preview steps are documented.
 ```
 
 ## Notes
