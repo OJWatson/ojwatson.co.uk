@@ -1,10 +1,10 @@
 ```pm-status
-milestone: M0
+milestone: M1
 state: running
-headSha: 34068b0
+headSha: d05e609
 ciRunUrl: 
-updatedAtUtc: 2026-02-12T12:02:00Z
-nextStep: Begin M1 (positioning/home) content edits now that local build/preview steps are documented.
+updatedAtUtc: 2026-02-12T21:13:54Z
+nextStep: Continue M1 by reviewing homepage sections/nav in the browser and deciding whether to enable/update additional home widgets (e.g., contact) to match the top-level menu.
 ```
 
 ## Notes
