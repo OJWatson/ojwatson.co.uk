@@ -1,9 +1,9 @@
 ```pm-status
 milestone: M1
 state: running
-headSha: b719ac5
+headSha: b170080
 ciRunUrl: 
-updatedAtUtc: 2026-02-13T03:50:58Z
+updatedAtUtc: 2026-02-13T04:30:47Z
 nextStep: M1: add booking link + switch primary email to Imperial; next adjust homepage intro/links for consistency.
 ```
 
