@@ -58,3 +58,6 @@ My research sits at the intersection of infectious disease modelling and mortali
 I am motivated by reducing global health inequalities, particularly through sustainable systems that strengthen data equity and enable timely, transparent analysis for policy.
 
 Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine. Before that I completed postdoctoral research at Brown University and completed my PhD in Infectious Disease Modelling at Imperial College London.
+
+
+I am a Lecturer (Assistant Professor) in the Department of Infectious Disease Epidemiology, School of Public Health, Imperial College London. I work at the intersection of infectious disease modelling, health emergencies, and AI, developing models and data tools to support decision-making in malaria control, pandemic preparedness, and humanitarian response.
