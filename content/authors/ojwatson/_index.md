@@ -2,10 +2,11 @@
 authors:
 - admin
 
+# Short bio (displayed in user profile at end of posts)
 bio: |
-  I am a Lecturer and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London, working within [I-X](https://ix.imperial.ac.uk/) and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
+  Lecturer (Assistant Professor) and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London.
 
-  My research sits at the intersection of infectious disease modelling and mortality estimation. I build open, reproducible tools that support decision-making and improve data equity, with applications including malaria and COVID-19.
+  I work at the intersection of infectious disease modelling, mortality estimation, and AI for public health — building reproducible tools and data products that support decision-making and data equity.
 
 education:
   courses:
@@ -62,8 +63,8 @@ user_groups:
 - Visitors
 ---
 
-I am a Lecturer (Assistant Professor) in the Department of Infectious Disease Epidemiology, School of Public Health, Imperial College London, and an Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow).
+I’m a Lecturer and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London, currently based within Imperial’s new AI Initiative, [I-X](https://ix.imperial.ac.uk/), and part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
-I work at the intersection of infectious disease modelling, health emergencies, and AI. My focus is on building and sharing reproducible models and data tools that support public health decision-making and strengthen data equity.
+My research sits at the intersection of infectious disease modelling and mortality estimation. I build open, reproducible tools that support decision-making and improve data equity, with applications including malaria and COVID-19.
 
 Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine, and held postdoctoral positions at Brown University and Imperial College London.
