@@ -1,10 +1,10 @@
 ```pm-status
 milestone: M1
 state: running
-headSha: d05e609
+headSha: 149dce4
 ciRunUrl: 
-updatedAtUtc: 2026-02-12T21:13:54Z
-nextStep: Continue M1 by reviewing homepage sections/nav in the browser and deciding whether to enable/update additional home widgets (e.g., contact) to match the top-level menu.
+updatedAtUtc: 2026-02-13T03:17:25Z
+nextStep: Continue M1 by reviewing the above-the-fold homepage/about section in the browser (mobile + desktop) and deciding if any tiny copy/layout tweaks are needed for clarity.
 ```
 
 ## Notes

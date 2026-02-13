@@ -3,6 +3,7 @@
 - 2026-02-12: Cloned repo and created refresh branch; added ROADMAP/STATUS/WORKLOG scaffolding.
 - 2026-02-12: Inspected repo structure (Hugo site using the Academic/Wowchemy theme via `themes/` submodule) and documented exact local preview/build commands.
 - 2026-02-12: M1: Refreshed homepage/about positioning copy (author bio/intro) and verified a clean production build with Hugo extended v0.62.1.
+- 2026-02-13: M1: Tightened the homepage intro/bio wording to read more crisply in the SCS PhD context; verified a clean `hugo --minify` build with Hugo extended v0.62.1.
 
 ## Local development (preview/build)
 
