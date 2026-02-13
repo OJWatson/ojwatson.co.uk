@@ -18,7 +18,7 @@ education:
   - course: BA in Natural Sciences
     institution: University of Cambridge
     year: 2014
-email: "oj.watson92@gmail.com"
+email: "o.watson15@imperial.ac.uk"
 interests:
 - R Programming
 - Infectious Disease Modelling
@@ -32,7 +32,7 @@ role: Lecturer & Imperial College Research Fellow
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:oj.watson92@gmail.com'
+  link: 'mailto:o.watson15@imperial.ac.uk'
 - icon: university
   icon_pack: fas
   link: 'https://www.imperial.ac.uk/people/o.watson15'

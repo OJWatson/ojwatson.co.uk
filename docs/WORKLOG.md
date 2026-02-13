@@ -56,3 +56,4 @@ hugo --minify
 
 - Netlify build config lives in `netlify.toml` (publish `public/`, command `hugo`).
 - `config.toml` sets `theme = "hugo-academic"`; theme assets are in `themes/` (git submodule).
+- 2026-02-13T03:50:58Z M1: set booking link + update primary email to Imperial; previewed locally.
