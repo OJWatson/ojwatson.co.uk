@@ -1,3 +1,13 @@
+
+
+### Current focus (2024–2026)
+My work is organised around four connected themes:
+
+1. Malaria diagnostic and drug resistance modelling (molecular surveillance, drug policy, selection dynamics)
+2. Vaccine impact modelling and pandemic preparedness (including CEPI’s 100 Days Mission and next-generation vaccines)
+3. Humanitarian health and crisis modelling (real-time burden estimation and decision support)
+4. AI-enabled epidemic modelling (deep learning surrogates and scalable inference)
+
 +++
 # Research widget.
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
@@ -73,3 +83,14 @@ I have developed an open source software package, rdhs, that is the first non-pr
 
 In 2016, a study in the Democratic Republic of Congo provided evidence that malaria parasites were evading detection by rapid diagnostic tests due to the deletion of the pfhrp2 gene. Using mathematical transmission models, I provided evidence that there was selection of pfhrp2 gene deletions to a WHO panel steered by the director of the WHO Global Malaria Programme. The panel formulated WHO guidance to national malaria control programmes (NMCPs) to implement molecular surveys to estimate pfhrp2 deletion prevalence. After attending the Malaria Policy Advisory Committee meeting in November 2017, I conducted a collaborative study with the WHO to estimate the potential for seasonal variations in malaria transmission to introduce bias in estimating pfhrp2 deletion prevalence. These findings infomed NMCPs through an interactive online database and field training programmes to optimise surveillance for pfhrp2. (Both studies in eLife). Additionally, I have modelled the impact of false-negative RDTs on community surveys (BMJ Global Health), worked on modelling ivermectin as a possible addition to the currently available malaria control tools (Lancet Infectious Diseases), as well as a modelling-based evaluation of the utility of malaria genetics for inferring transmission intensity (Molecular, Biology and Evolution) and the impact of partner drug resistance on artemisinin resistance (Lancet Microbe).
 
+
+
+### AI-enabled epidemic modelling
+I develop deep learning surrogate models that emulate computationally intensive epidemic simulations, enabling faster calibration, uncertainty quantification, and scenario exploration. This includes generative models and conditional architectures designed to be used in policy-relevant workflows where speed and transparency matter.
+
+**Selected papers (recent)**
+- Artificial intelligence for modelling infectious disease epidemics (Nature, 2025) – https://doi.org/10.1038/s41586-024-08564-w
+
+- Impact of the 100 days mission for vaccines on COVID-19 (The Lancet Global Health, 2024) – https://doi.org/10.1016/S2214-109X(24)00286-9
+- Impact of COVID-19 vaccination programmes in Europe: lives saved and lessons learned (The Lancet Respiratory Medicine, 2024) – https://doi.org/10.1016/S2213-2600(24)00214-5
+- Global risk of selection and spread of Plasmodium falciparum histidine-rich protein 2 and 3 gene deletions (Nature Medicine, 2025) – https://doi.org/10.1038/s41591-025-03974-3

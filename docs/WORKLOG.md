@@ -60,3 +60,4 @@ hugo --minify
 - `config.toml` sets `theme = "hugo-academic"`; theme assets are in `themes/` (git submodule).
 - 2026-02-13T03:50:58Z M1: set booking link + update primary email to Imperial; previewed locally.
 - 2026-02-13T08:00:55+00:00 W1.1 complete (job b77c0372-f7d2-49ea-b607-e4723a9a0685): updated profile/about
+- 2026-02-13T08:21:28+00:00 W1.2 complete (job 76f69dc3-ee9b-4e52-b07e-baa5ac0e3013): updated research page
