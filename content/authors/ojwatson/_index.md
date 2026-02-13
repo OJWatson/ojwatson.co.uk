@@ -20,9 +20,9 @@ education:
     year: 2014
 email: "o.watson15@imperial.ac.uk"
 interests:
-- R Programming
-- Infectious Disease Modelling
-- Data Equity
+- R programming
+- Infectious disease modelling
+- Data equity
 - Baking
 name: OJ Watson
 organizations:
