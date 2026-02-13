@@ -5,6 +5,7 @@
 - 2026-02-12: M1: Refreshed homepage/about positioning copy (author bio/intro) and verified a clean production build with Hugo extended v0.62.1.
 - 2026-02-13: M1: Tightened the homepage intro/bio wording to read more crisply in the SCS PhD context; verified a clean `hugo --minify` build with Hugo extended v0.62.1.
 - 2026-02-13: M1: Normalised homepage interest tags to sentence case for consistency; verified a clean `hugo --minify` build.
+- 2026-02-13T04:58:45Z M1: Made the homepage/about widget intro copy consistent ("working within" phrasing); verified a clean `hugo --minify` build.
 
 ## Local development (preview/build)
 
