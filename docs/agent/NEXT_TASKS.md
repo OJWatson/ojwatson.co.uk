@@ -1,6 +1,3 @@
-# Next tasks
+# NEXT_TASKS
 
-## Now
-- [ ] 
-## Next
-- [ ]
+Now: M1 — Update profile and About/Experience content

@@ -1,6 +1,6 @@
-# Project state
+# PROJECT_STATE
 
-- state: running
-- milestone: W1
-- next: 
-- blockers: none
+State: RUNNING
+
+Blockers:
+- None
