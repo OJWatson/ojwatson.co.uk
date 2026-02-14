@@ -1,0 +1,13 @@
+defaults:
+  acceptance:
+  - hugo --gc --minify
+project_id: ojwatson
+tasks:
+- depends_on: []
+  id: M1.2
+  title: Update home/About widget copy to match refreshed profile
+- depends_on:
+  - M1.2
+  id: M1.3
+  title: Audit and fix About/Experience page content blocks (ensure Hugo build clean)
+version: 1
