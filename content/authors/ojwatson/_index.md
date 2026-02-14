@@ -4,7 +4,7 @@ authors:
 
 # Short bio (displayed in user profile at end of posts)
 bio: |
-  Lecturer (Assistant Professor) and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London.
+  Lecturer & Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London, based in the AI Initiative (I-X) and the MRC Centre for Global Infectious Disease Analysis.
 
   I build open, reproducible tools at the intersection of infectious disease modelling, mortality estimation, and AI for public health — supporting decision-making and improving data equity.
 
