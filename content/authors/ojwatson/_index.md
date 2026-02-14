@@ -6,7 +6,7 @@ authors:
 bio: |
   Lecturer (Assistant Professor) and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London.
 
-  I work at the intersection of infectious disease modelling, mortality estimation, and AI for public health — building reproducible tools and data products that support decision-making and data equity.
+  I build open, reproducible tools at the intersection of infectious disease modelling, mortality estimation, and AI for public health — supporting decision-making and improving data equity.
 
 education:
   courses:
@@ -65,6 +65,6 @@ user_groups:
 
 I’m a Lecturer and Imperial College Research Fellow (Eric and Wendy Schmidt AI in Science Fellow) at Imperial College London, currently based within Imperial’s new AI Initiative, [I-X](https://ix.imperial.ac.uk/), and part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
-My research sits at the intersection of infectious disease modelling and mortality estimation. I build open, reproducible tools that support decision-making and improve data equity, with applications including malaria and COVID-19.
+My research sits at the intersection of infectious disease modelling, mortality estimation, and AI for public health. I build open, reproducible tools and data products that support decision-making and improve data equity, with applications including malaria and COVID-19.
 
 Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine, and held postdoctoral positions at Brown University and Imperial College London.
