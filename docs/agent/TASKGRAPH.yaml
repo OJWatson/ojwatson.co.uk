@@ -1,29 +1,123 @@
+version: 1
+project_id: ojwatson
+
 defaults:
   acceptance:
-  - hugo --gc --minify
-project_id: ojwatson
+    - hugo --gc --minify
+
 tasks:
-- depends_on: []
-  id: M1.2
-  title: Update home/About widget copy to match refreshed profile
-- depends_on:
-  - M1.2
-  id: M1.3
-  title: Audit and fix About/Experience page content blocks (ensure Hugo build clean)
-- depends_on:
-  - M1.3
-  id: M1.4
-  title: 'Content audit pass: publications/talks blocks consistency + build clean'
-- depends_on:
-  - M1.4
-  id: M1.5
-  title: 'Navigation tidy: ensure About sections ordered and no dead links'
-- depends_on:
-  - M1.5
-  id: M2.0
-  title: 'Site performance: enable minify + image processing sanity checks'
-- depends_on:
-  - M2.0
-  id: M2.1
-  title: 'Add simple regression test: hugo build + link check script'
-version: 1
+  # M1 — profile/about refresh
+  - id: M1.2
+    title: Update home/About widget copy to match refreshed profile
+    depends_on: []
+  - id: M1.3
+    title: Audit and fix About/Experience page content blocks (ensure Hugo build clean)
+    depends_on: [M1.2]
+  - id: M1.4
+    title: "Content audit pass: publications/talks blocks consistency + build clean"
+    depends_on: [M1.3]
+  - id: M1.5
+    title: "Navigation tidy: ensure About sections ordered and no dead links"
+    depends_on: [M1.4]
+  - id: M1.END
+    title: "Milestone end: M1 complete (gate on CI)"
+    depends_on: [M1.5]
+  - id: CI.FIX.M1
+    title: "CI fix: make Netlify/GitHub build green for M1 boundary"
+    depends_on: [M1.END]
+
+  # M2 — performance + regression guardrails
+  - id: M2.0
+    title: "Site performance: enable minify + image processing sanity checks"
+    depends_on: [M1.END]
+  - id: M2.1
+    title: "Add simple regression test: hugo build + link check script"
+    depends_on: [M2.0]
+  - id: M2.END
+    title: "Milestone end: M2 complete (gate on CI)"
+    depends_on: [M2.1]
+  - id: CI.FIX.M2
+    title: "CI fix: make Netlify/GitHub build green for M2 boundary"
+    depends_on: [M2.END]
+
+  # M3 — Team page
+  - id: M3.0
+    title: "Content: add /team/ widget page scaffolding + menu entry"
+    depends_on: [M2.END]
+  - id: M3.1
+    title: "Content: write Team page sections (students/staff/collaborators)"
+    depends_on: [M3.0]
+  - id: M3.2
+    title: "QA: ensure team page renders on mobile and no broken links"
+    depends_on: [M3.1]
+  - id: M3.END
+    title: "Milestone end: M3 complete (gate on CI)"
+    depends_on: [M3.2]
+  - id: CI.FIX.M3
+    title: "CI fix: make Netlify/GitHub build green for M3 boundary"
+    depends_on: [M3.END]
+
+  # M4 — Teaching page
+  - id: M4.0
+    title: "Content: add /teaching/ widget page scaffolding + menu entry"
+    depends_on: [M3.END]
+  - id: M4.1
+    title: "Content: write Teaching page (modules/short courses/supervision)"
+    depends_on: [M4.0]
+  - id: M4.2
+    title: "QA: ensure existing /training/ preserved and nav does not regress"
+    depends_on: [M4.1]
+  - id: M4.END
+    title: "Milestone end: M4 complete (gate on CI)"
+    depends_on: [M4.2]
+  - id: CI.FIX.M4
+    title: "CI fix: make Netlify/GitHub build green for M4 boundary"
+    depends_on: [M4.END]
+
+  # M5 — News/Updates
+  - id: M5.0
+    title: "Navigation: enable /post/ route as News and ensure menu ordering"
+    depends_on: [M4.END]
+  - id: M5.1
+    title: "Content: add initial News posts (3–5) with tags and links"
+    depends_on: [M5.0]
+  - id: M5.2
+    title: "QA: ensure posts list renders and RSS/feeds behave as expected"
+    depends_on: [M5.1]
+  - id: M5.END
+    title: "Milestone end: M5 complete (gate on CI)"
+    depends_on: [M5.2]
+  - id: CI.FIX.M5
+    title: "CI fix: make Netlify/GitHub build green for M5 boundary"
+    depends_on: [M5.END]
+
+  # M6 — Projects extension
+  - id: M6.0
+    title: "Content: add research programme project entries (JI-RISE, surrogates, resistance, vaccines)"
+    depends_on: [M5.END]
+  - id: M6.1
+    title: "UI: update Projects filters/tags (preserve existing software projects)"
+    depends_on: [M6.0]
+  - id: M6.2
+    title: "QA: cross-link Research ↔ Projects and verify no URL regressions"
+    depends_on: [M6.1]
+  - id: M6.END
+    title: "Milestone end: M6 complete (gate on CI)"
+    depends_on: [M6.2]
+  - id: CI.FIX.M6
+    title: "CI fix: make Netlify/GitHub build green for M6 boundary"
+    depends_on: [M6.END]
+
+  # M7 — QA sweep
+  - id: M7.0
+    title: "QA: run full link check + hugo build in CI/local script and fix regressions"
+    depends_on: [M6.END]
+  - id: M7.1
+    title: "QA: mobile sanity pass (nav, team/teaching/news/projects) and tidy CSS if needed"
+    depends_on: [M7.0]
+  - id: M7.END
+    title: "Milestone end: M7 complete (gate on CI)"
+    depends_on: [M7.1]
+  - id: CI.FIX.M7
+    title: "CI fix: make Netlify/GitHub build green for M7 boundary"
+    depends_on: [M7.END]
