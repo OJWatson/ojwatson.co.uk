@@ -1,10 +1,10 @@
 ```pm-status
-milestone: M2
+milestone: M3
 state: complete
-headSha: 93fa6f6
+headSha: 396e79b
 ciRunUrl: 
-updatedAtUtc: 2026-02-15T19:08:10Z
-nextStep: M3.0: Content: add /team/ widget page scaffolding + menu entry.
+updatedAtUtc: 2026-02-15T23:33:35Z
+nextStep: M4.0: Content: add /teaching/ widget page scaffolding + menu entry.
 ```
 
 ## Notes
