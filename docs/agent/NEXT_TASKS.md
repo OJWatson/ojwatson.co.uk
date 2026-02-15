@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- M3.END — Milestone end: M3 complete (gate on CI)
+- CI.FIX.M3 — CI fix: make Netlify/GitHub build green for M3 boundary
 
 Next:
-- CI.FIX.M3 — CI fix: make Netlify/GitHub build green for M3 boundary
+- M4.0 — Content: add /teaching/ widget page scaffolding + menu entry
