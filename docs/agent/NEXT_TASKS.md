@@ -1,6 +1,6 @@
 # NEXT_TASKS
 
-Now: M1.4 — Content audit pass: publications/talks blocks consistency + build clean
+Now: M2.1 — Add simple regression test: hugo build + link check script
 
 Next:
-- M1.5 — Navigation tidy: ensure About sections ordered and no dead links
+- (TBD) — Queue next milestone task in TASKGRAPH.yaml
