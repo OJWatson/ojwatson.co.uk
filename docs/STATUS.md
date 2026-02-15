@@ -1,10 +1,10 @@
 ```pm-status
-milestone: M1
+milestone: M2
 state: running
-headSha: e87f431
+headSha: face9ff5
 ciRunUrl: 
-updatedAtUtc: 2026-02-13T04:58:45Z
-nextStep: M1: review homepage (mobile/desktop) for final CTA/links consistency; consider adding a booking icon/button if useful.
+updatedAtUtc: 2026-02-15T17:33:36Z
+nextStep: M2.END: run acceptance checks and mark M2 complete (then address CI.FIX.M2 if needed).
 ```
 
 ## Notes

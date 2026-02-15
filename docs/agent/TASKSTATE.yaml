@@ -62,8 +62,15 @@ tasks:
     status: done
     updated_at_utc: 2026-02-15 13:03:42+00:00
   M1.END:
-    status: todo
-    updated_at_utc: ''
+    last:
+      commit: TBD
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T173004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T173004Z
+    status: done
+    updated_at_utc: 2026-02-15 17:33:36+00:00
   CI.FIX.M1:
     status: todo
     updated_at_utc: ''
