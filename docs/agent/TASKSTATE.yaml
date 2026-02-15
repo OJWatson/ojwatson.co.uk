@@ -33,14 +33,14 @@ tasks:
     updated_at_utc: 2026-02-15 11:18:00+00:00
   M1.5:
     last:
-      commit: ''
-      log_path: ''
-      outcome: ''
-      pushed: null
-      reason: ''
-      tick_ts: ''
-    status: todo
-    updated_at_utc: ''
+      commit: ef1f75be53d051955e1615eedd8f4f01c33a93e1
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T113008Z/logs/ojwatson_M1.5_acceptance.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T113008Z
+    status: done
+    updated_at_utc: 2026-02-15 11:35:30+00:00
   M2.0:
     last:
       commit: ''
