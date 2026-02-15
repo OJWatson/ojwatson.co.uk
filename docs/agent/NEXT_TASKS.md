@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- M3.0 — Content: add /team/ widget page scaffolding + menu entry
+- M3.2 — QA: ensure team page renders on mobile and no broken links
 
 Next:
-- M3.1 — Content: write Team page sections (students/staff/collaborators)
+- M3.END — Milestone end: M3 complete (gate on CI)
