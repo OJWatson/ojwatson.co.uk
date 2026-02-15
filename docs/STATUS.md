@@ -1,10 +1,10 @@
 ```pm-status
 milestone: M2
 state: running
-headSha: a1aa05e
+headSha: a6141fd
 ciRunUrl: 
-updatedAtUtc: 2026-02-15T17:34:41Z
-nextStep: M2.END: run acceptance checks and mark M2 complete (then address CI.FIX.M2 if needed).
+updatedAtUtc: 2026-02-15T19:06:30Z
+nextStep: CI.FIX.M2: make Netlify/GitHub build green for M2 boundary.
 ```
 
 ## Notes
