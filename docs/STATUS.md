@@ -1,10 +1,10 @@
 ```pm-status
 milestone: M2
-state: running
-headSha: a6141fd
+state: complete
+headSha: 93fa6f6
 ciRunUrl: 
-updatedAtUtc: 2026-02-15T19:06:30Z
-nextStep: CI.FIX.M2: make Netlify/GitHub build green for M2 boundary.
+updatedAtUtc: 2026-02-15T19:08:10Z
+nextStep: M3.0: Content: add /team/ widget page scaffolding + menu entry.
 ```
 
 ## Notes

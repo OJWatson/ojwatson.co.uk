@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- CI.FIX.M2 — CI fix: make Netlify/GitHub build green for M2 boundary
+- M3.0 — Content: add /team/ widget page scaffolding + menu entry
 
 Next:
-- M3.0 — Content: add /team/ widget page scaffolding + menu entry
+- M3.1 — Content: write Team page sections (students/staff/collaborators)
