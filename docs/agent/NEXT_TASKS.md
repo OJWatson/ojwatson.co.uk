@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- M3.2 — QA: ensure team page renders on mobile and no broken links
+- M3.END — Milestone end: M3 complete (gate on CI)
 
 Next:
-- M3.END — Milestone end: M3 complete (gate on CI)
+- CI.FIX.M3 — CI fix: make Netlify/GitHub build green for M3 boundary
