@@ -1,9 +1,9 @@
 ```pm-status
 milestone: M2
 state: running
-headSha: face9ff5
+headSha: a1aa05e
 ciRunUrl: 
-updatedAtUtc: 2026-02-15T17:33:36Z
+updatedAtUtc: 2026-02-15T17:34:41Z
 nextStep: M2.END: run acceptance checks and mark M2 complete (then address CI.FIX.M2 if needed).
 ```
 
