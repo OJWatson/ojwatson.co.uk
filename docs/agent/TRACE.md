@@ -7,3 +7,4 @@ Format:
 
 - M1.4 -> 8b3dbf06ed0c404d69baf2f283412b86e5d2ddb0 : publications/talks metadata consistency (draft placeholder + author ids)
 - M2.0 -> f0c98ace0ccd97553e588e0ff642495aac73d6f0 : enable Hugo minify by default and reduce imaging quality for smaller assets
+- CI.FIX.M1 -> e497a6d9783156d46f6460fb32e304608f5cb498 : align Netlify build command with acceptance (gc+minify)
