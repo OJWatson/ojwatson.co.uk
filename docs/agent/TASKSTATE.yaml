@@ -20,5 +20,45 @@ tasks:
       reason: completed
       tick_ts: 20260214T221936Z
     status: done
-    updated_at_utc: 2026-02-14T22:25:23Z
+    updated_at_utc: 2026-02-14 22:25:23+00:00
+  M1.4:
+    last:
+      commit: ''
+      log_path: ''
+      outcome: ''
+      pushed: null
+      reason: ''
+      tick_ts: ''
+    status: todo
+    updated_at_utc: ''
+  M1.5:
+    last:
+      commit: ''
+      log_path: ''
+      outcome: ''
+      pushed: null
+      reason: ''
+      tick_ts: ''
+    status: todo
+    updated_at_utc: ''
+  M2.0:
+    last:
+      commit: ''
+      log_path: ''
+      outcome: ''
+      pushed: null
+      reason: ''
+      tick_ts: ''
+    status: todo
+    updated_at_utc: ''
+  M2.1:
+    last:
+      commit: ''
+      log_path: ''
+      outcome: ''
+      pushed: null
+      reason: ''
+      tick_ts: ''
+    status: todo
+    updated_at_utc: ''
 version: 1

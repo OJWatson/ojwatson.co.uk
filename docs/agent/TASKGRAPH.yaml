@@ -10,4 +10,20 @@ tasks:
   - M1.2
   id: M1.3
   title: Audit and fix About/Experience page content blocks (ensure Hugo build clean)
+- depends_on:
+  - M1.3
+  id: M1.4
+  title: 'Content audit pass: publications/talks blocks consistency + build clean'
+- depends_on:
+  - M1.4
+  id: M1.5
+  title: 'Navigation tidy: ensure About sections ordered and no dead links'
+- depends_on:
+  - M1.5
+  id: M2.0
+  title: 'Site performance: enable minify + image processing sanity checks'
+- depends_on:
+  - M2.0
+  id: M2.1
+  title: 'Add simple regression test: hugo build + link check script'
 version: 1
