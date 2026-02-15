@@ -1,6 +1,6 @@
 # NEXT_TASKS
 
-Now: M1.2 — Update home/About widget copy to match refreshed profile
+Now: M1.4 — Content audit pass: publications/talks blocks consistency + build clean
 
 Next:
-- M1.3 — Audit and fix About/Experience page content blocks (ensure Hugo build clean)
+- M1.5 — Navigation tidy: ensure About sections ordered and no dead links
