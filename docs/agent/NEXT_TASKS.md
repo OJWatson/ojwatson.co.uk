@@ -1,6 +1,7 @@
 # NEXT_TASKS
 
-Now: M2.1 — Add simple regression test: hugo build + link check script
+Now:
+- (TBD) — Queue next milestone task in TASKGRAPH.yaml
 
 Next:
-- (TBD) — Queue next milestone task in TASKGRAPH.yaml
+- (TBD)
