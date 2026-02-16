@@ -4,7 +4,7 @@ state: complete
 headSha: 396e79b
 ciRunUrl: 
 updatedAtUtc: 2026-02-15T23:33:35Z
-nextStep: M4.0: Content: add /teaching/ widget page scaffolding + menu entry.
+nextStep: M4.1: Content: write Teaching page (modules/short courses/supervision).
 ```
 
 ## Notes
