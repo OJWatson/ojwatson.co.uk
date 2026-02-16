@@ -26,7 +26,7 @@ My teaching typically spans:
 
 Where helpful, I contribute guest lectures and applied sessions that link methods to real-world public health questions.
 
-If you’d like the most up-to-date list of specific modules I’m teaching this year, please [get in touch](/about/contact/).
+If you’d like the most up-to-date list of specific modules I’m teaching this year, please [get in touch](/contact/).
 
 ## Short courses and training
 
@@ -48,4 +48,4 @@ Areas I can supervise include:
 - Forecast evaluation and decision support
 - AI/deep learning surrogates for mechanistic models
 
-If you’re interested, please send a short note via the [contact page](/about/contact/) outlining your background, what you’d like to work on, and any relevant experience (e.g. modelling, coding, applied epidemiology).
+If you’re interested, please send a short note via the [contact page](/contact/) outlining your background, what you’d like to work on, and any relevant experience (e.g. modelling, coding, applied epidemiology).
