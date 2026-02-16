@@ -9,3 +9,5 @@ Format:
 - M2.0 -> f0c98ace0ccd97553e588e0ff642495aac73d6f0 : enable Hugo minify by default and reduce imaging quality for smaller assets
 - CI.FIX.M1 -> e497a6d9783156d46f6460fb32e304608f5cb498 : align Netlify build command with acceptance (gc+minify)
 - M3.END -> 44f40abf569a866cb722947b628ca1473f5becfb : milestone M3 gate passed (hugo --gc --minify)
+
+- M4.2 -> 209b43af29a6721ce55651efbd0fc09a73a64b0a : preserve /training/ route + guardrails in regression script
