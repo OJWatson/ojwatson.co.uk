@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- M4.0 — Content: add /teaching/ widget page scaffolding + menu entry
+- CI.FIX.M4 — CI fix: make Netlify/GitHub build green for M4 boundary
 
 Next:
-- M4.1 — Content: write Teaching page (modules/short courses/supervision)
+- M5.0 — Navigation: enable /post/ route as News and ensure menu ordering
