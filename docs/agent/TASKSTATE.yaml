@@ -198,7 +198,7 @@ tasks:
       commit: 4f905dc48bf9e96b46ddca2f2de5a38714741501
       log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T023005Z/logs/ojwatson.log
       outcome: success
-      pushed: false
+      pushed: true
       reason: completed
       tick_ts: 20260216T023005Z
   M5.0:
