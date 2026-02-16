@@ -28,6 +28,11 @@
   url = "/projects/"
   weight = 5
 
+[[main]]
+  name = "News"
+  url = "/post/"
+  weight = 6
+
 #[[main]]
 #  name = "Talks"
 #  url = "talk"
@@ -48,13 +53,7 @@
 [[main]]
   name = "Contact"
   url = "/contact/"
-  weight = 6
-  
-  
-# [[main]]
-#   name = "Blog"
-#   url = "post"
-#   weight = 2
+  weight = 7
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

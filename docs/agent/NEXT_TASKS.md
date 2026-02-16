@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- CI.FIX.M4 — CI fix: make Netlify/GitHub build green for M4 boundary
+- M5.1 — Content: add initial News posts (3–5) with tags and links
 
 Next:
-- M5.0 — Navigation: enable /post/ route as News and ensure menu ordering
+- M5.2 — QA: ensure posts list renders and RSS/feeds behave as expected
