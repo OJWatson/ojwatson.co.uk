@@ -14,17 +14,19 @@ title = "Teaching"
   css_style = ""
 +++
 
-I teach and supervise across infectious disease modelling, health emergencies, and data/AI-enabled methods. This page is focused on university teaching and supervision; for professional short courses and bespoke workshops, see [Training](/training/).
+I teach and supervise across infectious disease modelling, health emergencies, and data/AI-enabled methods. This page focuses on university teaching and supervision; for professional short courses and bespoke workshops, see [Training](/training/).
 
 ## Modules
 
-I contribute to teaching that typically covers topics such as:
+My teaching typically spans:
 
-- **Infectious disease modelling** — compartmental models, inference, uncertainty, and decision support.
-- **Outbreak analytics** — situational awareness, nowcasting/forecasting, and evaluation.
-- **Computational methods for public health** — reproducible research workflows and simulation-based analysis.
+- **Infectious disease modelling** — compartmental models, inference, uncertainty, scenario analysis, and decision support.
+- **Outbreak analytics** — situational awareness, nowcasting/forecasting, evaluation, and communication of uncertainty.
+- **Computational methods for public health** — reproducible workflows, simulation-based analysis, and practical data skills.
 
-(If you’d like the most up-to-date list of specific modules I’m teaching this year, please [get in touch](/about/contact/).)
+Where helpful, I contribute guest lectures and applied sessions that link methods to real-world public health questions.
+
+If you’d like the most up-to-date list of specific modules I’m teaching this year, please [get in touch](/about/contact/).
 
 ## Short courses and training
 
@@ -46,4 +48,4 @@ Areas I can supervise include:
 - Forecast evaluation and decision support
 - AI/deep learning surrogates for mechanistic models
 
-If you’re interested, please send a short note via the [contact page](/about/contact/) outlining your background and what you’d like to work on.
+If you’re interested, please send a short note via the [contact page](/about/contact/) outlining your background, what you’d like to work on, and any relevant experience (e.g. modelling, coding, applied epidemiology).
