@@ -15,4 +15,4 @@ Format:
 - CI.FIX.M4 -> e13e21bf1952f0064482ebd9959da443d9173c9e : verify CI/regression remains green at M4 boundary
 
 - M5.0 -> a64e01b0ae9f21ec1356023b9d40df65e09b4019 : add News menu entry for /post/ and rename Posts section title to News
-- M5.1 -> b49854ff99661d4ea630bfc285df75a5e99a46f2 : add initial News posts (site refresh, team, teaching, projects pointers)
+- M5.1 -> 6d2aad0312280b232e21fb8a52d47a76268b8659 : add initial News posts (site refresh, team, teaching, projects pointers)
