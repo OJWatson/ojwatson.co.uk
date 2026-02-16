@@ -14,4 +14,4 @@ Format:
 - M4.END -> 7a88df2459ffc0ce557b2b1bf317ecd7aec36540 : milestone M4 gate passed (hugo --gc --minify)
 - CI.FIX.M4 -> e13e21bf1952f0064482ebd9959da443d9173c9e : verify CI/regression remains green at M4 boundary
 
-- M5.0 -> $NEW : add News menu entry for /post/ and rename Posts section title to News
+- M5.0 -> a64e01b0ae9f21ec1356023b9d40df65e09b4019 : add News menu entry for /post/ and rename Posts section title to News
