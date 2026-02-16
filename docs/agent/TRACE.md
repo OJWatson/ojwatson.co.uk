@@ -11,3 +11,4 @@ Format:
 - M3.END -> 44f40abf569a866cb722947b628ca1473f5becfb : milestone M3 gate passed (hugo --gc --minify)
 
 - M4.2 -> 209b43af29a6721ce55651efbd0fc09a73a64b0a : preserve /training/ route + guardrails in regression script
+- M4.END -> 7a88df2459ffc0ce557b2b1bf317ecd7aec36540 : milestone M4 gate passed (hugo --gc --minify)
