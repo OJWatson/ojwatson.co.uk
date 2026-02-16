@@ -12,5 +12,5 @@ Format:
 
 - M4.2 -> 209b43af29a6721ce55651efbd0fc09a73a64b0a : preserve /training/ route + guardrails in regression script
 - M4.END -> 7a88df2459ffc0ce557b2b1bf317ecd7aec36540 : milestone M4 gate passed (hugo --gc --minify)
-- CI.FIX.M4 -> 4f905dc48bf9e96b46ddca2f2de5a38714741501 : verify CI/regression remains green at M4 boundary
+- CI.FIX.M4 -> e13e21bf1952f0064482ebd9959da443d9173c9e : verify CI/regression remains green at M4 boundary
 
