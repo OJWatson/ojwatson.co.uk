@@ -15,3 +15,5 @@ summary: "Recent work on vaccine impact modelling and preparedness planning acro
 Recent work has focused on vaccine impact and pandemic preparedness modelling, including strategy design under uncertainty and policy-facing scenario analysis.
 
 This includes work on COVID-19 vaccination impact and preparedness-oriented modelling for future epidemic threats.
+
+Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/)

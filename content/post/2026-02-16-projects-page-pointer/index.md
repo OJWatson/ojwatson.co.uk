@@ -15,3 +15,5 @@ summary: "A brief update on humanitarian modelling collaborations and recent con
 In 2025, I led a symposium submission to ASTMH focused on bridging academic modelling and humanitarian response.
 
 Related work includes ongoing collaborations across public health and humanitarian partners on real-time burden estimation and response analytics.
+
+Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/)

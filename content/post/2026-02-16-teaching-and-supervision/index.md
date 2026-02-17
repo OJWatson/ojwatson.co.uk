@@ -17,3 +17,5 @@ I am currently co-leading teaching in the GMPH Health Protection module and, fro
 Alongside this, I supervised five Master's research projects in 2024/2025, with projects progressing to high marks and onward opportunities.
 
 More detail is available on the updated [/teaching/](/teaching/) page.
+
+Related pages: [Teaching](/teaching/) | [Research](/research/) | [Team](/team/) | [Contact](/contact/)

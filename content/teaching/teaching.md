@@ -28,21 +28,10 @@ I teach across infectious disease modelling and health emergencies, with a focus
 - Student outcomes: **2 Distinctions, 3 Merits**; students progressed to roles/PhD pathways including Wellcome and Imperial.
 - Additional contributions include dissertation marking, viva examining, and PhD ESA/LSR examining.
 
-## Teaching approach
-
-I emphasise practical modelling skills, real-world case studies, and feedback-rich teaching.
-
-Recent examples include:
-
-- redesigning module assessments to better test applied analytic judgement;
-- integrating one-minute paper feedback in long practical sessions;
-- strengthening inclusive case studies for crisis-affected settings.
-
 ## External teaching and mentorship
 
 - Teaching on the **AIMS AI for Science Master's programme** (Cape Town).
 - Contributions to Imperial's **Mathematical Modelling for the Control of Infectious Diseases** short course.
-- Ongoing support for co-supervisors and junior colleagues through structured supervision mentoring.
 
 ## Supervision interests
 
@@ -54,3 +43,5 @@ I welcome conversations about **PhD**, **MSc**, and project supervision in:
 - AI/deep-learning surrogates for mechanistic epidemic models.
 
 If you are interested, please contact me via [/contact/](/contact/) with a short summary of your background and proposed topic.
+
+Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/) | [News](/post/) | [Contact](/contact/)

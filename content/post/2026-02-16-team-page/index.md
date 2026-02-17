@@ -15,3 +15,5 @@ summary: "A short update on a Nairobi collaboration to co-develop modelling tool
 In January 2025, I co-organised a 5-day hackathon in Nairobi with partners including the Kenya Ministry of Health and the University of Nairobi.
 
 The focus was practical tool development for MoH priorities, plus training on collaborative workflows for reproducible computational work.
+
+Related pages: [Team](/team/) | [Research](/research/) | [Projects](/projects/) | [Contact](/contact/)
