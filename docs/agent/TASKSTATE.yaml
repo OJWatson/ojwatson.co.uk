@@ -1,0 +1,345 @@
+project_id: ojwatson
+repo_status: RUNNING
+tasks:
+  M1.2:
+    last:
+      commit: 45c5572f12416b927b097449454a0cd0d28dabfa
+      log_path: ''
+      outcome: success
+      pushed: true
+      reason: completed_before_taskgraph
+      tick_ts: ''
+    status: done
+    updated_at_utc: ''
+  M1.3:
+    last:
+      commit: ''
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260214T221936Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260214T221936Z
+    status: done
+    updated_at_utc: 2026-02-14 22:25:23+00:00
+  M1.4:
+    last:
+      commit: bd5d8ea7a43f2aac080f6ea8146f32c32e28e5ec
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T110007Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T110007Z
+    status: done
+    updated_at_utc: 2026-02-15 11:18:00+00:00
+  M1.5:
+    last:
+      commit: ef1f75be53d051955e1615eedd8f4f01c33a93e1
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T113008Z/logs/ojwatson_M1.5_acceptance.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T113008Z
+    status: done
+    updated_at_utc: 2026-02-15 11:35:30+00:00
+  M2.0:
+    last:
+      commit: f0c98ace0ccd97553e588e0ff642495aac73d6f0
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T120006Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T120006Z
+    status: done
+    updated_at_utc: 2026-02-15 12:04:03+00:00
+  M2.1:
+    last:
+      commit: 90613f448c2f40d615cc686485607af4705ab692
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T130009Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T130009Z
+    status: done
+    updated_at_utc: 2026-02-15 13:03:42+00:00
+  M1.END:
+    last:
+      commit: a1aa05ebc27ce5c5a870799492a8a490947ea6c0
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T173004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T173004Z
+    status: done
+    updated_at_utc: 2026-02-15 17:33:36+00:00
+  CI.FIX.M1:
+    last:
+      commit: e497a6d9783156d46f6460fb32e304608f5cb498
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T180005Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T180005Z
+    status: done
+    updated_at_utc: 2026-02-15 18:04:17+00:00
+  M2.END:
+    last:
+      commit: 90613f448c2f40d615cc686485607af4705ab692
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T183005Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T183005Z
+    status: done
+    updated_at_utc: 2026-02-15 18:33:00+00:00
+  CI.FIX.M2:
+    last:
+      commit: 93fa6f67142f0001657f6bf2e775550426e15763
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T190005Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T190005Z
+    status: done
+    updated_at_utc: 2026-02-15 19:08:30+00:00
+  M3.0:
+    last:
+      commit: 59110dda338d768458de7f8b7d271c2d15ff5331
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T193004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T193004Z
+    status: done
+    updated_at_utc: 2026-02-15 19:34:44+00:00
+  M3.1:
+    last:
+      commit: d46d5cff410d047a1569f910a976b05562a878f1
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T203003Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T203003Z
+    status: done
+    updated_at_utc: 2026-02-15 20:34:58+00:00
+  M3.2:
+    last:
+      commit: 2461e92f17e8856dd081b57744f4462f2c9a5e12
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T213003Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T213003Z
+    status: done
+    updated_at_utc: 2026-02-15 21:33:07+00:00
+  M3.END:
+    last:
+      commit: 44f40abf569a866cb722947b628ca1473f5becfb
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T220004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T220004Z
+    status: done
+    updated_at_utc: 2026-02-15 22:03:20+00:00
+  CI.FIX.M3:
+    last:
+      commit: 396e79b939268083ca14a64f598dc3be328d7c54
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260215T233006Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260215T233006Z
+    status: done
+    updated_at_utc: 2026-02-15 23:33:35+00:00
+  M4.0:
+    last:
+      commit: 0b854762f075e5fe3af5fa83f6dcbb33fe32699c
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T000009Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T000009Z
+    status: done
+    updated_at_utc: 2026-02-16 00:07:40+00:00
+  M4.1:
+    status: done
+    updated_at_utc: '2026-02-16 01:03:52+00:00'
+    last:
+      commit: 0b63470579d3322c07e21df57ae7cbfda4f62c0a
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/logs/ojwatson/20260216T010004Z.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T010004Z
+  M4.2:
+    status: done
+    updated_at_utc: '2026-02-16 01:37:03+00:00'
+    last:
+      commit: 209b43af29a6721ce55651efbd0fc09a73a64b0a
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T013007Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T013007Z
+  M4.END:
+    last:
+      commit: 7a88df2459ffc0ce557b2b1bf317ecd7aec36540
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T020005Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T020005Z
+    status: done
+    updated_at_utc: 2026-02-16 02:03:47+00:00
+  CI.FIX.M4:
+    status: done
+    updated_at_utc: '2026-02-16 02:33:49+00:00'
+    last:
+      commit: e13e21bf1952f0064482ebd9959da443d9173c9e
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T023005Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T023005Z
+  M5.0:
+    status: done
+    updated_at_utc: '2026-02-16 03:07:51+00:00'
+    last:
+      commit: a64e01b0ae9f21ec1356023b9d40df65e09b4019
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T030004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T030004Z
+  M5.1:
+    status: done
+    updated_at_utc: '2026-02-16 03:37:45+00:00'
+    last:
+      commit: 6d2aad0312280b232e21fb8a52d47a76268b8659
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T033006Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T033006Z
+  M5.2:
+    status: done
+    updated_at_utc: '2026-02-16 04:04:04+00:00'
+    last:
+      commit: 5e20df45e141c9406fd6197c70d1074b337d4a31
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T040004Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T040004Z
+  M5.END:
+    status: done
+    updated_at_utc: '2026-02-16 04:34:30+00:00'
+    last:
+      commit: ab78e6b586a6311305b53e3727d0bbd068497351
+      log_path: /home/kana/.openclaw/workspace/portfolio/reports/runs/20260216T043006Z/logs/ojwatson.log
+      outcome: success
+      pushed: true
+      reason: completed
+      tick_ts: 20260216T043006Z
+  CI.FIX.M5:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M6.0:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M6.1:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M6.2:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M6.END:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  CI.FIX.M6:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M7.0:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M7.1:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  M7.END:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+  CI.FIX.M7:
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
+version: 1
+ci: {}
