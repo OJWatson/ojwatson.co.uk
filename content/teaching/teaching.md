@@ -14,38 +14,43 @@ title = "Teaching"
   css_style = ""
 +++
 
-I teach and supervise across infectious disease modelling, health emergencies, and data/AI-enabled methods. This page focuses on university teaching and supervision; for professional short courses and bespoke workshops, see [Training](/training/).
+I teach across infectious disease modelling and health emergencies, with a focus on applied decision-making, inclusive teaching practice, and close student support.
 
-## Modules
+## Current teaching roles at Imperial
 
-My teaching typically spans:
+- **Global Master of Public Health (Health Protection module)**: Module co-lead since 2024/2025.
+- **MSc Epidemiology (Outbreaks module)**: Module co-lead from 2025/2026; previously delivered a lecture on outbreaks in emergency crises.
+- **MSc Epidemiology (Emerging and Neglected Tropical Diseases)**: Lecture + practical on planning and preparing outbreak research.
 
-- **Infectious disease modelling** — compartmental models, inference, uncertainty, scenario analysis, and decision support.
-- **Outbreak analytics** — situational awareness, nowcasting/forecasting, evaluation, and communication of uncertainty.
-- **Computational methods for public health** — reproducible workflows, simulation-based analysis, and practical data skills.
+## Supervision and assessment
 
-Where helpful, I contribute guest lectures and applied sessions that link methods to real-world public health questions.
+- Primary supervisor for **5 Master's research projects** in 2024/2025 (4 MPH, 1 MSc).
+- Student outcomes: **2 Distinctions, 3 Merits**; students progressed to roles/PhD pathways including Wellcome and Imperial.
+- Additional contributions include dissertation marking, viva examining, and PhD ESA/LSR examining.
 
-If you’d like the most up-to-date list of specific modules I’m teaching this year, please [get in touch](/contact/).
+## Teaching approach
 
-## Short courses and training
+I emphasise practical modelling skills, real-world case studies, and feedback-rich teaching.
 
-Alongside formal teaching, I also run hands-on short courses (in-person or remote) for research groups and public health teams.
+Recent examples include:
 
-- I’m an [RStudio Certified Instructor](https://education.rstudio.com/trainers/).
-- Example formats include **introductory R**, **reproducible analysis workflows**, and **applied modelling/forecasting**.
+- redesigning module assessments to better test applied analytic judgement;
+- integrating one-minute paper feedback in long practical sessions;
+- strengthening inclusive case studies for crisis-affected settings.
 
-More details and booking information are on the [Training](/training/) page.
+## External teaching and mentorship
 
-## Supervision
+- Teaching on the **AIMS AI for Science Master's programme** (Cape Town).
+- Contributions to Imperial's **Mathematical Modelling for the Control of Infectious Diseases** short course.
+- Ongoing support for co-supervisors and junior colleagues through structured supervision mentoring.
 
-I’m happy to discuss **PhD**, **MSc**, and **project** supervision.
+## Supervision interests
 
-Areas I can supervise include:
+I welcome conversations about **PhD**, **MSc**, and project supervision in:
 
-- Infectious disease and vaccine modelling
-- Health emergency preparedness and response analytics
-- Forecast evaluation and decision support
-- AI/deep learning surrogates for mechanistic models
+- infectious disease and vaccine modelling;
+- health emergencies and humanitarian analytics;
+- malaria resistance and surveillance methods;
+- AI/deep-learning surrogates for mechanistic epidemic models.
 
-If you’re interested, please send a short note via the [contact page](/contact/) outlining your background, what you’d like to work on, and any relevant experience (e.g. modelling, coding, applied epidemiology).
+If you are interested, please contact me via [/contact/](/contact/) with a short summary of your background and proposed topic.

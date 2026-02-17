@@ -1,17 +1,17 @@
 ---
-title: "Projects page: software and research work"
+title: "ASTMH symposium and humanitarian modelling collaborations"
 date: 2026-02-16
 author: OJ Watson
-slug: projects-page-pointer
+slug: astmh-humanitarian-modelling
 categories:
   - news
 tags:
-  - projects
-  - research
-  - software
-summary: "A pointer to the Projects page, which collects software and research project summaries."
+  - astmh
+  - humanitarian
+  - collaborations
+summary: "A brief update on humanitarian modelling collaborations and recent conference activity."
 ---
 
-If you’re looking for a quick overview of current and past work, the [/projects/](/projects/) page collects software and research project summaries in one place.
+In 2025, I led a symposium submission to ASTMH focused on bridging academic modelling and humanitarian response.
 
-Over time I’ll expand project write-ups and add cross-links from related posts and publications.
+Related work includes ongoing collaborations across public health and humanitarian partners on real-time burden estimation and response analytics.

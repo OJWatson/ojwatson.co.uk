@@ -1,20 +1,19 @@
 ---
-title: "Teaching, training, and supervision"
+title: "Teaching update: module leadership and supervision"
 date: 2026-02-16
 author: OJ Watson
-slug: teaching-training-supervision
+slug: teaching-update-module-leadership
 categories:
   - news
 tags:
   - teaching
-  - training
   - supervision
-summary: "I’ve pulled together a short overview of teaching topics, training options, and supervision interests."
+  - imperial
+summary: "An update on current teaching roles at Imperial and recent student supervision outcomes."
 ---
 
-I’ve added a short overview of my teaching, training, and supervision interests.
+I am currently co-leading teaching in the GMPH Health Protection module and, from 2025/2026, the MSc Epidemiology Outbreaks module.
 
-- **Teaching** (university modules + supervision topics): [/teaching/](/teaching/)
-- **Training** (short courses and workshops): [/training/](/training/)
+Alongside this, I supervised five Master's research projects in 2024/2025, with projects progressing to high marks and onward opportunities.
 
-If you’d like to discuss a guest lecture, a short course, or a student project, please reach out via [/contact/](/contact/).
+More detail is available on the updated [/teaching/](/teaching/) page.

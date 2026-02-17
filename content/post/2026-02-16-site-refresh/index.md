@@ -1,22 +1,17 @@
 ---
-title: "Site refresh: new pages and updated navigation"
+title: "Policy-facing modelling updates: vaccines and preparedness"
 date: 2026-02-16
 author: OJ Watson
-slug: site-refresh-2026
+slug: policy-modelling-updates-2026
 categories:
   - news
 tags:
-  - site
-  - update
-summary: "A quick note on recent updates to the site: refreshed navigation plus new Team and Teaching pages."
+  - vaccines
+  - preparedness
+  - modelling
+summary: "Recent work on vaccine impact modelling and preparedness planning across COVID-19 and future pandemic scenarios."
 ---
 
-I’ve been doing a light refresh of the site structure and navigation.
+Recent work has focused on vaccine impact and pandemic preparedness modelling, including strategy design under uncertainty and policy-facing scenario analysis.
 
-Highlights:
-
-- **Team** — a summary of current students, staff, and collaborators: [/team/](/team/)
-- **Teaching** — teaching, short courses, and supervision interests: [/teaching/](/teaching/)
-- **Training** — professional short courses and workshops remain here: [/training/](/training/)
-
-I’ll use this **News** section to post occasional updates and pointers to new content.
+This includes work on COVID-19 vaccination impact and preparedness-oriented modelling for future epidemic threats.

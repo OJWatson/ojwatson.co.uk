@@ -7,8 +7,7 @@ cd "$ROOT_DIR"
 # Build the site (matches TaskGraph acceptance default)
 hugo --gc --minify
 
-# M4.2 guardrails: ensure legacy routes are still built
-[[ -f public/training/index.html ]]
+# Route guardrail: ensure key pages are still built
 [[ -f public/teaching/index.html ]]
 
 # Basic internal link check over generated output

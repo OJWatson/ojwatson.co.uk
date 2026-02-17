@@ -1,17 +1,17 @@
 ---
-title: "Team page now live"
+title: "Nairobi hackathon with Kenya Ministry of Health"
 date: 2026-02-16
 author: OJ Watson
-slug: team-page
+slug: nairobi-hackathon-kenya-moh
 categories:
   - news
 tags:
-  - team
-  - collaborators
-summary: "A new Team page summarises current students, staff, and collaborators."
+  - kenya
+  - collaboration
+  - modelling-tools
+summary: "A short update on a Nairobi collaboration to co-develop modelling tools aligned with Ministry of Health priorities."
 ---
 
-I’ve added a dedicated **Team** page that summarises the people I work with across research and applied projects.
+In January 2025, I co-organised a 5-day hackathon in Nairobi with partners including the Kenya Ministry of Health and the University of Nairobi.
 
-- Team overview: [/team/](/team/)
-- If you’re interested in collaboration (or prospective supervision), the best starting point is the [/contact/](/contact/) page.
+The focus was practical tool development for MoH priorities, plus training on collaborative workflows for reproducible computational work.

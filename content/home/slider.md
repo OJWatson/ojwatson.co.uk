@@ -27,7 +27,7 @@ height = "400px"
   overlay_filter = 0.2  # Darken the image. Value in range 0-1.
   
   cta_label = "See available workshops"
-  cta_url = "/training"
+  cta_url = "/teaching/"
   cta_icon_pack = "fas"
   cta_icon = "graduation-cap"
   
