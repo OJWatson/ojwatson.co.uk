@@ -1,19 +1,21 @@
 ---
-title: "ASTMH symposium and humanitarian modelling collaborations"
+title: "AI for epidemic modelling: Nature 2025 and tool development"
 date: 2026-02-16
 author: OJ Watson
-slug: astmh-humanitarian-modelling
+slug: ai-epidemic-modelling-nature-2025
 categories:
   - news
 tags:
-  - astmh
-  - humanitarian
-  - collaborations
-summary: "A brief update on humanitarian modelling collaborations and recent conference activity."
+  - ai
+  - modelling
+  - software
+summary: "A note on recent AI-enabled epidemic modelling work and associated software tool development."
 ---
 
-In 2025, I led a symposium submission to ASTMH focused on bridging academic modelling and humanitarian response.
+I recently contributed to **Nature (2025)** on AI for infectious disease epidemic modelling.
 
-Related work includes ongoing collaborations across public health and humanitarian partners on real-time burden estimation and response analytics.
+- Paper: [https://doi.org/10.1038/s41586-024-08564-w](https://doi.org/10.1038/s41586-024-08564-w)
+- Related tool: [emidm](/project/emidm/)
+- Related research section: [AI-enabled epidemic modelling](/research/#ai-enabled-epidemic-modelling)
 
-Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/)
+Alongside this, my group continues work on emulator-based approaches that improve calibration speed and scenario exploration for policy-facing analyses.

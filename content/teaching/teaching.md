@@ -45,3 +45,5 @@ I welcome conversations about **PhD**, **MSc**, and project supervision in:
 If you are interested, please contact me via [/contact/](/contact/) with a short summary of your background and proposed topic.
 
 Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/) | [News](/post/) | [Contact](/contact/)
+
+Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/) | [News](/post/) | [Contact](/contact/)

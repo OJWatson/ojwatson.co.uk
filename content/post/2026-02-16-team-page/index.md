@@ -1,19 +1,21 @@
 ---
-title: "Nairobi hackathon with Kenya Ministry of Health"
+title: "Lancet Global Health 2024: impact of the 100 Days Mission"
 date: 2026-02-16
 author: OJ Watson
-slug: nairobi-hackathon-kenya-moh
+slug: lancet-global-health-100-days-mission
 categories:
   - news
 tags:
-  - kenya
-  - collaboration
-  - modelling-tools
-summary: "A short update on a Nairobi collaboration to co-develop modelling tools aligned with Ministry of Health priorities."
+  - vaccines
+  - preparedness
+  - modelling
+summary: "Update on our Lancet Global Health modelling study on pandemic vaccine speed and impact."
 ---
 
-In January 2025, I co-organised a 5-day hackathon in Nairobi with partners including the Kenya Ministry of Health and the University of Nairobi.
+Our **Lancet Global Health (2024)** study quantified the expected impact of accelerating vaccine availability under the 100 Days Mission framework.
 
-The focus was practical tool development for MoH priorities, plus training on collaborative workflows for reproducible computational work.
+- Paper: [https://doi.org/10.1016/S2214-109X(24)00286-9](https://doi.org/10.1016/S2214-109X(24)00286-9)
+- Related prior work: [Global impact of first-year COVID-19 vaccination (Lancet ID, 2022)](https://doi.org/10.1016/S1473-3099(22)00320-6)
+- Related tools: [squire](/project/squire/), [nimue](/project/nimue/), [vece](/project/vece/)
 
-Related pages: [Team](/team/) | [Research](/research/) | [Projects](/projects/) | [Contact](/contact/)
+This sits within the [Vaccine impact and preparedness](/research/#vaccine-impact-and-pandemic-preparedness) strand of my research.

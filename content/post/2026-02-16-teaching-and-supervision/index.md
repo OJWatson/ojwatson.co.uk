@@ -1,21 +1,21 @@
 ---
-title: "Teaching update: module leadership and supervision"
+title: "Humanitarian modelling: forecast evaluation and policy translation"
 date: 2026-02-16
 author: OJ Watson
-slug: teaching-update-module-leadership
+slug: humanitarian-forecast-evaluation-policy
 categories:
   - news
 tags:
-  - teaching
-  - supervision
-  - imperial
-summary: "An update on current teaching roles at Imperial and recent student supervision outcomes."
+  - humanitarian
+  - forecasting
+  - policy
+summary: "Recent outputs focused on improving forecast interpretation and policy use in resource-constrained settings."
 ---
 
-I am currently co-leading teaching in the GMPH Health Protection module and, from 2025/2026, the MSc Epidemiology Outbreaks module.
+A continuing focus is improving how epidemic forecasts are evaluated and interpreted for policy decisions in resource-constrained and crisis contexts.
 
-Alongside this, I supervised five Master's research projects in 2024/2025, with projects progressing to high marks and onward opportunities.
+- medRxiv preprint: [https://doi.org/10.1101/2025.08.11.25333414](https://doi.org/10.1101/2025.08.11.25333414)
+- SocArXiv perspective: [https://doi.org/10.31235/osf.io/tcjqs_v1](https://doi.org/10.31235/osf.io/tcjqs_v1)
+- Related tools: [vrcmort](/project/vrcmort/) and [vpdsus](/project/vpdsus/)
 
-More detail is available on the updated [/teaching/](/teaching/) page.
-
-Related pages: [Teaching](/teaching/) | [Research](/research/) | [Team](/team/) | [Contact](/contact/)
+See the [Humanitarian health and JI-RISE](/research/#humanitarian-health-and-ji-rise) section for context.

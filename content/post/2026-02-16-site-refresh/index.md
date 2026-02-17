@@ -1,19 +1,21 @@
 ---
-title: "Policy-facing modelling updates: vaccines and preparedness"
+title: "Nature Medicine 2025: global pfhrp2/3 deletion risk"
 date: 2026-02-16
 author: OJ Watson
-slug: policy-modelling-updates-2026
+slug: nature-medicine-pfhrp23-risk
 categories:
   - news
 tags:
-  - vaccines
-  - preparedness
-  - modelling
-summary: "Recent work on vaccine impact modelling and preparedness planning across COVID-19 and future pandemic scenarios."
+  - malaria
+  - diagnostics
+  - policy
+summary: "A brief note on our Nature Medicine paper modelling global pfhrp2/3 deletion selection and spread risk."
 ---
 
-Recent work has focused on vaccine impact and pandemic preparedness modelling, including strategy design under uncertainty and policy-facing scenario analysis.
+A key recent output is our **Nature Medicine (2025)** paper on the global risk of selection and spread of *Plasmodium falciparum* pfhrp2/3 deletions.
 
-This includes work on COVID-19 vaccination impact and preparedness-oriented modelling for future epidemic threats.
+- Paper: [https://doi.org/10.1038/S41591-025-03974-3](https://doi.org/10.1038/S41591-025-03974-3)
+- Related modelling background: [eLife 2017 pfhrp2 deletion modelling](https://doi.org/10.7554/eLife.25008)
+- Related software: [hrp2malaRia](/project/hrp2malaria/) and [hrpup](/project/hrpup/)
 
-Related pages: [Research](/research/) | [Projects](/projects/) | [Team](/team/)
+This work links directly to my broader [Malaria research](/research/#malaria-transmission-modelling) and WHO-facing policy support activities.

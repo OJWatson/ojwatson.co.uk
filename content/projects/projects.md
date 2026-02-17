@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 65  # Order that this section will appear.
 
 title = "Projects"
-subtitle = "Software outputs and research tools."
+subtitle = "Major software outputs, packages, and modelling tools."
 
 [content]
   page_type = "project"
@@ -29,7 +29,15 @@ subtitle = "Software outputs and research tools."
     tag = "covid"
 
   [[content.filter_button]]
-    name = "Other Projects"
+    name = "AI/ML"
+    tag = "ai"
+
+  [[content.filter_button]]
+    name = "Humanitarian"
+    tag = "humanitarian"
+
+  [[content.filter_button]]
+    name = "Other"
     tag = "other"
 
 [design]
