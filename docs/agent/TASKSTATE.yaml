@@ -242,34 +242,104 @@ tasks:
       reason: completed
       tick_ts: 20260216T043006Z
   CI.FIX.M5:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M6.0:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M6.1:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M6.2:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M6.END:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   CI.FIX.M6:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M7.0:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M7.1:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   M7.END:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
   CI.FIX.M7:
-    status: todo
-    updated_at_utc: ''
+    status: done
+    updated_at_utc: '2026-02-17 05:10:14+00:00'
+    last:
+      commit: ''
+      log_path: local/manual
+      outcome: success
+      pushed: false
+      reason: completed
+      tick_ts: 20260217T051014Z
 version: 1
 ci: {}

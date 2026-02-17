@@ -1,10 +1,10 @@
 ```pm-status
-milestone: M3
+milestone: M7
 state: complete
-headSha: 396e79b
+headSha: e830e99
 ciRunUrl: 
-updatedAtUtc: 2026-02-15T23:33:35Z
-nextStep: M4.1: Content: write Teaching page (modules/short courses/supervision).
+updatedAtUtc: 2026-02-17T05:10:14Z
+nextStep: Optional cleanup of additional legacy content directories after manual review.
 ```
 
 ## Notes

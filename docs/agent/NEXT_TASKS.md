@@ -1,7 +1,7 @@
 # NEXT_TASKS
 
 Now:
-- M5.END — Milestone end: M5 complete (gate on CI)
+- None
 
 Next:
-- CI.FIX.M5 — CI fix: make Netlify/GitHub build green for M5 boundary
+- Optional: additional manual pruning of legacy, non-live content directories after owner review.

@@ -65,7 +65,7 @@ height = "400px"
   overlay_filter = 0.2  # Darken the image. Value in range 0-1.
   
   cta_label = "See available services"
-  cta_url = "/consulting"
+  cta_url = "/contact/"
   cta_icon_pack = "fas"
   cta_icon = "hammer"
   

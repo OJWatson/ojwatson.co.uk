@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 65  # Order that this section will appear.
 
 title = "Projects"
-subtitle = ""
+subtitle = "Research programme and software projects."
 
 [content]
   # Page type to display. E.g. project.
@@ -24,6 +24,10 @@ subtitle = ""
   [[content.filter_button]]
     name = "All"
     tag = "*"
+
+  [[content.filter_button]]
+    name = "Research Programmes"
+    tag = "research-programme"
   
   [[content.filter_button]]
     name = "R Packages"
@@ -83,4 +87,3 @@ subtitle = ""
  # CSS class.
  css_class = "projects"
 +++
-

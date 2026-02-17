@@ -16,3 +16,13 @@ Format:
 
 - M5.0 -> a64e01b0ae9f21ec1356023b9d40df65e09b4019 : add News menu entry for /post/ and rename Posts section title to News
 - M5.1 -> 6d2aad0312280b232e21fb8a52d47a76268b8659 : add initial News posts (site refresh, team, teaching, projects pointers)
+- CI.FIX.M5 -> (working-tree) : revalidated CI-equivalent checks (`hugo --gc --minify` + regression script)
+- M6.0 -> (working-tree) : add research programme project entries (JI-RISE, surrogates, resistance, vaccines)
+- M6.1 -> (working-tree) : update Projects filters/tags while preserving existing software project tags
+- M6.2 -> (working-tree) : cross-link Research and Projects pages and verify no URL regressions
+- M6.END -> (working-tree) : milestone M6 gate passed (local acceptance checks)
+- CI.FIX.M6 -> (working-tree) : CI-equivalent checks green at M6 boundary
+- M7.0 -> (working-tree) : full linkcheck + Hugo build QA sweep completed
+- M7.1 -> (working-tree) : mobile/navigation sanity pass completed; no CSS regressions found
+- M7.END -> (working-tree) : milestone M7 gate passed (local acceptance checks)
+- CI.FIX.M7 -> (working-tree) : CI-equivalent checks green at M7 boundary

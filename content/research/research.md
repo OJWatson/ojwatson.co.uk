@@ -38,6 +38,8 @@ title = ""
 
 # Research
 
+For a curated list of active research-programme projects and software outputs, see the [Projects](/projects/) page.
+
 ***
 
 <img align="left" width=50% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-right: 5%" src="/img/headers/vaccine2.jpg"> 
@@ -45,6 +47,8 @@ title = ""
 ### COVID-19 Modelling
 
 In March 2020, I joined the Imperial College COVID-19 response team. I led the software development and modelling in low- and middle-income countries (LMICs), producing epidemic trajectories for the potential global burden of COVID-19 (Science). Throughout the pandemic, I provided epidemic scenario projections (Imperial College COVID-19 LMIC Reports) for every country to the WHO as part of the first costing for a global response to COVID-19 (Lancet Global Health) and the WHO Essential Supplies Forecasting Tool. Most recently, in June 2022, I published the first estimates of the global impact of the COVID-19 vaccinations, showing almost 20 million deaths were averted due to vaccination during the first of vaccinations (Lancet Infectious Diseases).
+
+Related projects: [Vaccine Impact and Delivery](/project/vaccine-impact-delivery/), [JI-RISE](/project/ji-rise/), [squire](/project/squire/), [nimue](/project/nimue/).
 
 ***
 
@@ -73,3 +77,4 @@ I have developed an open source software package, rdhs, that is the first non-pr
 
 In 2016, a study in the Democratic Republic of Congo provided evidence that malaria parasites were evading detection by rapid diagnostic tests due to the deletion of the pfhrp2 gene. Using mathematical transmission models, I provided evidence that there was selection of pfhrp2 gene deletions to a WHO panel steered by the director of the WHO Global Malaria Programme. The panel formulated WHO guidance to national malaria control programmes (NMCPs) to implement molecular surveys to estimate pfhrp2 deletion prevalence. After attending the Malaria Policy Advisory Committee meeting in November 2017, I conducted a collaborative study with the WHO to estimate the potential for seasonal variations in malaria transmission to introduce bias in estimating pfhrp2 deletion prevalence. These findings infomed NMCPs through an interactive online database and field training programmes to optimise surveillance for pfhrp2. (Both studies in eLife). Additionally, I have modelled the impact of false-negative RDTs on community surveys (BMJ Global Health), worked on modelling ivermectin as a possible addition to the currently available malaria control tools (Lancet Infectious Diseases), as well as a modelling-based evaluation of the utility of malaria genetics for inferring transmission intensity (Molecular, Biology and Evolution) and the impact of partner drug resistance on artemisinin resistance (Lancet Microbe).
 
+Related projects: [Malaria Resistance Dynamics](/project/malaria-resistance-dynamics/), [hrp2malaRia](/project/hrp2malaria/), [magenta](/project/magenta/), [hmmIBDr](/project/hmmibdr/), [McCOILR](/project/mccoilr/).
