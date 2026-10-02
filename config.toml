@@ -34,6 +34,11 @@ defaultContentLanguageInSubdir = false
 removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
 
 paginate = 10  # Number of items per page in paginated lists.
+
+# Build output minification.
+# (Also passed via CLI in acceptance, but keeping this enabled here makes it the default.)
+minify = true
+
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
@@ -59,7 +64,8 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 [imaging]
   resampleFilter = "lanczos"
-  quality = 100
+  # 100 produces noticeably larger assets; 80–85 is a sensible default for web.
+  quality = 85
   anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
 # Taxonomies.

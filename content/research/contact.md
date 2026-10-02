@@ -6,7 +6,7 @@ active = false  # Activate this widget? true/false
 weight = 130  # Order that this section will appear.
 
 title = "Contact"
-subtitle = "Either use the form, socials or just email me"
+subtitle = "Email is the best way to contact me."
 
 # Automatically link email and phone?
 autolink = true
@@ -15,8 +15,8 @@ autolink = true
 #   0: Disable email form
 #   1: Netlify (requires that the site is hosted by Netlify)
 #   2: formspree.io
-email_form = 2
-form_id = "mvoljlqw"
+email_form = 0
+form_id = ""
 
 
 +++

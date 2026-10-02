@@ -7,3 +7,7 @@ Thumbs.db
 resources
 /blogdown/
 todo.txt
+
+# Python cache (linkcheck regression script)
+__pycache__/
+*.pyc
