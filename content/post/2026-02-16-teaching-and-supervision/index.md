@@ -9,7 +9,7 @@ tags:
   - humanitarian
   - forecasting
   - policy
-summary: "Recent outputs focused on improving forecast interpretation and policy use in resource-constrained settings."
+summary: "Recent outputs focused on forecast interpretation and policy use in resource-constrained and crisis settings."
 ---
 
 A continuing focus is improving how epidemic forecasts are evaluated and interpreted for policy decisions in resource-constrained and crisis contexts.
@@ -18,4 +18,6 @@ A continuing focus is improving how epidemic forecasts are evaluated and interpr
 - SocArXiv perspective: [https://doi.org/10.31235/osf.io/tcjqs_v1](https://doi.org/10.31235/osf.io/tcjqs_v1)
 - Related tools: [vrcmort](/project/vrcmort/) and [vpdsus](/project/vpdsus/)
 
-See the [Humanitarian health and JI-RISE](/research/#humanitarian-health-and-ji-rise) section for context.
+These outputs sit alongside ongoing work on mortality estimation, vaccine-preventable disease risk, cholera anticipatory action, and the translation of model evidence into humanitarian decision-making.
+
+See the [Humanitarian evidence for humanitarian operations](/research/#humanitarian-evidence-for-humanitarian-operations) section for context.

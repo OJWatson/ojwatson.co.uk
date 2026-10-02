@@ -44,7 +44,7 @@ local_business_type = ""
 org_name = "OJ Watson"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = "Personal website and portfolio of Dr. OJ Watson."
+description = "Personal website and portfolio of Dr. OJ Watson, Associate Professor at Imperial College London."
 
 # Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
@@ -106,14 +106,14 @@ email = "o.watson15@imperial.ac.uk"
 # office_hours = ["Monday 10:00 to 13:00", "Wednesday 09:00 to 10:00"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://app.usemotion.com/meet/oj-watson/gmeet?d=60"
+appointment_url = ""
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 contact_links = [
-  {icon = "twitter", icon_pack = "fab", name = "Follow Me on Twitter", link = "https://twitter.com/ojwatson"},
-  {icon = "github", icon_pack = "fab", name = "Follow Me on GitHub", link = "https://github.com/ojwatson"},
-  {icon = "envelope", icon_pack = "fas", name = "Email Me", link = "mailto:o.watson15@imperial.ac.uk"}
+  {icon = "linkedin", icon_pack = "fab", name = "LinkedIn", link = "https://uk.linkedin.com/in/oj-watson-4a809524a"},
+  {icon = "github", icon_pack = "fab", name = "GitHub", link = "https://github.com/ojwatson"},
+  {icon = "envelope", icon_pack = "fas", name = "Email OJ", link = "mailto:o.watson15@imperial.ac.uk"}
   ]
 
 ############################
@@ -124,7 +124,7 @@ contact_links = [
 sharing_image = "headers/newyork.jpg"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = "ojwatson92"
+twitter = ""
 
 ############################
 ## Regional Settings
@@ -151,14 +151,14 @@ gravatar = false
 menu_align_right = true
 
 # Show estimated reading time for posts? (true/false)
-reading_time = true
+reading_time = false
 
 # Display next/previous section pager? (true/false)
 section_pager = false
 docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 
 # Enable in-built social sharing buttons? (true/false)
-sharing = true
+sharing = false
 
 # Link authors to their profile page? (true/false)
 link_authors = true

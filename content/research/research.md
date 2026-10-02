@@ -40,7 +40,7 @@ title = ""
 
 For software outputs and research tools, see [Projects](/projects/).
 
-Quick links: [Malaria](/research/#malaria-transmission-modelling) | [Vaccine preparedness](/research/#vaccine-impact-and-pandemic-preparedness) | [Humanitarian modelling](/research/#humanitarian-health-and-ji-rise) | [AI-enabled modelling](/research/#ai-enabled-epidemic-modelling) | [News](/post/)
+Quick links: [Malaria](/research/#malaria-transmission-modelling) | [Vaccine preparedness](/research/#vaccine-impact-and-pandemic-preparedness) | [Humanitarian evidence](/research/#humanitarian-evidence-for-humanitarian-operations) | [AI-enabled modelling](/research/#ai-enabled-epidemic-modelling) | [News](/post/)
 
 ***
 
@@ -64,7 +64,7 @@ Related software outputs: [squire](/project/squire/), [nimue](/project/nimue/), 
 
 As part of growing evidence of COVID-19 mortality being unobserved, I led two research studies in Damascus (Nature Communications) and Khartoum (Imperial College COVID-19 Report 39) to ascertain mortality reporting of COVID-19. In Damascus, I identified Facebook groups uploading obituary certificates since the start of the conflict in Damascus. These obituary certificates provided a reliable source of mortality patterns in the city that revealed clear COVID-19 epidemic dynamics. In Khartoum, I worked with local youth activist groups to integrate surveys of COVID-19 symptoms distributed through social media channels to estimate the proportion of COVID-19 deaths occurring undetected. The latter was part of evidence that led to new ministry of health intervention measures and increased public health campaigns to raise awareness of COVID-19 during Sudan's second wave.
 
-Related outputs: [vrcmort](/project/vrcmort/), [JI-RISE section](/research/#humanitarian-health-and-ji-rise).
+Related outputs: [vrcmort](/project/vrcmort/), [humanitarian evidence section](/research/#humanitarian-evidence-for-humanitarian-operations).
 
 <br>
 
@@ -99,11 +99,11 @@ Related software outputs: [hrp2malaRia](/project/hrp2malaria/), [magenta](/proje
 
 <img align="left" width="50%" style="padding-top:4%; padding-bottom:4%; padding-right:5%" src="/img/research/humanitarian-mortality-model.png">
 
-### Humanitarian health and JI-RISE
+### Humanitarian evidence for humanitarian operations
 
-I lead work on disease burden estimation and response analytics in crisis-affected settings, including conflict and food insecurity contexts. This includes excess mortality estimation, surveillance innovation, and vaccine-preventable disease burden modelling.
+I lead work on disease burden estimation and response analytics in crisis-affected settings, including conflict and food insecurity contexts. This includes excess mortality estimation, surveillance innovation, cholera anticipatory action, and vaccine-preventable disease burden modelling.
 
-This strand is developed through the Jameel Institute RISE initiative and collaborations with humanitarian and public health partners.
+This strand is developed through the Jameel Institute RISE initiative and collaborations with humanitarian and public health partners, with an emphasis on evidence that can support operational decisions under uncertainty.
 
 Selected outputs:
 - [Bridging the gap: evaluating epidemic forecasts in resource-constrained settings (medRxiv, 2025)](https://doi.org/10.1101/2025.08.11.25333414)

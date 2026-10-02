@@ -4,7 +4,7 @@ authors:
 
 # Short bio (displayed in user profile at end of posts)
 bio: |
-  I’m a Lecturer and Imperial College Research Fellow at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I’m based within Imperial’s AI Initiative, [I-X](https://ix.imperial.ac.uk/), and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
+  I’m an Associate Professor at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I’m based within Imperial’s AI Initiative, [I-X](https://ix.imperial.ac.uk/), and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
   I develop open, reproducible methods at the intersection of infectious disease modelling, mortality estimation, and AI for public health — supporting decision-making and improving data equity. Recent applications include malaria and COVID-19.
 
@@ -39,7 +39,7 @@ organizations:
 - name: Imperial College London
   url: ""
 
-role: Lecturer & Imperial College Research Fellow
+role: Associate Professor
 
 social:
 - icon: envelope
@@ -51,9 +51,9 @@ social:
 - icon: google-scholar
   icon_pack: ai
   link: 'https://scholar.google.co.uk/citations?user=0jAMBM8AAAAJ&hl=en'
-- icon: twitter
+- icon: linkedin
   icon_pack: fab
-  link: https://twitter.com/ojwatson92
+  link: https://uk.linkedin.com/in/oj-watson-4a809524a
 - icon: github
   icon_pack: fab
   link: https://github.com/ojwatson
@@ -65,7 +65,7 @@ user_groups:
 - Visitors
 ---
 
-I’m a Lecturer and Imperial College Research Fellow at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I’m based within Imperial’s AI Initiative, [I-X](https://ix.imperial.ac.uk/), and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
+I’m an Associate Professor at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I’m based within Imperial’s AI Initiative, [I-X](https://ix.imperial.ac.uk/), and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
 I develop open, reproducible methods at the intersection of infectious disease modelling, mortality estimation, and AI for public health — supporting decision-making and improving data equity. Recent applications include malaria and COVID-19.
 

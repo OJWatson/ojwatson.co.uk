@@ -13,6 +13,6 @@ title = ""
 
 [advanced]
   # Reuse existing header styling pattern.
-  css_style = "background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  url('/img/headers/tree.jpg');"
+  css_style = "background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  url('/img/headers/scalability.jpg');"
   css_class = "aboutme-header"
 +++
