@@ -1,7 +1,11 @@
 {{ partial "page_edit" . }}
 {{ partial "tags" . }}
 {{ partial "share" . }}
-{{ if ne .Type "post" }}
+
+{{ $article_sections := slice "post" "posts" "news" "article" "articles" }}
+{{ $is_article := or (in $article_sections .Type) (in $article_sections .Section) }}
+
+{{ if not $is_article }}
 {{ partial "page_author" . }}
 {{ end }}
 {{ partial "comments" . }}
@@ -12,7 +16,7 @@
 </div>
 {{ end }}
 
-{{ if and (ne .Type "page") (ne .Type "post") }}
+{{ if and (ne .Type "page") (not $is_article) }}
   {{ $related := site.RegularPages.Related . | first 5 }}
   {{ with $related }}
   <div class="article-widget content-widget-hr">
