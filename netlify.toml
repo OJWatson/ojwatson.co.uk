@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "hugo --gc --minify"
+  command = "hugo --gc --minify --cleanDestinationDir"
 
 [context.production.environment]
   HUGO_VERSION = "0.62.1"
@@ -14,8 +14,8 @@
   HUGO_VERSION = "0.62.1"
   
 [context.deploy-preview]
-  command = "hugo -b $DEPLOY_PRIME_URL --buildFuture --gc --minify"
+  command = "hugo -b $DEPLOY_PRIME_URL --buildFuture --gc --minify --cleanDestinationDir"
 
 [context.branch-deploy]
-  command = "hugo -b $DEPLOY_PRIME_URL --buildFuture --gc --minify"
+  command = "hugo -b $DEPLOY_PRIME_URL --buildFuture --gc --minify --cleanDestinationDir"
   

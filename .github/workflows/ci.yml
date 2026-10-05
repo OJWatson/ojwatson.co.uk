@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install content-check dependencies
+        run: python3 -m pip install -r requirements-checks.txt
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:

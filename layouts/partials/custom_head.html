@@ -1,0 +1,1 @@
+{{ if ne (getenv "CONTEXT") "production" }}{{ if or (getenv "CONTEXT") (eq hugo.Environment "development") }}<meta name="robots" content="noindex, nofollow">{{ end }}{{ end }}

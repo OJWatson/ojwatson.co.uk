@@ -1,0 +1,92 @@
+# Selected examples from current collaborations and earlier work by OJ.
+# Evidence links support publication metadata and any paper-to-code association.
+# Update these records once; the homepage and outputs page read this file.
+# The first three entries appear on the homepage: keep one per research theme.
+works:
+  - id: forecast-usability
+    title: "Making epidemic forecasts useful to policymakers"
+    citation_title: "Enhancing epidemic forecast usability for policymakers: A global mixed-methods study"
+    authors: "Paula Christen, Oliver J. Watson & colleagues"
+    year: 2026
+    venue: "PLOS Global Public Health"
+    description: "A global survey and interview study examining how policymakers understand and use epidemic forecasts, and the barriers that limit their usefulness."
+    paper_url: "https://doi.org/10.1371/journal.pgph.0006519"
+    code_url: "https://github.com/paulachristen/infectech_manuscript"
+    theme: humanitarian
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0006519"
+      - "https://github.com/paulachristen/infectech_manuscript"
+
+  - id: malaria-diagnostic-risk
+    title: "Protecting the reliability of malaria diagnosis"
+    citation_title: "Global risk of selection and spread of Plasmodium falciparum histidine-rich protein 2 and 3 gene deletions"
+    authors: "Oliver J. Watson & colleagues"
+    year: 2025
+    venue: "Nature Medicine"
+    description: "Global modelling of the risk posed by parasite gene deletions that can undermine malaria rapid diagnostic tests, helping identify priorities for surveillance."
+    paper_url: "https://doi.org/10.1038/s41591-025-03974-3"
+    code_url: "https://github.com/OJWatson/hrpup"
+    theme: malaria
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://www.nature.com/articles/s41591-025-03974-3"
+      - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532711/"
+
+  - id: hundred-days-mission
+    title: "What faster vaccine availability could change"
+    citation_title: "Impact of the 100 days mission for vaccines on COVID-19: a mathematical modelling study"
+    authors: "Gregory Barnsley, Oliver J. Watson & colleagues"
+    year: 2024
+    venue: "The Lancet Global Health"
+    description: "A modelling study of the 100 Days Mission, examining how earlier vaccine availability and different delivery strategies could have changed COVID-19 outcomes."
+    paper_url: "https://doi.org/10.1016/S2214-109X(24)00286-9"
+    theme: vaccines
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://pubmed.ncbi.nlm.nih.gov/39424569/"
+
+  - id: malaria-resistance-surveillance
+    title: "Interpreting malaria drug-resistance surveillance"
+    citation_title: "Selection of Plasmodium falciparum kelch13 mutations in Uganda in comparison with southeast Asia: a modelling study"
+    authors: "C. P. G. Meier-Scherling, Oliver J. Watson & colleagues"
+    year: 2025
+    venue: "The Lancet Microbe"
+    description: "A comparison of surveillance trends in Uganda and southeast Asia, examining what changes in resistance markers mean for malaria control."
+    paper_url: "https://doi.org/10.1016/j.lanmic.2024.101027"
+    theme: malaria
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12128186/"
+      - "https://pubmed.ncbi.nlm.nih.gov/40112841/"
+
+  - id: first-year-vaccination
+    title: "The global impact of COVID-19 vaccination"
+    citation_title: "Global impact of the first year of COVID-19 vaccination: a mathematical modelling study"
+    authors: "Oliver J. Watson & colleagues"
+    year: 2022
+    venue: "The Lancet Infectious Diseases"
+    description: "An analysis of vaccination's first year, estimating deaths averted across 185 countries and territories and examining the consequences of unequal access."
+    paper_url: "https://doi.org/10.1016/S1473-3099(22)00320-6"
+    code_url: "https://github.com/mrc-ide/covid-vaccine-impact-orderly"
+    theme: vaccines
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://pmc.ncbi.nlm.nih.gov/articles/PMC9225255/"
+      - "https://github.com/mrc-ide/covid-vaccine-impact-orderly"
+
+  - id: damascus-mortality
+    title: "Reconstructing mortality when routine data are incomplete"
+    citation_title: "Leveraging community mortality indicators to infer COVID-19 mortality and transmission dynamics in Damascus, Syria"
+    authors: "Oliver J. Watson, Mervat Alhaffar, Zaki Mehchy & colleagues"
+    year: 2021
+    venue: "Nature Communications"
+    description: "A study combining reported deaths with community obituary notifications to investigate under-reporting of COVID-19 mortality in Damascus, Syria."
+    paper_url: "https://doi.org/10.1038/s41467-021-22474-9"
+    code_url: "https://github.com/mrc-ide/syria-covid-ascertainment"
+    theme: humanitarian
+    reviewed: "2026-10-05"
+    evidence_urls:
+      - "https://www.nature.com/articles/s41467-021-22474-9"
+      - "https://pmc.ncbi.nlm.nih.gov/articles/PMC8062464/"
+      - "https://github.com/mrc-ide/syria-covid-ascertainment"

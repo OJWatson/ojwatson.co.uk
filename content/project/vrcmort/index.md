@@ -1,23 +1,28 @@
 ---
-title: "vrcmort"
-summary: "R package for hierarchical Bayesian mortality estimation with reporting-process adjustment."
+title: vrcmort
 authors: []
-tags: [rpackage, humanitarian, other]
-categories: [R, humanitarian]
-date: 2025-12-01T10:00:00+00:00
-
+tags:
+- rpackage
+- humanitarian
+- other
+categories:
+- R
+- humanitarian
+date: 2025-12-01 10:00:00+00:00
+summary: Research software for mortality estimation when registration data are incomplete.
+project_type: Research software
 image:
-  caption: "Model schematic from vrcmort"
-  focal_point: "Center"
-  preview_only: false
-
-url_code: "https://github.com/OJWatson/vrcmort"
-url_pdf: ""
-url_slides: ""
-url_video: ""
-slides: ""
+  preview_only: true
+url_code: https://github.com/jameel-institute/vrcmort
+links:
+- name: Documentation
+  url: https://jameel-institute.github.io/vrcmort/
+evidence_checked: '2026-10-05'
+evidence_sources:
+- https://github.com/jameel-institute/vrcmort
+- https://jameel-institute.github.io/vrcmort/
 ---
 
-`vrcmort` implements hierarchical Bayesian models for estimating mortality from partial and under-reported registration data.
+vrcmort is being developed to study mortality when reporting systems vary or are disrupted, including during conflict. It is a research package under development within the Jameel Institute.
 
-This tool supports ongoing humanitarian and crisis-mortality workstreams, including rapid assessment settings where reporting completeness is uncertain.
+The repository describes an early research-facing package. For published examples of earlier mortality work, see the [humanitarian research overview](/research/#humanitarian-evidence-for-humanitarian-operations); those studies used their own analysis repositories.

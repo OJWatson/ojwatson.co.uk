@@ -1,7 +1,6 @@
 +++
-# about me page
 title = "Research"
-summary = "Research"
+summary = "Models, data and open software for malaria control, vaccination and preparedness, and humanitarian response."
 type = "widget_page"
-headless = false  # Homepage is headless, other widget pages are not.
+headless = false
 +++

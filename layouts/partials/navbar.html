@@ -1,4 +1,5 @@
 {{ $current_page := . }}
+<a class="skip-link" href="#page-content">Skip to content</a>
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
@@ -7,7 +8,7 @@
         {{- if site.Params.logo -}}
         <img src="{{ printf "/img/%s" site.Params.logo | relURL }}" alt="{{ site.Title }}">
         {{- else -}}
-         {{ if not .IsHome }}{{- site.Title -}}{{- end -}}
+         <span class="brand-name">OJ Watson</span><span class="brand-group">&amp; research group</span>
         {{- end -}}
       </a>
       {{ if or site.Menus.main .IsTranslated }}
@@ -100,7 +101,7 @@
 
         {{ if site.Params.search.engine }}
         <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+          <a class="nav-link js-search" href="#" aria-label="Search the website"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
         {{ end }}
 

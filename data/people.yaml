@@ -1,0 +1,43 @@
+# Existing website roster; OJ confirmed Annabelle and Arran roles on 2026-10-05.
+intro: Researchers, students and collaborators working across infectious disease modelling,
+  public health and research software.
+groups:
+- title: Group lead
+  people:
+  - name: OJ Watson
+    role: Associate Professor · Imperial College London
+    description: Infectious disease modelling, mortality estimation and AI for public
+      health.
+    url: /about/
+- title: Doctoral students
+  people:
+  - name: Nisreen Shehada
+    role: PhD · started January 2026
+    description: Vaccine-preventable disease models to support humanitarian operations.
+  - name: Cosmo Santoni
+    role: PhD · started January 2025
+    description: Deep learning surrogates for infectious disease models.
+  - name: Ishana Atkinson
+    role: PhD · UCL, supported by OJ
+    description: Modelling and mapping vaccine equity.
+- title: Research staff
+  people:
+  - name: Annabelle Piot
+    role: Research Assistant
+    description: Anticipatory action for cholera and vaccine-preventable disease research.
+  - name: Timothy Hitge
+    role: Postdoctoral Research Associate · since November 2025
+    description: Deep learning surrogates for epidemic models.
+  - name: Mantra Susskind
+    role: Research Software Engineer · since March 2025
+    description: Research software engineering for crisis modelling systems.
+- title: Visiting researchers and consultants
+  people:
+  - name: Paula Christen
+    role: Visiting Researcher / Consultant · since April 2024
+    description: Forecast evaluation and decision support.
+- title: Previous appointments
+  people:
+  - name: Arran Hamlet
+    role: Short-term contract · March–August 2025
+    description: Support for the early development of JI-RISE.
