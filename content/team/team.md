@@ -34,5 +34,5 @@ I work with a small team of researchers and collaborators focused on infectious 
 
 <div class="card-simple">
   <h3><a href="https://docs.google.com/document/d/1tloAygtM366qAHFsYcldWdWjfJw47r4OAjwkQ90lOBI/edit?tab=t.0">OJW Group Norms</a></h3>
-  <p>Shared group norms document. Access and commenting are managed in Google Drive.</p>
+  <p>Living draft of the group's working norms, covering expectations, meetings, reporting, scientific culture, and support resources. Access and commenting are managed in Google Drive.</p>
 </div>
