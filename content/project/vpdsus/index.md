@@ -25,4 +25,4 @@ evidence_sources:
 
 vpdsus is an R package for preparing country-level evidence on vaccine-preventable diseases. The repository and documentation describe ongoing research development, with a focus on susceptibility and public health planning.
 
-The project is presented as research software; no dedicated software paper or operational validation is claimed here.
+The documentation introduces the package and its current research scope.

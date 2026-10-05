@@ -28,4 +28,4 @@ evidence_sources:
 
 squire supported the Imperial College COVID-19 Response Team’s research on epidemic burden in low- and middle-income countries. The associated study by Walker, Whittaker, Watson and colleagues in *Science* (2020) examined the potential impact of response strategies.
 
-The repository is research software, released without a support commitment; it should not be read as an operational forecasting service.
+The software is released for research use without a support commitment. See the repository for its current status.

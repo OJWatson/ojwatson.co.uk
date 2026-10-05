@@ -74,7 +74,11 @@ The regression script checks selected-output fields and duplicate IDs/DOIs,
 published example publications, placeholder links, malformed `hhttps://` links,
 and the footer checksum; runs regression fixtures for those checks; builds Hugo
 with `--cleanDestinationDir` into the generated-only `public/` directory;
-and checks root-relative and same-origin links in the generated site. Disabled
+and checks root-relative and same-origin links in the generated site. It also
+checks `public/index.json` against the data files and rendered research page:
+each selected output appears once at its output anchor with its exact citation
+title, every roster name is searchable, and visible research text is included.
+Disabled
 widgets and draft content are excluded from publication checks. External URL
 availability, relative links, anchors, factual accuracy and visual layout still
 need review. A passing check is not a full factual audit.

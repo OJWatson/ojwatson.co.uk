@@ -72,6 +72,6 @@
 
 {{- range site.Data.selected_work.works -}}
   {{- $url := printf "/outputs/#%s" .id -}}
-  {{- $index = $index | append (dict "objectID" (printf "selected-%s" .id) "title" .title "summary" .description "content" (printf "%s %s %s %d %s" .title (.citation_title | default "") .authors .year .venue) "authors" (slice .authors) "permalink" ($url | absURL) "relpermalink" ($url | relURL) "type" "publication" "kind" "page" "section" "outputs" "tags" (slice .theme)) -}}
+  {{- $index = $index | append (dict "objectID" (printf "selected-%s" .id) "title" .title "summary" .description "content" (printf "%s %s %s %d %s" .title (.citation_title | default "") .authors .year .venue) "authors" (slice .authors) "permalink" (printf "%s#%s" ("/outputs/" | absURL) .id) "relpermalink" ($url | relURL) "type" "publication" "kind" "page" "section" "outputs" "tags" (slice .theme)) -}}
 {{- end -}}
 {{- $index | jsonify -}}

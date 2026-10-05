@@ -28,4 +28,4 @@ evidence_sources:
 
 icer supports analysis of how malaria infection types occur together in observed data. It was used in the observational study by Akala, Watson and colleagues published in *The Lancet Microbe* (2021).
 
-The repository describes research software under development; a published application does not imply a general-purpose supported product.
+The repository describes research software under development; see the documentation for its current scope.

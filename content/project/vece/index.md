@@ -22,4 +22,4 @@ evidence_sources:
 
 vece organises reproducible analysis for vaccine cost evaluation. The repository is structured around a research workflow using an R package layout.
 
-See the repository for the scope and current state of the analysis. A dedicated associated publication has not yet been established for this website.
+See the repository for the scope and current state of this ongoing analysis.

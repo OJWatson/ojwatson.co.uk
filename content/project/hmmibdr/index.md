@@ -25,4 +25,4 @@ evidence_sources:
 
 hmmIBDr wraps [hmmIBD](https://github.com/glipsnort/hmmIBD) for use in R. The original method and software are by Schaffner and colleagues; OJ’s contribution is the R wrapper.
 
-The linked *Malaria Journal* paper (2018) describes the original method. It is an attribution to its authors, not an OJ or group publication.
+The linked *Malaria Journal* paper (2018) describes the original method. The wrapper builds on their work.

@@ -12,9 +12,11 @@ tags:
 summary: "Our Nature Medicine paper modelling global pfhrp2/3 deletion selection and spread risk."
 ---
 
+**Update — 5 October 2026:** The Nature Medicine article names [hrpup](https://github.com/OJWatson/hrpup) in its code availability statement. [hrp2malaRia](/project/hrp2malaria/) accompanies the earlier eLife study. The current [hrpup project page](/project/hrpup/) makes that distinction and directs readers to the paper and repository for the relevant analysis resources.
+
 A key recent output is our **Nature Medicine (2025)** paper on the global risk of selection and spread of *Plasmodium falciparum* pfhrp2/3 deletions.
 
-- Paper: [https://doi.org/10.1038/S41591-025-03974-3](https://doi.org/10.1038/S41591-025-03974-3)
+- Paper: [https://doi.org/10.1038/s41591-025-03974-3](https://doi.org/10.1038/s41591-025-03974-3)
 - Related modelling background: [eLife 2017 pfhrp2 deletion modelling](https://doi.org/10.7554/eLife.25008)
 - Related software: [hrp2malaRia](/project/hrp2malaria/) and [hrpup](/project/hrpup/)
 

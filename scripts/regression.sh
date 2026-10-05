@@ -29,3 +29,6 @@ done
 
 # Basic internal link check over generated output
 python3 scripts/linkcheck.py public config.toml
+
+# YAML-backed outputs/people and widget prose must remain discoverable in search.
+python3 scripts/check_search.py public

@@ -28,4 +28,4 @@ evidence_sources:
 
 McCOILR makes an existing malaria data-analysis method easier to use from R. OJ developed the wrapper; the underlying method and software are credited to Chang and colleagues and the [Greenhouse Lab](https://github.com/Greenhouse-Lab/THEREALMcCOIL).
 
-The linked *PLOS Computational Biology* paper (2017) describes the original method. It is an attribution to its authors, not an OJ or group publication.
+The linked *PLOS Computational Biology* paper (2017) describes the original method. The wrapper builds on their work.
