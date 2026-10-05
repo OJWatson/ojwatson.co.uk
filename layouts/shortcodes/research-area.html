@@ -1,0 +1,8 @@
+<section class="research-area" aria-labelledby="{{ .Get "id" }}">
+  <h2 id="{{ .Get "id" }}">{{ .Get "title" }}</h2>
+  <figure class="research-figure">
+    <a href="{{ .Get "image" | relURL }}" aria-label="View full-size figure: {{ .Get "alt" }}"><img src="{{ .Get "image" | relURL }}" alt="{{ .Get "alt" }}" loading="lazy"></a>
+    {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
+  <div class="research-copy">{{ .Inner | markdownify }}</div>
+</section>

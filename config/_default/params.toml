@@ -44,7 +44,7 @@ local_business_type = ""
 org_name = "OJ Watson"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = "Personal website and portfolio of Dr. OJ Watson, Associate Professor at Imperial College London."
+description = "OJ Watson and research group at Imperial College London. Infectious disease modelling, malaria, vaccine impact and evidence for humanitarian response."
 
 # Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
@@ -161,12 +161,15 @@ docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 sharing = false
 
 # Link authors to their profile page? (true/false)
-link_authors = true
+link_authors = false
+
+# Biography belongs on About OJ, not in repeated author cards below projects.
+profile = false
 
 # Load CSS and JS plugins
 #   E.g. To load `/assets/css/custom.css`, set `plugins_css = ["custom"]`.
 #   E.g. To load `/assets/js/custom.js`, set `plugins_js = ["custom"]`.
-plugins_css = ["ojwatson"]
+plugins_css = ["ojwatson", "group-site"]
 plugins_js  = []
 
 # Configuration of publication pages.

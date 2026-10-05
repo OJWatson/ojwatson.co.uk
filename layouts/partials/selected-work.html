@@ -1,0 +1,4 @@
+<article class="work-row" id="{{ .id }}">
+  <div class="work-meta"><span>{{ .year }}</span><span>{{ .venue }}</span></div>
+  <div class="work-body"><h3><a href="{{ .paper_url }}">{{ .title }}</a></h3><p>{{ .description }}</p>{{ with .citation_title }}<p class="work-citation">{{ . }}</p>{{ end }}<p class="work-authors">{{ .authors }}</p><div class="work-links"><a href="{{ .paper_url }}">Read paper <span aria-hidden="true">↗</span></a>{{ with .code_url }}<a href="{{ . }}">Research code <span aria-hidden="true">↗</span></a>{{ end }}</div></div>
+</article>

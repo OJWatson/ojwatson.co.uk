@@ -2,7 +2,7 @@
 # Team header widget
 widget = "blank"
 headless = true
-active = true
+active = false
 weight = 10
 
 title = ""

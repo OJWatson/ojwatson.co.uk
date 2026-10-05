@@ -1,0 +1,6 @@
+{{ define "main" }}
+<main id="main-content" class="people-page">
+<header class="page-intro container"><p class="eyebrow">Our people</p><h1>People</h1><p class="intro-copy">{{ site.Data.people.intro }}</p></header>
+<div class="container people-groups">{{ range site.Data.people.groups }}<section class="people-group"><h2>{{ .title }}</h2>{{ range .people }}<article class="person-row"><div><h3>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</h3><p class="person-role">{{ .role }}</p></div><p>{{ .description }}</p></article>{{ end }}</section>{{ end }}
+<aside class="people-resources"><h2>Working together</h2><p>Our <a href="https://docs.google.com/document/d/1tloAygtM366qAHFsYcldWdWjfJw47r4OAjwkQ90lOBI/edit?tab=t.0">group norms</a> set out expectations, meetings, scientific culture and support. Access is managed in Google Drive.</p><a class="text-link" href="{{ "/contact/" | relURL }}">Contact OJ <span aria-hidden="true">↗</span></a></aside>
+</div></main>{{ end }}

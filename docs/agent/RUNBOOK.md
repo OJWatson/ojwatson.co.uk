@@ -1,10 +1,12 @@
 # RUNBOOK
 
-## Local dev / acceptance
+The current workflow is in [AGENTS.md](../../AGENTS.md) and
+[MAINTENANCE.md](../MAINTENANCE.md). Older automation state in this directory is
+historical context.
 
-- Run the project's acceptance commands (see portfolio/projects.yaml).
-- If acceptance fails: stop, record blocker in PROJECT_STATE.md, and do not continue.
-
-## Branch policy
-
-Automation commits directly to the configured default branch.
+- Work on a dedicated branch; never commit directly to the default branch.
+- Run `bash scripts/regression.sh` with Hugo extended 0.62.1, resolve failures,
+  and inspect desktop and mobile previews.
+- Deploy review work to a Netlify branch/deploy preview or draft deploy and
+  return its URL. Merge and production deployment require explicit user approval.
+- Preserve the personal footer and record unresolved factual claims for review.

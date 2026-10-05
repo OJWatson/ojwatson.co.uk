@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $home := site.Data.homepage }}
+<main id="main-content" class="group-home">
+  <section class="group-hero">
+    <div class="container home-introduction">
+      <div>
+      <p class="eyebrow">{{ $home.eyebrow }}</p>
+      <h1>{{ $home.headline }}</h1>
+      <div class="hero-bottom"><p class="hero-intro">{{ $home.intro }}</p><a class="text-link hero-link" href="{{ "/research/" | relURL }}">Research overview <span aria-hidden="true">↗</span></a></div>
+      </div>
+      {{ with site.GetPage "/authors/ojwatson" }}{{ with .Resources.GetMatch "avatar*" }}{{ $portrait := .Fill "400x400 Center" }}<img class="home-portrait" src="{{ $portrait.RelPermalink }}" alt="OJ Watson" width="200" height="200">{{ end }}{{ end }}
+    </div>
+  </section>
+  <section class="group-section research-themes" aria-labelledby="themes-heading">
+    <div class="container">
+      <div class="section-top"><h2 id="themes-heading">Research areas</h2></div>
+      <div class="theme-grid">{{ range $home.themes }}<article class="theme-item"><a class="theme-visual" href="{{ .url | relURL }}" tabindex="-1" aria-hidden="true"><img src="{{ .image | relURL }}" alt="" loading="lazy"></a><h3>{{ .title }}</h3><p>{{ .text }}</p><a class="text-link" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">↗</span></a></article>{{ end }}</div>
+    </div>
+  </section>
+  <section class="group-section selected-section" aria-labelledby="selected-heading">
+    <div class="container">
+      <div class="section-top"><h2 id="selected-heading">Selected papers</h2><a class="text-link" href="{{ "/outputs/" | relURL }}">More papers and code <span aria-hidden="true">↗</span></a></div>
+      <p class="section-intro">Some recent and earlier work with collaborators.</p>
+      {{ range first 3 site.Data.selected_work.works }}{{ partial "selected-work.html" . }}{{ end }}
+    </div>
+  </section>
+  <section class="group-section people-band" aria-labelledby="people-heading">
+    <div class="container people-intro">
+      <div><h2 id="people-heading">People</h2><p>{{ $home.about }}</p><div class="link-row"><a class="text-link" href="{{ "/team/" | relURL }}">Meet the people <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ "/about/" | relURL }}">About OJ <span aria-hidden="true">↗</span></a></div></div>
+    </div>
+  </section>
+  <section class="contact-strip"><div class="container"><h2>Research enquiries</h2><a class="text-link" href="{{ "/contact/" | relURL }}">Get in touch <span aria-hidden="true">↗</span></a></div></section>
+</main>
+{{ end }}

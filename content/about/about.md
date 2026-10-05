@@ -1,11 +1,11 @@
 +++
 # About widget.
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "biography"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear in.
 
-title = "<br>"
+title = ""
 subtitle = ""
 
 # Choose the user profile to display
@@ -34,23 +34,17 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
-css_class = "aboutpage"
+css_class = "biography-overview"
 +++
 
-<br>
+# About OJ
 
-# About
+I’m an Associate Professor at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I’m based within Imperial’s AI Initiative, [I-X](https://ix.imperial.ac.uk/), and the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
-I am an Associate Professor supported by an Eric and Wendy Schmidt AI in Science Fellowship at Imperial College London, currently based within Imperial's AI Initiative, [I-X](https://ix.imperial.ac.uk/). Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/), working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and a long-term collaborator with the [Infectious Disease Epidemiology and Ecology Lab (IDEEL)](https://www.med.unc.edu/medicine/infdis/ideel) across UNC at Chapel Hill and [Brown University](http://www.baileylab.org/).
+I develop open, reproducible methods for infectious disease modelling, mortality estimation and AI for public health. My research brings together malaria drug and diagnostic resistance, vaccination and pandemic preparedness, and evidence for humanitarian response.
 
-My undergraduate degree was in Natural Sciences at Pembroke College, Cambridge before completing a master's degree in Systems Biology, working on multi-omic computational methods for identifying new biochemical reactions indicative of disease.
+Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine, working on mortality estimation with Francesco Checchi, and held postdoctoral positions at Brown University and Imperial College London.
 
-For my PhD I worked on integrating genetic information into malaria transmission modelling with Prof Azra Ghani, Dr Lucy Okell and Dr Robert Verity. This work was focussed on extending malaria transmission models that have been used in creating global technical strategies for malaria control by including parasite genetic information to answer policy questions related to pfhrp2/3 deletions and antimalarial resistance. 
+I studied Natural Sciences (BA, 2014) and Systems Biology (MRes, 2015) at the University of Cambridge, followed by an MRes in Epidemiology, Evolution and Control of Infectious Diseases (2016) and a PhD in Infectious Disease Modelling (2019) at Imperial. My PhD explored how genetic information can help answer questions about malaria transmission and control.
 
-My current research involves using mathematical models to better understand the spread of infectious diseases and estimate mortality in settings without robust vital registration services. I work primarily in three areas:
-
-1. Malaria drug and diagnostic resistance modelling
-
-2. Pandemic preparedness and vaccine impact modelling
-
-3. Mortality estimation in humanitarian settings
+[Download my CV](/files/cv.pdf) · [Teaching and training](/teaching/) · [Writing and news archive](/post/) · [Google Scholar](https://scholar.google.co.uk/citations?user=0jAMBM8AAAAJ&hl=en)

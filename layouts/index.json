@@ -1,0 +1,77 @@
+{{- /* Generate the search index. */ -}}
+{{- $index := slice -}}
+{{- $pages := site.RegularPages -}}
+{{- /* Add the index page of docs separately since it's not in RegularPages above. */ -}}
+{{- $pages := $pages | union (where (where site.Pages "Kind" "section") "Type" "docs") -}}
+{{- /* Author data is retained for biography/avatar lookups, not public profiles. */ -}}
+{{- $pages = where $pages "Section" "!=" "authors" -}}
+
+{{- range $pages -}}
+  {{- /* Do not index drafts or private pages. */ -}}
+  {{- if and (not .Draft) (not .Params.private) -}}
+
+    {{- /* Generate page description. */ -}}
+    {{- $desc := "" -}}
+    {{- if .Params.summary -}}
+      {{- $desc = .Params.summary -}}
+    {{- else if .Params.abstract -}}
+      {{- $desc = .Params.abstract -}}
+    {{- else -}}
+      {{- $desc = .Summary -}}
+    {{- end -}}
+
+    {{- $authors := .Params.authors -}}
+    {{- $title := .Title}}
+    {{- $rel_permalink := .RelPermalink -}}
+    {{- $permalink := .Permalink -}}
+
+    {{/* Correct the title and URL for author profile pages. */}}
+    {{- if eq .Section "authors" -}}
+      {{- $title = .Params.name -}}
+      {{- $username := path.Base (path.Split .Path).Dir -}}
+      {{- with site.GetPage (printf "/authors/%s" $username) -}}
+        {{- $permalink = .Permalink -}}
+        {{- $rel_permalink = .RelPermalink -}}
+      {{- end -}}
+    {{- else -}}
+      {{/* Include a user's display name rather than username where possible. */}}
+      {{- if .Params.authors -}}
+        {{- $authorLen := len .Params.authors -}}
+        {{- if gt $authorLen 0 -}}
+          {{- $authors = slice -}}
+            {{- range $k, $v := .Params.authors -}}
+              {{- $person_page_path := (printf "/authors/%s" (urlize $v)) -}}
+              {{- $person_page := site.GetPage $person_page_path -}}
+              {{- if and $person_page $person_page.File -}}
+                {{- $person := $person_page.Params -}}
+                {{- $authors = $authors | append $person.name -}}
+              {{- else -}}
+                {{- $authors = $authors | append ($v | plainify) -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $content := .Plain -}}
+    {{- if eq .Type "widget_page" -}}
+      {{- range where (.Resources.ByType "page") ".Params.active" "!=" false -}}
+        {{- $content = printf "%s %s %s" $content .Title .Plain -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if eq .RelPermalink "/team/" -}}
+      {{- range site.Data.people.groups -}}{{- range .people -}}
+        {{- $content = printf "%s %s %s %s" $content .name .role .description -}}
+      {{- end -}}{{- end -}}
+    {{- end -}}
+    {{- /* Add page to index. */ -}}
+    {{- $index = $index | append (dict "objectID" .File.UniqueID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" $permalink "relpermalink" $rel_permalink "title" $title "summary" (plainify $desc) "content" $content "authors" $authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories) -}}
+
+  {{- end -}}
+{{- end -}}
+
+{{- range site.Data.selected_work.works -}}
+  {{- $url := printf "/outputs/#%s" .id -}}
+  {{- $index = $index | append (dict "objectID" (printf "selected-%s" .id) "title" .title "summary" .description "content" (printf "%s %s %s %d %s" .title (.citation_title | default "") .authors .year .venue) "authors" (slice .authors) "permalink" (printf "%s#%s" ("/outputs/" | absURL) .id) "relpermalink" ($url | relURL) "type" "publication" "kind" "page" "section" "outputs" "tags" (slice .theme)) -}}
+{{- end -}}
+{{- $index | jsonify -}}

@@ -1,7 +1,5 @@
-+++
-# Team page
-title = "Team"
-summary = "Team"
-type = "widget_page"
-headless = false
-+++
+---
+title: People
+summary: Researchers, students and collaborators.
+layout: people
+---

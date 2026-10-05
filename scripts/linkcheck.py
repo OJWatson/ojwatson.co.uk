@@ -34,7 +34,7 @@ def _read_baseurl(config_path: str) -> str | None:
 
     # Very small TOML scrape (no toml dependency)
     # Supports lines like: baseURL = "https://example.com/"
-    baseurl_re = re.compile(r"^\s*baseURL\s*=\s*\"([^\"]+)\"\s*$")
+    baseurl_re = re.compile(r"^\s*baseurl\s*=\s*['\"]([^'\"]+)['\"]\s*(?:#.*)?$", re.IGNORECASE)
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             for line in f:

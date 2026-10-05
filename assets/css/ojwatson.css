@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-size: smaller;
+  font-size: inherit;
 }
 
 
@@ -69,7 +69,7 @@ section#profile-page.pt-5 div.container div.row div.col-12.col-lg-8{
 */
 
 a.nav-link {
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 body {
