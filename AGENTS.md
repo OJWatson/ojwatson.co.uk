@@ -11,6 +11,8 @@ override templates locally; do not upgrade the framework during content work.
   the user's explicit approval; do not use `netlify deploy --prod` for previews.
 - Preserve `layouts/partials/site_footer.html` byte-for-byte. It is intentionally
   personal; its hash is checked by `scripts/contentcheck.py`.
+- Use an understated, personal academic tone. Prefer concrete descriptions and
+  ordinary headings to slogans, mission statements or inflated claims about the group.
 - Keep homepage copy in `data/homepage.yaml`, the roster in `data/people.yaml`,
   and selected outputs in `data/selected_work.yaml`. Verify claims against
   primary sources and record evidence URLs. Do not infer group membership,

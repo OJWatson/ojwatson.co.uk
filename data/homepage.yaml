@@ -1,21 +1,21 @@
-eyebrow: "Imperial College London · Infectious disease modelling"
-headline: "Models for epidemics."
-headline_accent: "Evidence for decisions."
-intro: "We study malaria resistance, vaccine impact and disease burden in crisis-affected settings, combining mathematical models, statistical inference and machine learning."
-about: "Led by OJ Watson at Imperial College London, our research brings together epidemiology, data and open software to help answer public health questions."
+eyebrow: Imperial College London
+headline: Infectious disease modelling
+intro: I’m OJ Watson, an Associate Professor at Imperial College London. I work on malaria, vaccination
+  and mortality estimation with a small group of students and collaborators.
+about: I work with doctoral students, research staff and collaborators, with interests in epidemiology,
+  public health and research software.
 themes:
-  - number: "01"
-    title: "Malaria resistance"
-    text: "Understanding the changing challenges to malaria diagnosis and treatment, and where surveillance can help."
-    url: "/research/#malaria-transmission-modelling"
-    label: "Malaria research"
-  - number: "02"
-    title: "Vaccines & preparedness"
-    text: "Estimating vaccine impact and exploring how timing, access and delivery shape the response to epidemics."
-    url: "/research/#vaccine-impact-and-pandemic-preparedness"
-    label: "Vaccine research"
-  - number: "03"
-    title: "Humanitarian evidence"
-    text: "Estimating mortality and disease burden where routine data are limited, and making evidence useful to decision-makers."
-    url: "/research/#humanitarian-evidence-for-humanitarian-operations"
-    label: "Humanitarian research"
+- title: Malaria resistance
+  text: Modelling malaria transmission and studying the implications of drug and diagnostic resistance.
+  url: /research/#malaria-transmission-modelling
+  label: Malaria research
+- title: Vaccines & preparedness
+  text: Estimating vaccine impact and studying how timing, access and delivery affect the benefits of
+    vaccination.
+  url: /research/#vaccine-impact-and-pandemic-preparedness
+  label: Vaccine research
+- title: Mortality and humanitarian research
+  text: Estimating mortality where routine data are incomplete, and working on the use of modelling in
+    humanitarian settings.
+  url: /research/#humanitarian-evidence-for-humanitarian-operations
+  label: Humanitarian research

@@ -2,6 +2,6 @@
 <main id="main-content" class="outputs-page">
 <header class="page-intro container"><p class="eyebrow">Publications & open research</p><h1>Outputs</h1><div class="intro-copy">{{ .Content }}</div><div class="link-row"><a class="text-link" href="{{ "/files/cv.pdf" | relURL }}">Publication list in the CV <span aria-hidden="true">↗</span></a><a class="text-link" href="https://scholar.google.co.uk/citations?user=0jAMBM8AAAAJ&hl=en">Google Scholar <span aria-hidden="true">↗</span></a></div></header>
 <section class="container output-list" aria-label="Selected publications">{{ range site.Data.selected_work.works }}{{ partial "selected-work.html" . }}{{ end }}</section>
-<section class="software-band"><div class="container"><p class="eyebrow">Software & reproducibility</p><h2>From a research question<br>to something you can use.</h2><p>Explore models, data tools, teaching resources and research compendia. Each project explains its purpose and links to documentation, source code and related publications where established.</p><a class="text-link" href="{{ "/projects/" | relURL }}">Browse the software catalogue <span aria-hidden="true">↗</span></a></div></section>
+<section class="software-band"><div class="container"><p class="eyebrow">Software & reproducibility</p><h2>Research software</h2><p>Models, data tools and teaching resources I have worked on, with links to documentation, code and associated papers.</p><a class="text-link" href="{{ "/projects/" | relURL }}">Software projects <span aria-hidden="true">↗</span></a></div></section>
 </main>
 {{ end }}
