@@ -56,6 +56,9 @@ def search_errors(index, works, people_names, research_text):
     if not isinstance(index, list) or not all(isinstance(record, dict) for record in index):
         return ["index.json must contain a list of search records"]
     errors = []
+    for record in index:
+        if urlsplit(str(record.get("relpermalink", ""))).path.startswith("/authors/"):
+            errors.append("Author profiles must not appear in search; the biography belongs on About")
     for work in works:
         object_id = f"selected-{work['id']}"
         expected_url = f"/outputs/#{work['id']}"

@@ -13,6 +13,9 @@ override templates locally; do not upgrade the framework during content work.
   personal; its hash is checked by `scripts/contentcheck.py`.
 - Use an understated, personal academic tone. Prefer concrete descriptions and
   ordinary headings to slogans, mission statements or inflated claims about the group.
+- Preserve the site's illustrated research sections, project imagery and personal
+  portrait. Improve this existing character rather than replacing it with a generic
+  institutional layout or an uninterrupted page of prose. Keep author profiles hidden.
 - Keep homepage copy in `data/homepage.yaml`, the roster in `data/people.yaml`,
   and selected outputs in `data/selected_work.yaml`. Verify claims against
   primary sources and record evidence URLs. Do not infer group membership,

@@ -32,3 +32,6 @@ python3 scripts/linkcheck.py public config.toml
 
 # YAML-backed outputs/people and widget prose must remain discoverable in search.
 python3 scripts/check_search.py public
+
+# Keep the old theme profile surface hidden while preserving citation authors.
+python3 scripts/check_author_pages.py public

@@ -161,7 +161,10 @@ docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 sharing = false
 
 # Link authors to their profile page? (true/false)
-link_authors = true
+link_authors = false
+
+# Biography belongs on About OJ, not in repeated author cards below projects.
+profile = false
 
 # Load CSS and JS plugins
 #   E.g. To load `/assets/css/custom.css`, set `plugins_css = ["custom"]`.

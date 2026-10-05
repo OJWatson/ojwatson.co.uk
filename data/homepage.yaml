@@ -6,15 +6,18 @@ about: I work with doctoral students, research staff and collaborators, with int
   public health and research software.
 themes:
 - title: Malaria resistance
+  image: /img/hrp2.jpg
   text: Modelling malaria transmission and studying the implications of drug and diagnostic resistance.
   url: /research/#malaria-transmission-modelling
   label: Malaria research
 - title: Vaccines & preparedness
+  image: /img/headers/vaccine2.jpg
   text: Estimating vaccine impact and studying how timing, access and delivery affect the benefits of
     vaccination.
   url: /research/#vaccine-impact-and-pandemic-preparedness
   label: Vaccine research
 - title: Mortality and humanitarian research
+  image: /img/certificate.jpg
   text: Estimating mortality where routine data are incomplete, and working on the use of modelling in
     humanitarian settings.
   url: /research/#humanitarian-evidence-for-humanitarian-operations

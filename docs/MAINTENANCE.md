@@ -19,10 +19,23 @@ current group. Continue using Hugo Academic and **Hugo extended 0.62.1**.
 | Local theme overrides | `layouts/`, `assets/` |
 | Personal footer | `layouts/partials/site_footer.html` — preserve exactly |
 
+The author bundle remains an internal source for OJ's profile data and portrait.
+Public biography belongs on `/about/`: repeated author cards and profile links
+are disabled, old `/authors/` pages redirect to About with `noindex`, and author
+profiles are excluded from site search. Keep citation author names intact.
+`check_author_pages.py` guards against restoring the unwanted theme surfaces.
+
 The homepage, People, Outputs and software catalogue use local templates under
 `layouts/`; the research and personal pages retain the theme's widget structure.
 Change ordinary homepage copy in `data/homepage.yaml`, including the three theme
 links and their visible labels. Fixed section headings live in `layouts/index.html`.
+Each homepage theme also has an `image` path. Research uses the `research-area`
+shortcode in `content/research/research.md`: keep its stable `id`, descriptive
+`title`, original `image`, accessible `alt` and source-linked `caption` alongside
+ordinary Markdown prose. The template alternates figures and text on desktop and
+stacks them on mobile without cropping scientific figures. Project images come
+from each existing bundle's `featured*` resource. Preserve these visual cues when
+updating copy; the user prefers them to an uninterrupted text overview.
 The order of `works` in `data/selected_work.yaml` controls the Outputs page; its
 first three entries also appear on the homepage.
 

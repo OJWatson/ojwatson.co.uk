@@ -1,9 +1,12 @@
 """Protect discoverability when content is stored outside ordinary Hugo pages."""
 
 import copy
+from pathlib import Path
+import tempfile
 import unittest
 
 from check_search import ResearchText, search_errors
+from check_author_pages import author_errors
 
 
 WORKS = [{"id": "forecast-study", "citation_title": "Enhancing epidemic forecast usability"}]
@@ -45,6 +48,24 @@ class SearchChecks(unittest.TestCase):
         parser = ResearchText()
         parser.feed('<nav>Menu</nav><main id="main-content"><section><h2>Models</h2><p>Support <em>decisions</em>.<br>Vaccines.</p></section></main><footer>Footer</footer>')
         self.assertEqual("Models Support  decisions . Vaccines.", " ".join(parser.parts))
+
+    def test_author_profiles_do_not_return_as_search_hits_or_cards(self):
+        duplicate_profile = {"objectID": "profile", "relpermalink": "/authors/ojwatson/", "content": "Biography"}
+        self.assertTrue(any("Author profiles" in error for error in search_errors(INDEX + [duplicate_profile], WORKS, NAMES, RESEARCH)))
+        with tempfile.TemporaryDirectory() as temporary:
+            public = Path(temporary)
+            page = public / "index.html"
+            page.write_text('<p>Watson et al.</p>')
+            self.assertEqual([], author_errors(public))
+            page.write_text('<div class="media author-card">OJ</div><a href="/authors/ojwatson/">OJ</a>')
+            self.assertTrue(any("profile link or repeated author card" in error for error in author_errors(public)))
+            page.unlink()
+            profile = public / "authors/ojwatson/index.html"
+            profile.parent.mkdir(parents=True)
+            profile.write_text('<meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=https://preview.netlify.app/about/">')
+            self.assertEqual([], author_errors(public))
+            profile.write_text('<h1>Duplicate biography</h1>')
+            self.assertTrue(any("old author URL" in error for error in author_errors(public)))
 
 
 if __name__ == "__main__":
