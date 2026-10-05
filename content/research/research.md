@@ -31,119 +31,81 @@ title = ""
   # Text color (true=light or false=dark).
   text_color_light = false
 
+[design]
+  columns = "1"
+
 [advanced]
  # Custom CSS.
- css_style = "research"
+ css_style = ""
+ css_class = "research-overview"
 +++
 
 # Research
 
-For software outputs and research tools, see [Projects](/projects/).
+I work on open, reproducible models that help public-health teams reason under uncertainty. The main strands below connect methods, software, and collaborations across malaria, COVID-19, pandemic preparedness, humanitarian response, and AI-enabled epidemic modelling.
 
-Quick links: [Malaria](/research/#malaria-transmission-modelling) | [Vaccine preparedness](/research/#vaccine-impact-and-pandemic-preparedness) | [Humanitarian evidence](/research/#humanitarian-evidence-for-humanitarian-operations) | [AI-enabled modelling](/research/#ai-enabled-epidemic-modelling) | [News](/post/)
+<div class="research-link-row">
+  <a href="#malaria-transmission-modelling">Malaria</a>
+  <a href="#covid-19-and-vaccine-impact">COVID-19 and vaccines</a>
+  <a href="#humanitarian-evidence">Humanitarian evidence</a>
+  <a href="#ai-enabled-epidemic-modelling">AI-enabled modelling</a>
+  <a href="/projects/">Projects</a>
+</div>
 
-***
+<div class="research-grid">
+  <section class="research-card" id="malaria-transmission-modelling">
+    <img src="/img/hrp2.jpg" alt="">
+    <div>
+      <p class="research-kicker">Transmission modelling</p>
+      <h3>Malaria diagnostics, genetics, and control</h3>
+      <p>I use mathematical transmission models to evaluate malaria diagnostics, parasite genetics, and intervention strategy. This work includes WHO-facing evidence on <em>pfhrp2/3</em> deletion surveillance, false-negative rapid diagnostic tests, ivermectin, malaria genetics, partner drug resistance, and artemisinin resistance.</p>
+      <p><strong>Selected outputs:</strong> <a href="https://doi.org/10.1038/S41591-025-03974-3">Nature Medicine, 2025</a>; <a href="https://doi.org/10.7554/eLife.25008">eLife, 2017</a>; <a href="https://doi.org/10.1016/j.lanmic.2024.101027">Lancet Microbe, 2025</a>.</p>
+      <p><strong>Tools:</strong> <a href="/project/hrp2malaria/">hrp2malaRia</a>, <a href="/project/magenta/">magenta</a>, <a href="/project/hmmibdr/">hmmIBDr</a>, <a href="/project/mccoilr/">McCOILR</a>, <a href="/project/hrpup/">hrpup</a>.</p>
+    </div>
+  </section>
 
-<img align="left" width=50% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-right: 5%" src="/img/headers/vaccine2.jpg">
+  <section class="research-card" id="covid-19-and-vaccine-impact">
+    <img src="/img/research/vaccine-impact-figure.png" alt="">
+    <div>
+      <p class="research-kicker">Pandemic response</p>
+      <h3>COVID-19 modelling and vaccine impact</h3>
+      <p>As part of the Imperial College COVID-19 response team, I led software and modelling for low- and middle-income country scenarios, produced trajectories for global burden estimates, and supplied country-level projections to the WHO. I also published global estimates of COVID-19 vaccine impact and continue to work on vaccine preparedness and the 100 Days Mission.</p>
+      <p><strong>Selected outputs:</strong> <a href="https://doi.org/10.1016/S2214-109X(24)00286-9">Lancet Global Health, 2024</a>; <a href="https://doi.org/10.1016/S1473-3099(22)00320-6">Lancet Infectious Diseases, 2022</a>.</p>
+      <p><strong>Tools:</strong> <a href="/project/squire/">squire</a>, <a href="/project/nimue/">nimue</a>, <a href="/project/vece/">vece</a>, <a href="/project/roiv/">roiv</a>, <a href="/project/vpdsus/">vpdsus</a>.</p>
+    </div>
+  </section>
 
-### COVID-19 Modelling
+  <section class="research-card" id="humanitarian-evidence">
+    <img src="/img/research/humanitarian-mortality-model.png" alt="">
+    <div>
+      <p class="research-kicker">Crisis-affected settings</p>
+      <h3>Humanitarian evidence for operations</h3>
+      <p>I lead work on disease-burden estimation and response analytics in conflict, food insecurity, and other crisis-affected contexts. This includes excess mortality estimation, surveillance innovation, cholera anticipatory action, vaccine-preventable disease burden modelling, and novel mortality data sources from Damascus and Khartoum.</p>
+      <p><strong>Selected outputs:</strong> <a href="https://doi.org/10.1101/2025.08.11.25333414">medRxiv, 2025</a>; <a href="https://doi.org/10.31235/osf.io/tcjqs_v1">SocArXiv, 2025</a>.</p>
+      <p><strong>Tools:</strong> <a href="/project/vrcmort/">vrcmort</a>, <a href="/project/vpdsus/">vpdsus</a>.</p>
+    </div>
+  </section>
 
-In March 2020, I joined the Imperial College COVID-19 response team. I led the software development and modelling in low- and middle-income countries (LMICs), producing epidemic trajectories for the potential global burden of COVID-19 (Science). Throughout the pandemic, I provided epidemic scenario projections (Imperial College COVID-19 LMIC Reports) for every country to the WHO as part of the first costing for a global response to COVID-19 (Lancet Global Health) and the WHO Essential Supplies Forecasting Tool. Most recently, in June 2022, I published the first estimates of the global impact of the COVID-19 vaccinations, showing almost 20 million deaths were averted due to vaccination during the first year of vaccination (Lancet Infectious Diseases).
+  <section class="research-card" id="ai-enabled-epidemic-modelling">
+    <img src="/img/research/ai-epidemic-emulator.png" alt="">
+    <div>
+      <p class="research-kicker">Methods</p>
+      <h3>AI-enabled epidemic modelling</h3>
+      <p>A core methodological focus is developing deep learning surrogates for computationally intensive epidemic models. The aim is faster calibration, uncertainty quantification, and scenario exploration while keeping models interpretable enough for public-health decision-making.</p>
+      <p><strong>Selected output:</strong> <a href="https://doi.org/10.1038/s41586-024-08564-w">Nature, 2025</a>.</p>
+      <p><strong>Tool:</strong> <a href="/project/emidm/">emidm</a>.</p>
+    </div>
+  </section>
 
-Selected publications:
-- [Impact of the 100 days mission for vaccines on COVID-19 (Lancet Global Health, 2024)](https://doi.org/10.1016/S2214-109X(24)00286-9)
-- [Global impact of the first year of COVID-19 vaccination (Lancet Infectious Diseases, 2022)](https://doi.org/10.1016/S1473-3099(22)00320-6)
+  <section class="research-card">
+    <img src="/img/rdhs.png" alt="">
+    <div>
+      <p class="research-kicker">Open data access</p>
+      <h3>Demographic and Health Surveys software</h3>
+      <p>I developed <a href="/project/rdhs/">rdhs</a>, the first non-proprietary tool to ease access to and analysis of DHS datasets. The package was created to democratise access to lower-middle income country data and has been downloaded more than 23,000 times since publication.</p>
+      <p><strong>Tool:</strong> <a href="/project/rdhs/">rdhs</a>.</p>
+    </div>
+  </section>
+</div>
 
-Related software outputs: [squire](/project/squire/), [nimue](/project/nimue/), [vece](/project/vece/).
-
-***
-
-<img align="right" width = 30% height=30px style="padding-top:0%; padding-bottom:2%; padding-left: 5%" src="/img/certificate.jpg">
-
-### Generating Novel Mortality Data Sources in low-income settings
-
-As part of growing evidence of COVID-19 mortality being unobserved, I led two research studies in Damascus (Nature Communications) and Khartoum (Imperial College COVID-19 Report 39) to ascertain mortality reporting of COVID-19. In Damascus, I identified Facebook groups uploading obituary certificates since the start of the conflict in Damascus. These obituary certificates provided a reliable source of mortality patterns in the city that revealed clear COVID-19 epidemic dynamics. In Khartoum, I worked with local youth activist groups to integrate surveys of COVID-19 symptoms distributed through social media channels to estimate the proportion of COVID-19 deaths occurring undetected. The latter was part of evidence that led to new ministry of health intervention measures and increased public health campaigns to raise awareness of COVID-19 during Sudan's second wave.
-
-Related outputs: [vrcmort](/project/vrcmort/), [humanitarian evidence section](/research/#humanitarian-evidence-for-humanitarian-operations).
-
-<br>
-
-***
-
-<img align="left" width=40% height=300px padding="100" style="padding-top:5%; padding-bottom:5%; padding-right: 5%" src="/img/rdhs.png">
-
-### Demographic and Health Surveys Program (DHS) Software
-
-I have developed an open source software package, rdhs, that is the first non-proprietary tool to ease access to and analysis of the DHS datasets. The software was developed to address the need for greater democratization of lower-middle income country data and was presented at the ASTMH annual meeting in 2018. The package has been downloaded over 23,000 times since it was published in December 2018.
-
-Related software output: [rdhs](/project/rdhs/).
-
-***
-
-<img align="right" width=50% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-left: 5%" src="/img/hrp2.jpg">
-
-### Malaria transmission modelling
-
-In 2016, a study in the Democratic Republic of Congo provided evidence that malaria parasites were evading detection by rapid diagnostic tests due to the deletion of the pfhrp2 gene. Using mathematical transmission models, I provided evidence that there was selection of pfhrp2 gene deletions to a WHO panel steered by the director of the WHO Global Malaria Programme. The panel formulated WHO guidance to national malaria control programmes (NMCPs) to implement molecular surveys to estimate pfhrp2 deletion prevalence. After attending the Malaria Policy Advisory Committee meeting in November 2017, I conducted a collaborative study with the WHO to estimate the potential for seasonal variations in malaria transmission to introduce bias in estimating pfhrp2 deletion prevalence. These findings informed NMCPs through an interactive online database and field training programmes to optimise surveillance for pfhrp2. (Both studies in eLife). Additionally, I have modelled the impact of false-negative RDTs on community surveys (BMJ Global Health), worked on modelling ivermectin as a possible addition to the currently available malaria control tools (Lancet Infectious Diseases), as well as a modelling-based evaluation of the utility of malaria genetics for inferring transmission intensity (Molecular Biology and Evolution) and the impact of partner drug resistance on artemisinin resistance (Lancet Microbe).
-
-Selected publications:
-- [Global risk of selection and spread of pfhrp2/3 deletions (Nature Medicine, 2025)](https://doi.org/10.1038/S41591-025-03974-3)
-- [Modelling the drivers of pfhrp2 deletions (eLife, 2017)](https://doi.org/10.7554/eLife.25008)
-- [Selection of kelch13 mutations in Uganda vs southeast Asia (Lancet Microbe, 2025)](https://doi.org/10.1016/j.lanmic.2024.101027)
-
-Related software outputs: [hrp2malaRia](/project/hrp2malaria/), [magenta](/project/magenta/), [hmmIBDr](/project/hmmibdr/), [McCOILR](/project/mccoilr/), [hrpup](/project/hrpup/).
-
-<br>
-
-***
-
-<img align="left" width="50%" style="padding-top:4%; padding-bottom:4%; padding-right:5%" src="/img/research/humanitarian-mortality-model.png">
-
-### Humanitarian evidence for humanitarian operations
-
-I lead work on disease burden estimation and response analytics in crisis-affected settings, including conflict and food insecurity contexts. This includes excess mortality estimation, surveillance innovation, cholera anticipatory action, and vaccine-preventable disease burden modelling.
-
-This strand is developed through the Jameel Institute RISE initiative and collaborations with humanitarian and public health partners, with an emphasis on evidence that can support operational decisions under uncertainty.
-
-Selected outputs:
-- [Bridging the gap: evaluating epidemic forecasts in resource-constrained settings (medRxiv, 2025)](https://doi.org/10.1101/2025.08.11.25333414)
-- [Bridging academia and policy (SocArXiv, 2025)](https://doi.org/10.31235/osf.io/tcjqs_v1)
-
-Related tools: [vrcmort](/project/vrcmort/), [vpdsus](/project/vpdsus/).
-
-<br>
-
-***
-
-<img align="right" width="50%" style="padding-top:4%; padding-bottom:4%; padding-left:5%" src="/img/research/vaccine-impact-figure.png">
-
-### Vaccine impact and pandemic preparedness
-
-I work on vaccine impact modelling for COVID-19 and future pandemic threats, including prioritisation, delivery strategy, and preparedness planning. This includes modelling related to the 100 Days Mission and next-generation vaccine scenarios.
-
-The goal is to provide decision-relevant evidence on expected impact and uncertainty under realistic operational constraints.
-
-Related tools: [vece](/project/vece/), [roiv](/project/roiv/), [vpdsus](/project/vpdsus/).
-
-<br>
-
-***
-
-<img align="left" width="50%" style="padding-top:4%; padding-bottom:4%; padding-right:5%" src="/img/research/ai-epidemic-emulator.png">
-
-### AI-enabled epidemic modelling
-
-A core methodological focus is developing deep learning surrogates for computationally intensive epidemic models. This work is aimed at accelerating calibration, uncertainty quantification, and scenario exploration for policy support.
-
-I am particularly interested in combining mechanistic modelling with modern generative and representation-learning approaches that remain interpretable for public health decision-making.
-
-Selected publication:
-- [Artificial intelligence for modelling infectious disease epidemics (Nature, 2025)](https://doi.org/10.1038/s41586-024-08564-w)
-
-Related software output: [emidm](/project/emidm/).
-
-<br>
-
-***
-
-Related pages: [Projects](/projects/) | [Teaching](/teaching/) | [Team](/team/) | [News](/post/) | [Contact](/contact/)
+<p class="research-related">Related pages: <a href="/projects/">Projects</a> | <a href="/teaching/">Teaching</a> | <a href="/team/">Team</a> | <a href="/post/">News</a> | <a href="/contact/">Contact</a></p>

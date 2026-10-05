@@ -5,6 +5,12 @@
   </p>
   {{ end }}
 
+  <p class="powered-by footer-secondary-links">
+    <a href="/teaching/">Teaching</a> &middot;
+    <a href="/post/">News</a> &middot;
+    <a href="/contact/">Contact</a>
+  </p>
+
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
     
