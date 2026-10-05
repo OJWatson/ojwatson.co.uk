@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear in.
 
 title = "<br>"
-subtitle ='<a class="twitter-timeline" data-height="600" href="https://twitter.com/ojwatson92?ref_src=twsrc%5Etfw">Tweets by ojwatson92</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+subtitle = ""
 
 # Choose the user profile to display
 # This should be the username of a profile in your `content/authors/` folder.
@@ -41,7 +41,7 @@ css_class = "aboutpage"
 
 # About
 
-I am a Lecturer and Imperial College Research Fellow supported by an Eric and Wendy Schmidt AI in Science Fellowship at Imperial College London, currently based within Imperial's new AI Initiative, [I-X](https://ix.imperial.ac.uk/). Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/), working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and a long-term collaborator with the [Infectious Disease Epidemiology and Ecology Lab (IDEEL)](https://www.med.unc.edu/medicine/infdis/ideel) across UNC at Chapel Hill and [Brown University](http://www.baileylab.org/).  
+I am an Associate Professor supported by an Eric and Wendy Schmidt AI in Science Fellowship at Imperial College London, currently based within Imperial's AI Initiative, [I-X](https://ix.imperial.ac.uk/). Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/), working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and a long-term collaborator with the [Infectious Disease Epidemiology and Ecology Lab (IDEEL)](https://www.med.unc.edu/medicine/infdis/ideel) across UNC at Chapel Hill and [Brown University](http://www.baileylab.org/).
 
 My undergraduate degree was in Natural Sciences at Pembroke College, Cambridge before completing a master's degree in Systems Biology, working on multi-omic computational methods for identifying new biochemical reactions indicative of disease.
 
@@ -54,4 +54,3 @@ My current research involves using mathematical models to better understand the 
 2. Pandemic preparedness and vaccine impact modelling
 
 3. Mortality estimation in humanitarian settings
-

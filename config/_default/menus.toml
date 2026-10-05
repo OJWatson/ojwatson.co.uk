@@ -5,18 +5,33 @@
 
 [[main]]
   name = "About"
-  url = "about"
+  url = "/about/"
   weight = 1
 
 [[main]]
-  name = "Research"
-  url = "research"
+  name = "Team"
+  url = "/team/"
+  weight = 2
+
+[[main]]
+  name = "Teaching"
+  url = "/teaching/"
   weight = 3
-  
+
+[[main]]
+  name = "Research"
+  url = "/research/"
+  weight = 4
+
 [[main]]
   name = "Projects"
-  url = "projects"
-  weight = 4
+  url = "/projects/"
+  weight = 5
+
+[[main]]
+  name = "News"
+  url = "/post/"
+  weight = 6
 
 #[[main]]
 #  name = "Talks"
@@ -37,18 +52,12 @@
   
 [[main]]
   name = "Contact"
-  url = "contact"
-  weight = 6
-  
-  
-# [[main]]
-#   name = "Blog"
-#   url = "post"
-#   weight = 2
+  url = "/contact/"
+  weight = 7
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 [[main]]
   name = "CV"
-  url = "files/cv.pdf"
+  url = "/files/cv.pdf"
   weight = 70
