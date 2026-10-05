@@ -24,7 +24,7 @@ I work with a small team of researchers and collaborators focused on infectious 
 
 ## Postdoctoral researchers and research staff
 
-- **Annabelle Yates** (postdoctoral / research staff) — Anticipatory action for cholera and vaccine-preventable disease work.
+- **Annabelle Piot** (postdoctoral / research staff) — Anticipatory action for cholera and vaccine-preventable disease work.
 - **Timothy Hitge** (PDRA, Nov 2025–present) — Deep learning surrogates for epidemic models.
 - **Mantra Susskind** (Research Software Engineer, Mar 2025–present) — Research software engineering for crisis modelling systems.
 - **Paula Christen** (Visiting Researcher / Consultant, Apr 2024–present) — Forecast evaluation and decision support work.
