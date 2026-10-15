@@ -22,7 +22,7 @@ image:
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
 
-url_code: "https://github.com/OJWatson/rdhs"
+url_code: "https://github.com/ropensci/rdhs"
 url_pdf: ""
 url_slides: ""
 url_video: ""

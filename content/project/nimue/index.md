@@ -35,9 +35,9 @@ url_video: ""
 slides: ""
 ---
 
-`nimue` is an extension to the [squire package](https://mrc-ide.github.io/squire/) that allows vaccination to be included. For detailed information on the base model structure and parameterisation please visit the [squire webpage](https://mrc-ide.github.io/squire/). The model has been used for vaccine delivery optimisation[^1] and as part of model trajectories in support of the WHO Essential Supplies Forecasting Tool. 
+`nimue` is an extension to the [squire package](https://mrc-ide.github.io/squire/) that allows vaccination to be included. For detailed information on the base model structure and parameterisation please visit the [squire webpage](https://mrc-ide.github.io/squire/). The model has been used for vaccine delivery optimisation[^1] and as part of model trajectories in support of the WHO Essential Supplies Forecasting Tool.
 
-nimue has also been used for the first estimates of the global impact of the COVID-19 vaccinations, showing almost 20 million deaths were averted due to vaccination during the first of vaccinations[^2].
+nimue has also been used for the first estimates of the global impact of the COVID-19 vaccinations, showing almost 20 million deaths were averted due to vaccination during the first year of vaccination[^2].
 
  [^1]: A. B. Hogan, P. Winskill, **O. J. Watson**, P. G. T. Walker, C. Whittaker, M. Baguelin, N. F. Brazeau, G. D. Charles, K. A. M. Gaythorpe, A. Hamlet, E. Knock, D. J. Laydon, J. A. Lees, A. Løchen, R. Verity, L. K. Whittles, F. Muhib, K. Hauck, N. M. Ferguson, A. C. Ghani, Within-country age-based prioritisation, global allocation, and public health impact of a vaccine against SARS-CoV-2: A mathematical modelling analysis. Vaccine. 39, 2995–3006 (2021). (https://www.sciencedirect.com/science/article/pii/S0264410X21004278?via%3Dihub)
 

@@ -1,6 +1,6 @@
 ---
 title: "hrpup"
-summary: "R package and workflow for pfhrp2/3 deletion risk and policy-oriented malaria analyses."
+summary: "Reproducible research compendium for pfhrp2/3 deletion risk mapping."
 authors: []
 tags: [rpackage, malaria]
 categories: [R, malaria]
@@ -18,6 +18,6 @@ url_video: ""
 slides: ""
 ---
 
-`hrpup` supports modelling and analysis workflows around pfhrp2/3 deletion risk, including country-level and regional outputs for policy and surveillance planning.
+`hrpup` is a reproducible research compendium for modelling and mapping pfhrp2/3 deletion risk.
 
-It complements the broader malaria resistance modelling stack used across multiple WHO-facing analyses.
+The repository brings together the analysis workflow and risk-mapping outputs.
