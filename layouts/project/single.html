@@ -1,0 +1,58 @@
+{{- define "main" -}}
+{{/* Tool pages keep the theme's image and link presentation without article widgets. */}}
+{{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+
+<article class="article article-project">
+
+  {{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
+  <div class="article-header">
+    {{ $img_src := urls.Parse .Params.header.image }}
+    {{ if $img_src.Scheme }}
+    <img src="{{ .Params.header.image }}" class="article-banner" alt="">
+    {{ else }}
+    <img src="{{ (printf "/img/%s" .Params.header.image) | relURL }}" class="article-banner" alt="">
+    {{ end }}
+    {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="article-container pt-3">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
+    {{ end }}
+    {{ partial "page_links_div.html" . }}
+  </div>
+
+  {{ if and $featured (not .Params.image.preview_only) }}
+    {{ $image := $featured }}
+    {{ $placement := .Params.image.placement | default 1 }}
+    {{ $image_container := "article-container" }}
+    {{ if eq $placement 2 }}
+      {{ $image_container = "container" }}
+      {{ if gt $featured.Width 1200 }}
+        {{ $image = $featured.Resize "1200x" }}
+      {{ end }}
+    {{ else if eq $placement 3 }}
+      {{ $image_container = "container-fluid" }}
+      {{ $image = $featured.Fit "2560x2560" }}
+    {{ else }}
+      {{ if gt $featured.Width 720 }}
+        {{ $image = $featured.Resize "720x" }}
+      {{ end }}
+    {{ end }}
+  <div class="article-header {{ $image_container }} featured-image-wrapper mt-4 mb-4" style="max-width: {{ $image.Width }}px; max-height: {{ $image.Height }}px;">
+    <div style="position: relative">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="featured-image">
+      {{ with .Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="article-container">
+    <div class="article-style">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{- end -}}

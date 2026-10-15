@@ -58,13 +58,18 @@ Related software: [hrp2malaRia](/project/hrp2malaria/), [magenta](/project/magen
 
 <section class="research-area">
 
-<img class="research-image research-image-right" src="/img/research/vaccine-impact-figure.png" alt="Illustration comparing health costs and vaccine costs across vaccination policies">
-
 ### Vaccine impact and pandemic preparedness
 
 I work on vaccine impact modelling for COVID-19 and future pandemic threats, including prioritisation, delivery strategy, and preparedness planning. This includes modelling related to the 100 Days Mission and next-generation vaccine scenarios.
 
 The goal is to provide decision-relevant evidence on expected impact and uncertainty under realistic operational constraints.
+
+<figure class="research-figure">
+  <a href="/img/research/100-days-mission-figure-2ab.svg" aria-label="Open the 100 Days Mission figure at full size">
+    <img src="/img/research/100-days-mission-figure-2ab.svg" width="437" height="282" loading="lazy" alt="Cumulative COVID-19 deaths with historical vaccine availability and under the 100 Days Mission; the lower panel groups results by World Bank income group.">
+  </a>
+  <figcaption>100 Days Mission modelling with historical non-pharmaceutical interventions retained (China excluded). <a href="https://doi.org/10.1016/S2214-109X(24)00286-9">Barnsley et al. (2024), Figure 2A–B</a>, cropped from the original figure. © 2024 The Authors; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+</figure>
 
 Selected publications:
 
