@@ -45,7 +45,7 @@ I am an Associate Professor at Imperial College London, supported by an Eric and
 
 ## Background and experience
 
-I studied Natural Sciences and completed an MRes in Systems Biology at Cambridge. My PhD at Imperial explored how parasite genetic information can inform malaria transmission modelling, including questions about diagnostic and antimalarial resistance.
+I studied Natural Sciences and completed a master’s degree in Systems Biology at Cambridge. My PhD at Imperial explored how parasite genetic information can inform malaria transmission modelling, including questions about diagnostic and antimalarial resistance.
 
 Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine, working with [Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation.
 

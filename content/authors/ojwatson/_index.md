@@ -18,7 +18,7 @@ education:
   - course: MRes in Epidemiology, Evolution and Control of Infectious Diseases
     institution: Imperial College London
     year: 2016
-  - course: MRes in Systems Biology
+  - course: Master’s degree in Systems Biology
     institution: University of Cambridge
     year: 2015
   - course: BA in Natural Sciences
