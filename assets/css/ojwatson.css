@@ -443,7 +443,7 @@ table {
   margin: 0.25rem 1.5rem 1rem 0;
 }
 .research-area .research-image-right { float: right; margin: 0.25rem 0 1rem 1.5rem; }
-.research-area .research-figure { clear: both; margin: 1.25rem 0; }
+.research-area .research-figure { clear: both; max-width: 900px; margin: 1.25rem auto; }
 .research-area .research-figure img {
   display: block;
   float: none;
