@@ -18,16 +18,16 @@ height = "400px"
 
 
 [[item]]
-  title = "Book a workshop"
-  content = "Courses in the data manipulation and visualization in R, modeling, Shiny, and more."
+  title = "About OJ"
+  content = "Background, experience and current research."
   align = "center"
 
   overlay_color = "#56B4E9"  # An HTML color value.
   overlay_img = "headers/tree.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.2  # Darken the image. Value in range 0-1.
   
-  cta_label = "See available workshops"
-  cta_url = "/teaching/"
+  cta_label = "Background and experience"
+  cta_url = "/about/"
   cta_icon_pack = "fas"
   cta_icon = "graduation-cap"
   

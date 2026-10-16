@@ -1,0 +1,16 @@
+100 Days Mission research illustration
+
+Source: Barnsley et al. (2024), Impact of the 100 Days Mission for vaccines
+on COVID-19: a mathematical modelling study. The Lancet Global Health.
+https://doi.org/10.1016/S2214-109X(24)00286-9
+
+Figure 2, panels A and B. Copyright 2024 The Authors.
+Licensed under Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+
+Selected panels were extracted from page 4 (e1767) of the original article
+as SVG, retaining the original vector artwork, axes, labels and legend.
+The crop excludes panels C-F; no curves or labels were redrawn.
+
+Original PDF:
+https://msh.org/wp-content/uploads/2024/10/Lancet_Global_Health_Impact-of-the-100-days-mission-for-vaccines-on-COVID-19_A-mathematical-modelling-study_Damian-Walker.pdf

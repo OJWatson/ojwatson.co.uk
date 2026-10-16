@@ -18,17 +18,20 @@ I work with a small team of researchers and collaborators focused on infectious 
 
 ## Current PhD students
 
-- **Nisreen Shehada** (PhD, started Jan 2026) — Vaccine preventable disease models to support humanitarian operations.
-- **Cosmo Santoni** (PhD, started Jan 2025) — Deep learning surrogates for infectious disease models.
-- **Ishana Atkinson** (PhD, UCL) — Modelling and mapping vaccine equity, supported by OJ.
+- **Nisreen Shehada** — Vaccine-preventable disease models to support humanitarian operations.
+- **Cosmo Santoni** — Deep learning surrogates for infectious disease models.
+- **Ishana Atkinson** — Modelling and mapping vaccine equity at UCL.
 
-## Postdoctoral researchers and research staff
+## Research staff
 
-- **Annabelle Piot** (postdoctoral / research staff) — Anticipatory action for cholera and vaccine-preventable disease work.
-- **Timothy Hitge** (PDRA, Nov 2025–present) — Deep learning surrogates for epidemic models.
-- **Mantra Susskind** (Research Software Engineer, Mar 2025–present) — Research software engineering for crisis modelling systems.
-- **Paula Christen** (Visiting Researcher / Consultant, Apr 2024–present) — Forecast evaluation and decision support work.
-- **Arran Hamlet** (Short-term contract, Mar 2025–Aug 2025) — Support on early JI-RISE build-out.
+- **Annabelle Piot** — Research Assistant. Anticipatory action for cholera and vaccine-preventable disease work.
+- **Timothy Hitge** — Research Assistant. Deep learning surrogates for epidemic models.
+- **Mantra Susskind** — Research Software Engineer. Research software engineering for crisis modelling systems.
+- **Paula Christen** — Visiting Researcher / Consultant. Forecast evaluation and decision support.
+
+## Previous research staff
+
+- **Arran Hamlet** — Research Fellow. Supported early Jameel Institute RISE (JI-RISE) work.
 
 ## Group resources
 

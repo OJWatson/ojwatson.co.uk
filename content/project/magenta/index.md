@@ -22,12 +22,12 @@ image:
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
 links:
-- name: GitHub
+- name: Documentation
   url: https://ojwatson.github.io/magenta/index.html
   icon_pack: fab
   icon: github
 
-url_code: ""
+url_code: "https://github.com/OJWatson/magenta"
 url_pdf: ""
 url_slides: ""
 url_video: ""
@@ -40,8 +40,8 @@ url_video: ""
 slides: ""
 ---
 
-`magenta` is an individual-based simulation model of malaria epidemiology and parasite genetics, which was designed to extends the Imperial malaria model by tracking the infection history of individuals. With this addition, genetic characteristics of the parasite can be assessed for looking at both neutral genetic variation as well as loci under selection.
+`magenta` is an individual-based simulation model of malaria epidemiology and parasite genetics, which was designed to extend the Imperial malaria model by tracking the infection history of individuals. With this addition, genetic characteristics of the parasite can be assessed for looking at both neutral genetic variation as well as loci under selection.
 
-The first and main research paper based on this project was published in MBE[^1], which showed the extenet to which parasite genetic traits could be used to infer malaria transmission intensity. 
+The first and main research paper based on this project was published in MBE[^1], which showed the extent to which parasite genetic traits could be used to infer malaria transmission intensity.
 
 [^1]: Oliver J Watson, Lucy C Okell, Joel Hellewell, Hannah C Slater, H Juliette T Unwin, Irene Omedo, Philip Bejon, Robert W Snow, Abdisalan M Noor, Kirk Rockett, Christina Hubbart, Joaniter I Nankabirwa, Bryan Greenhouse, Hsiao-Han Chang, Azra C Ghani, Robert Verity, Evaluating the Performance of Malaria Genetics for Inferring Changes in Transmission Intensity Using Transmission Modeling, Molecular Biology and Evolution, Volume 38, Issue 1, January 2021, Pages 274–289, https://doi.org/10.1093/molbev/msaa225

@@ -23,7 +23,7 @@ image:
 #   Uncomment and edit lines below to show custom links.
 
 url_code: "https://github.com/OJWatson/hrp2malaRia"
-url_pdf: "https://elifesciences.org/download/aHR0cHM6Ly9jZG4uZWxpZmVzY2llbmNlcy5vcmcvYXJ0aWNsZXMvMjUwMDgvZWxpZmUtMjUwMDgtdjQucGRmP2Nhbm9uaWNhbFVyaT1odHRwczovL2VsaWZlc2NpZW5jZXMub3JnL2FydGljbGVzLzI1MDA4/elife-25008-v4.pdf?_hash=DxZVBR0nGoe3w0yfLDB3B5u9gWjRkS4W2piEvV6CwJY%3D"
+url_pdf: "https://doi.org/10.7554/eLife.25008"
 url_slides: ""
 url_video: ""
 

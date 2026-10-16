@@ -41,16 +41,16 @@ css_class = "aboutpage"
 
 # About
 
-I am an Associate Professor supported by an Eric and Wendy Schmidt AI in Science Fellowship at Imperial College London, currently based within Imperial's AI Initiative, [I-X](https://ix.imperial.ac.uk/). Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine working with [Prof Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation. I also am part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/), working with [Prof Azra Ghani](https://www.imperial.ac.uk/people/a.ghani) and [Dr Patrick Walker](https://www.imperial.ac.uk/people/patrick.walker06) on modelling the transmission of COVID-19, and a long-term collaborator with the [Infectious Disease Epidemiology and Ecology Lab (IDEEL)](https://www.med.unc.edu/medicine/infdis/ideel) across UNC at Chapel Hill and [Brown University](http://www.baileylab.org/).
+I am an Associate Professor at Imperial College London, supported by an Eric and Wendy Schmidt AI in Science Fellowship. I am based within Imperial's AI Initiative, [I-X](https://ix.imperial.ac.uk/), and am part of the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/).
 
-My undergraduate degree was in Natural Sciences at Pembroke College, Cambridge before completing a master's degree in Systems Biology, working on multi-omic computational methods for identifying new biochemical reactions indicative of disease.
+## Background and experience
 
-For my PhD I worked on integrating genetic information into malaria transmission modelling with Prof Azra Ghani, Dr Lucy Okell and Dr Robert Verity. This work was focussed on extending malaria transmission models that have been used in creating global technical strategies for malaria control by including parasite genetic information to answer policy questions related to pfhrp2/3 deletions and antimalarial resistance. 
+I studied Natural Sciences and completed a master’s degree in Systems Biology at Cambridge. My PhD at Imperial explored how parasite genetic information can inform malaria transmission modelling, including questions about diagnostic and antimalarial resistance.
 
-My current research involves using mathematical models to better understand the spread of infectious diseases and estimate mortality in settings without robust vital registration services. I work primarily in three areas:
+Previously, I was a [Schmidt Science Fellow](https://schmidtsciencefellows.org/) at the London School of Hygiene and Tropical Medicine, working with [Francesco Checchi](https://www.lshtm.ac.uk/aboutus/people/checchi.francesco) on mortality estimation.
 
-1. Malaria drug and diagnostic resistance modelling
+## Current research
 
-2. Pandemic preparedness and vaccine impact modelling
+I use mathematical models to understand infectious disease transmission and estimate mortality where vital registration is limited. My work spans malaria drug and diagnostic resistance, pandemic preparedness and vaccine impact, and mortality estimation in humanitarian settings.
 
-3. Mortality estimation in humanitarian settings
+[Explore my research, selected publications and software](/research/).
