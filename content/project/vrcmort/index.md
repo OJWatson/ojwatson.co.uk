@@ -31,6 +31,4 @@ slides: ""
 <li><strong>Summarise uncertainty</strong><span>Review fitted mortality, reporting estimates and model diagnostics.</span></li>
 </ol>
 
-The model can represent age-selective changes in reporting and partial pooling across regions. See the [model explanation and tutorials](https://jameel-institute.github.io/vrcmort/) for assumptions and examples.
-
-This is a research package under active development. The [repository](https://github.com/jameel-institute/vrcmort) describes its current status and installation requirements.
+The model can represent age-selective changes in reporting and partial pooling across regions.

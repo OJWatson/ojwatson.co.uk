@@ -13,12 +13,10 @@ image:
   preview_only: false
 
 url_code: "https://github.com/OJWatson/metis"
-url_pdf: "https://doi.org/10.1038/s41586-024-08564-w"
+url_pdf: ""
 url_slides: ""
 url_video: ""
 slides: ""
 ---
 
 `METIS` develops neural surrogate models that learn epidemic trajectories from mechanistic simulations, supporting faster exploration of model behaviour.
-
-The [repository](https://github.com/OJWatson/metis) contains the current implementation and documentation. This software belongs to the [AI-enabled epidemic modelling](/research/#ai-enabled-epidemic-modelling) research strand.

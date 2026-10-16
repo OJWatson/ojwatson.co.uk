@@ -38,7 +38,6 @@ slides: ""
 `hmmIBDr` is an Rcpp wrapper for [hmmIBD](https://github.com/glipsnort/hmmIBD), which infers pairwise identity by descent between haploid genotypes, including samples from populations with different allele frequencies.
 
 I claim no ownership over the original source code, and all attribution and acknowledgement should be referred to
-the original [project](https://github.com/glipsnort/hmmIBD), and the [associated publication](https://doi.org/10.1186/s12936-018-2349-7)[^1]. I have simply provided
-this wrapper in the hope that it might be helpful for others, and have provided a tutorial for basic use.
+the original [project](https://github.com/glipsnort/hmmIBD), and the [associated publication](https://doi.org/10.1186/s12936-018-2349-7)[^1].
 
  [^1]:  Schaffner, S.F., Taylor, A.R., Wong, W. et al. hmmIBD: software to infer pairwise identity by descent between haploid genotypes. Malar J 17, 196 (2018). (https://doi.org/10.1186/s12936-018-2349-7)

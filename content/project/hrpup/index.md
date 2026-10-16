@@ -19,5 +19,3 @@ slides: ""
 ---
 
 `hrpup` is a reproducible research compendium for modelling and mapping pfhrp2/3 deletion risk.
-
-The repository brings together the analysis workflow and risk-mapping outputs.

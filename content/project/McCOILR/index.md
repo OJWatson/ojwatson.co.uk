@@ -40,7 +40,6 @@ developed by the [Greenhouse Lab](https://github.com/Greenhouse-Lab) that estima
 and population allele frequencies using SNP data obtained from Sequenom or similar types of SNP assays. It was
 simply created to aid incorporating COI estimation more easily within distributed computing pipelines, and I
 claim no ownership over the original source code, and all attribution and acknowledgement should be referred to
-the original [project](https://github.com/Greenhouse-Lab/THEREALMcCOIL), and the [associated publication](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005348)[^1]. I have simply provided
-this wrapper in the hope that it might be helpful for others, and have provided a tutorial for basic use.
+the original [project](https://github.com/Greenhouse-Lab/THEREALMcCOIL), and the [associated publication](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005348)[^1].
 
  [^1]:  THE REAL McCOIL: A method for the concurrent estimation of the complexity of infection and SNP allele frequency for malaria parasites. Chang HH, Worby CJ, Yeka A, Nankabirwa J, Kamya MR, et al. (2017) THE REAL McCOIL: A method for the concurrent estimation of the complexity of infection and SNP allele frequency for malaria parasites. PLOS Computational Biology 13(1): e1005348. (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005348#sec015)
