@@ -67,7 +67,7 @@ test('blocked pages, login shells, malformed streams, and empty chats are not su
   assert.equal(calls, 1);
 });
 
-test('ChatGPT requests the public document without cookies and Claude snapshot requests retain JSON support', async () => {
+test('public documents and Claude JSON snapshots use their viewer request formats without credentials', async () => {
   const capture = await retrieveShare(SOURCE, async (url, init) => {
     assert.equal(String(url), SOURCE);
     const headers = new Headers(init?.headers);
@@ -84,9 +84,20 @@ test('ChatGPT requests the public document without cookies and Claude snapshot r
   const claude = await retrieveShare(CLAUDE_SOURCE, async (url, init) => {
     calls++;
     const headers = new Headers(init?.headers);
-    assert.equal(headers.has('Sec-Fetch-Mode'), false);
-    assert.match(headers.get('Accept')!, /application\/json/);
-    if (calls === 1) return new Response('<html>/api/chat_snapshots/</html>', { headers: { 'Content-Type': 'text/html' } });
+    assert.equal(headers.has('Authorization'), false);
+    assert.equal(headers.has('Cookie'), false);
+    assert.equal(init?.redirect, 'manual');
+    if (calls === 1) {
+      assert.equal(String(url), CLAUDE_SOURCE);
+      assert.match(headers.get('Accept')!, /text\/html/);
+      assert.equal(headers.get('Sec-Fetch-Mode'), 'navigate');
+      assert.equal(headers.has('Referer'), false);
+      return new Response('<html>/api/chat_snapshots/</html>', { headers: { 'Content-Type': 'text/html' } });
+    }
+    assert.equal(headers.get('Accept'), 'application/json');
+    assert.equal(headers.get('Referer'), CLAUDE_SOURCE);
+    assert.equal(headers.get('Sec-Fetch-Mode'), 'cors');
+    assert.equal(headers.get('Sec-Fetch-Site'), 'same-origin');
     assert.match(String(url), /^https:\/\/claude.ai\/api\/chat_snapshots\//);
     return new Response(JSON.stringify({ chat_messages: [{ sender: 'human', text: 'Public Claude message' }] }), { headers: { 'Content-Type': 'application/json' } });
   });

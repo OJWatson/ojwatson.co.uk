@@ -8,7 +8,7 @@ Live archive: **https://airef.ojwatson.co.uk/**. Synthetic verification records 
 
 Source home: [`apps/airef/` in OJWatson/ojwatson.co.uk](https://github.com/OJWatson/ojwatson.co.uk/tree/main/apps/airef). Ordinary releases use the repository's **AIRef** GitHub Actions workflow: check/build, deploy preview, verify preview, then deploy and verify production. See [GitHub deployment and one-time authorization](docs/github-deployment.md). The Hugo website at the repository root keeps its existing Netlify configuration.
 
-Current capture setup (4 November 2026): the website and storage use Cloudflare Free. A separate authenticated Netlify function retrieves ChatGPT pages when Cloudflare is blocked. The operator explicitly authorized its use of existing included Pro credits with auto recharge disabled; no new subscription, paid add-on, or additional payment was enabled. This uses the existing team's shared quota. The reported ChatGPT link now imports in production; automatic Claude retrieval remains blocked and needs the helper fallback. See [verification](docs/verification.md).
+Current capture setup (5 November 2026): the website and storage use Cloudflare Free. A separate authenticated Netlify function retrieves public ChatGPT and Claude shares when Cloudflare is blocked. The operator explicitly authorized its use of existing included Pro credits with auto recharge disabled; no new subscription, paid add-on, or additional payment was enabled. This uses the existing team's shared quota. Both reported links now import through the production API. The browser helper remains available when automatic retrieval fails. See [verification](docs/verification.md).
 
 ## Run locally
 

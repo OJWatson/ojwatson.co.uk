@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const MAX_RECORD_BYTES = 1_048_576;
-export const IMPORTER_VERSION = 'airef/0.1.1';
+export const IMPORTER_VERSION = 'airef/0.1.2';
 export const Provider = z.enum(['chatgpt', 'claude']);
 export const MessageSchema = z.object({
   role: z.enum(['user', 'assistant', 'system', 'tool']),

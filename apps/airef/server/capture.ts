@@ -3,6 +3,7 @@ import { CaptureSchema, IMPORTER_VERSION, shareSource, type Capture, type Messag
 import { HttpError } from './types.ts';
 
 const MAX_SOURCE_BYTES = 4 * 1024 * 1024;
+const PUBLIC_VIEWER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36';
 type ObjectValue = Record<string, any>;
 
 export async function boundedText(response: Response, limit = MAX_SOURCE_BYTES): Promise<string> {
@@ -22,11 +23,20 @@ export async function boundedText(response: Response, limit = MAX_SOURCE_BYTES):
   return result + decoder.decode();
 }
 
-async function publicFetch(url: string, fetcher: typeof fetch): Promise<Response> {
+async function publicFetch(url: string, fetcher: typeof fetch, sharePage?: string): Promise<Response> {
   // ChatGPT may serve a metadata-only link preview to generic HTTP clients.
-  // Request its public document representation; never send provider credentials.
-  const headers: Record<string, string> = new URL(url).hostname === 'chatgpt.com' ? {
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
+  // Claude's public viewer uses a separate JSON request. Request those same public
+  // representations without forwarding cookies, authorization, or challenge state.
+  const headers: Record<string, string> = sharePage ? {
+    'User-Agent': PUBLIC_VIEWER_AGENT,
+    Accept: 'application/json',
+    'Accept-Language': 'en-GB,en;q=0.9',
+    Referer: sharePage,
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-origin',
+  } : {
+    'User-Agent': PUBLIC_VIEWER_AGENT,
     Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en-GB,en;q=0.9',
     'Sec-Fetch-Dest': 'document',
@@ -34,7 +44,7 @@ async function publicFetch(url: string, fetcher: typeof fetch): Promise<Response
     'Sec-Fetch-Site': 'none',
     'Sec-Fetch-User': '?1',
     'Upgrade-Insecure-Requests': '1',
-  } : { Accept: 'text/html,application/json', 'User-Agent': 'AIRef/0.1 public-share-archiver' };
+  };
   const response = await fetcher(url, {
     redirect: 'manual',
     signal: AbortSignal.timeout(15000),
@@ -60,7 +70,7 @@ export async function retrieveShare(value: string, fetcher: typeof fetch = fetch
     if (source.provider === 'claude' && body.includes('/api/chat_snapshots/')) {
       const id = new URL(source.url).pathname.split('/').pop();
       const viewer = `https://claude.ai/api/chat_snapshots/${id}?rendering_mode=messages&render_all_tools=true&renders_source_card=true&renders_tally_table_bars=true`;
-      const data = JSON.parse(await boundedText(await publicFetch(viewer, fetcher)));
+      const data = JSON.parse(await boundedText(await publicFetch(viewer, fetcher, source.url)));
       return normalizeConversation(data, source.url);
     }
     throw error;
@@ -74,7 +84,7 @@ export async function retrieveSource(value: string, fetcher: typeof fetch = fetc
   if (source.provider === 'claude' && text.includes('/api/chat_snapshots/') && !text.includes('"chat_messages"')) {
     const id = new URL(source.url).pathname.split('/').pop();
     const endpoint = `https://claude.ai/api/chat_snapshots/${id}?rendering_mode=messages&render_all_tools=true&renders_source_card=true&renders_tally_table_bars=true`;
-    text = await boundedText(await publicFetch(endpoint, fetcher));
+    text = await boundedText(await publicFetch(endpoint, fetcher, source.url));
   }
   return { text, source_url: source.url, provider: source.provider, captured_at: new Date().toISOString() };
 }
