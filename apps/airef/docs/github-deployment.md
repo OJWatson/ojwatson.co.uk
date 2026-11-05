@@ -1,6 +1,6 @@
 # GitHub deployment
 
-AIRef lives in `apps/airef/` in [OJWatson/ojwatson.co.uk](https://github.com/OJWatson/ojwatson.co.uk/tree/main/apps/airef). The Hugo website remains at the repository root with its existing Netlify configuration.
+AIRef lives in `apps/airef/` in [OJWatson/ojwatson.co.uk](https://github.com/OJWatson/ojwatson.co.uk/tree/main/apps/airef). The Hugo website remains at the repository root with its existing build command and pinned Hugo version. Its Netlify ignore command skips AIRef-only changes, avoiding unrelated main-site production-deploy credits; website changes still trigger the existing Hugo deployment.
 
 `.github/workflows/airef.yml` runs Node 24, a clean dependency installation, the tests, and the app/helper build for AIRef pull requests. Changes under `apps/airef/` merged into `main` deploy to the existing Cloudflare preview, verify the live client/helper and API access controls, then deploy and check production. A manual run from `main` follows the same route. Pull-request and fork code never receives the deployment secret. Standard GitHub-hosted runners in this public repository are free; no larger or paid runner is configured.
 
@@ -26,4 +26,4 @@ The capture-only Netlify function's source is versioned here too. Its existing d
 
 ## Local development
 
-Run the commands in `apps/airef/README.md` from that directory. `scripts/deploy.ts` remains an operator bootstrap/recovery tool, while ordinary releases use the GitHub workflow. The existing main-site Hugo workflow and Netlify configuration are unchanged.
+Run the commands in `apps/airef/README.md` from that directory. `scripts/deploy.ts` remains an operator bootstrap/recovery tool, while ordinary releases use the GitHub workflow. The existing main-site Hugo workflow, build command and publishing directory are retained. `scripts/netlify-ignore-airef.sh` is the narrowly scoped main-site build skip described above.

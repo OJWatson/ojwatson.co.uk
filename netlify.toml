@@ -1,6 +1,7 @@
 [build]
   publish = "public"
   command = "hugo --gc --minify"
+  ignore = "bash scripts/netlify-ignore-airef.sh"
 
 [context.production.environment]
   HUGO_VERSION = "0.62.1"
