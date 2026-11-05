@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.wrangler/
+.netlify/
+.dev.vars*
+.env*
+!.env.example
+data/
+outputs/
+*.log
+.DS_Store

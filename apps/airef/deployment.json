@@ -1,0 +1,21 @@
+{
+  "account_id": "9f505e045e3b96be8b752ffeb94bd97b",
+  "project": "airef",
+  "pages_hostname": "airef-8ej.pages.dev",
+  "compatibility_date": "2026-11-03",
+  "capture_relay_url": "https://airef-capture-ojwatson.netlify.app/.netlify/functions/capture",
+  "environments": {
+    "preview": {
+      "branch": "preview",
+      "origin": "https://preview.airef-8ej.pages.dev",
+      "database_name": "airef-preview",
+      "database_id": "0f3d9b1b-d399-4fc3-b127-7f24f87712ef"
+    },
+    "production": {
+      "branch": "main",
+      "origin": "https://airef.ojwatson.co.uk",
+      "database_name": "airef-production",
+      "database_id": "135a3a58-927a-4f9a-bf89-39c41cf48380"
+    }
+  }
+}

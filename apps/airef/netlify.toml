@@ -1,0 +1,11 @@
+[build]
+  # This optional deployment contains only the capture service.
+  command = "node --version"
+  publish = "capture-relay/public"
+  functions = "capture-relay/netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "24"

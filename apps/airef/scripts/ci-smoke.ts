@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { sha256 } from '../src/shared.ts';
+
+const deployment = JSON.parse(await readFile('deployment.json', 'utf8'));
+const environment = process.argv[2];
+const target = deployment.environments[environment];
+if (!['preview', 'production'].includes(environment) || !target) throw new Error('Use preview or production.');
+const origin = target.origin;
+const page = await fetch(origin, { signal: AbortSignal.timeout(20000) });
+assert.equal(page.status, 200, 'Home page must be available');
+assert.ok(page.headers.get('Content-Security-Policy')?.includes("default-src 'none'"), 'Security policy must be present');
+const html = await page.text();
+const script = html.match(/src="(\/assets\/main-[^"]+\.js)"/)?.[1];
+assert.ok(script, 'The application script must be present');
+const asset = await fetch(origin + script, { signal: AbortSignal.timeout(20000) });
+assert.equal(asset.status, 200);
+assert.equal(await sha256(await asset.text()), await sha256(await readFile('dist' + script, 'utf8')), 'Live client must match this build');
+const helper = await fetch(origin + '/airef-browser-helper.zip', { signal: AbortSignal.timeout(20000) });
+assert.equal(helper.status, 200);
+const bytes = new Uint8Array(await helper.arrayBuffer());
+const local = await readFile('dist/airef-browser-helper.zip');
+assert.deepEqual(bytes, new Uint8Array(local), 'Helper download must match this build');
+const unauthorized = await fetch(origin + '/api/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: 'https://chatgpt.com/share/00000000-0000-4000-8000-000000000000' }), signal: AbortSignal.timeout(20000) });
+assert.equal(unauthorized.status, 401, 'Import must still require an invitation');
+const missing = await fetch(origin + '/00000000-0000-4000-8000-000000000000/conversation.json', { signal: AbortSignal.timeout(20000) });
+assert.equal(missing.status, 404, 'An absent record must not return the home page');
+console.log(`AIRef ${environment}: homepage, client/helper bytes, security policy, invitation enforcement, and missing-record checks passed. No record was published.`);

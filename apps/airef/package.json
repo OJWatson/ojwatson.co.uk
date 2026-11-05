@@ -1,0 +1,43 @@
+{
+  "name": "airef",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && vite build --config vite.helper.config.ts && node scripts/package-helper.mjs",
+    "preview": "wrangler pages dev dist --local --ip 127.0.0.1 --port 8788",
+    "db:local": "wrangler d1 migrations apply DB --local",
+    "setup:local": "node scripts/admin.ts setup-local",
+    "invite": "node scripts/admin.ts invite",
+    "revoke": "node scripts/admin.ts revoke",
+    "withdraw": "node scripts/admin.ts withdraw",
+    "backup": "node scripts/admin.ts backup",
+    "restore": "node scripts/admin.ts restore",
+    "deployment:check": "node scripts/deploy.ts check",
+    "deploy:preview": "node scripts/deploy.ts preview",
+    "deploy:production": "node scripts/deploy.ts production",
+    "deploy:ci": "node scripts/ci-deploy.ts",
+    "smoke:ci": "node scripts/ci-smoke.ts",
+    "test": "node --test tests/*.test.ts",
+    "check": "tsc --noEmit && node --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "markdown-it": "14.3.3",
+    "turbo-stream": "2.4.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.37",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^24.0.0",
+    "fflate": "^0.8.2",
+    "linkedom": "0.18.12",
+    "typescript": "^5.9.3",
+    "vite": "8.3.5",
+    "wrangler": "4.157.0"
+  }
+}
