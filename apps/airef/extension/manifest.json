@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AIRef capture helper",
+  "version": "0.2.0",
+  "description": "Capture loaded text and code from a public ChatGPT or Claude share page for review in AIRef.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Capture this shared conversation"
+  },
+  "minimum_chrome_version": "112",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo6nGn+InyVK/jLtwxwMwaPsBWERRJ/uTArCNJyfZ1x7xMoaqJEC0Vo3bH1kh5eoqZzT4UI6ZQslCNWr5spFmyWsZZ2NeJK+d3QWxxQNebrK53sREwRIM3xdhLjwQ1DwhflZxVzQgUdaQGI95Z1otd70cSjqEn3uXix3qUGtG8T7EsAS0T0VWW2v6LLi86V+gQNPxTlW/9zrr/P5RRrj5EY5kMwZLvcn7dGI3uItcq/YdJSRIFvspTz+BeWqT8IOpbW94t0Yp+p2cq8Zkw7hWmfAQzAMv56NVTagJDQIC2CkHWHOS3vCSHD2HD1sEYy84a4MGVQVwtizn9PnsHcuM2QIDAQAB",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://airef.ojwatson.co.uk/*",
+      "https://preview.airef-8ej.pages.dev/*"
+    ]
+  }
+}

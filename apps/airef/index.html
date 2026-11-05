@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AIRef · Give a conversation a lasting reference</title>
+  <meta name="description" content="Capture, review, and preserve an AI conversation as a citable record.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header"><a class="wordmark" href="/" aria-label="AIRef home">AIRef<span class="wordmark-dot">.</span></a><span class="header-note">Conversations, preserved.</span><a class="header-link" href="/about.html">About the archive ↗</a></header>
+  <main id="app">
+    <section id="capture-stage" class="capture-layout">
+      <div class="capture-intro"><div class="eyebrow"><span class="small-line"></span> A LASTING RECORD OF THE EXCHANGE</div><h1>Good conversations<br>deserve a<br><em>lasting reference.</em></h1><p class="intro-copy">Save the exchange behind your work. Turn a shared AI conversation into a frozen, readable record that others can cite.</p><div class="provider-list"><span class="provider-mark">◎</span> ChatGPT <span class="provider-divider">/</span><span class="claude-mark">✳</span> Claude <span class="text-only">TEXT & CODE</span></div></div>
+      <section class="capture-card" aria-labelledby="start-heading"><div class="card-topline"><span class="step-marker">01</span><span>CAPTURE A CONVERSATION</span></div><h2 id="start-heading">Start with a shared link.</h2><p class="muted">You’ll review everything before it becomes public.</p>
+        <form id="capture-form"><label for="share-url">Public conversation link</label><input id="share-url" name="url" type="url" placeholder="https://chatgpt.com/share/…" required maxlength="500" autocomplete="off"><p class="field-hint">A public ChatGPT or Claude share link.</p><label for="invite-code">Invitation code</label><input id="invite-code" name="invite" type="password" placeholder="Your invitation code" required minlength="12" maxlength="200" autocomplete="off"><p class="field-hint">The pilot is open to invited researchers.</p><button class="button primary full" type="submit" id="capture-button">Capture conversation <span aria-hidden="true">→</span></button></form>
+        <div id="capture-status" class="notice" role="status" hidden></div>
+        <section id="browser-capture" class="notice neutral" aria-labelledby="browser-heading" hidden><h3 id="browser-heading">Continue in your browser</h3><p>This provider needs you to open the public share page. The helper brings its loaded text and code directly back to AIRef for review.</p><p id="helper-state" role="status"></p><button id="open-with-helper" type="button" class="button primary full" hidden>Open conversation with helper →</button><p><a id="open-share" href="#" target="_blank" rel="noopener noreferrer">Open the shared conversation ↗</a></p><p>On that page, expand any earlier messages, click <strong>AIRef capture helper</strong> in Chrome’s extensions menu, then <strong>Capture and review in AIRef</strong>.</p><a href="/helper/" target="_blank" rel="noopener noreferrer">Install or update the helper ↗</a></section>
+        <div class="or-divider"><span>or bring your own capture</span></div><label class="file-button" for="json-file"><span aria-hidden="true">↥</span> Import an AIRef JSON file</label><input class="visually-hidden" id="json-file" type="file" accept="application/json,.json"><p class="card-note">Our <a href="/helper/">browser helper</a> opens captures directly in AIRef. You can also import a saved JSON file.</p>
+      </section>
+    </section>
+    <section id="review-stage" class="review-layout" hidden>
+      <div class="review-heading"><div><div class="eyebrow">02 / REVIEW YOUR SNAPSHOT</div><h1>Make it ready to reference.</h1><p class="muted">Your draft is private to this browser tab. Nothing is published yet.</p></div><button type="button" id="start-over" class="button subtle">Start over</button></div>
+      <div id="capture-summary" class="summary-strip"></div><div id="review-status" class="notice" role="status" hidden></div>
+      <div class="review-columns"><section class="transcript-panel"><div class="panel-heading"><h2>The conversation</h2><span id="message-count" class="muted"></span></div><p class="field-hint">Edit any message below. Select sensitive text and choose “Redact selection”, or remove a message entirely.</p><div id="sensitive-notice" class="notice warning" hidden></div><div id="capture-notes" class="notice neutral"></div><div id="message-editors"></div></section>
+      <aside class="metadata-panel"><div class="panel-heading"><h2>The reference</h2><span class="step-marker">03</span></div><form id="publish-form">
+        <label for="review-invite">Invitation code</label><input id="review-invite" type="password" required minlength="12" maxlength="200" autocomplete="off"><p class="field-hint">Your code is never included in the public record.</p>
+        <label for="record-title">Record title</label><input id="record-title" required maxlength="300" placeholder="A descriptive title for the exchange">
+        <label for="author-name">Reference-author name</label><input id="author-name" required maxlength="160" placeholder="e.g. Jane Doe" autocomplete="name"><p class="field-hint">The human name to use in the citation.</p>
+        <label for="affiliation">Affiliation <span class="optional">optional</span></label><input id="affiliation" maxlength="300" autocomplete="organization">
+        <label for="orcid">ORCID iD <span class="optional">optional</span></label><input id="orcid" maxlength="40" placeholder="0000-0002-1825-0097">
+        <label for="archiver-name">Archived by <span class="optional">if different</span></label><input id="archiver-name" maxlength="160" placeholder="Same as reference author">
+        <label for="description">Description <span class="optional">optional</span></label><textarea id="description" maxlength="4000" rows="3" placeholder="What does this conversation document?"></textarea>
+        <label for="license">Reuse permissions</label><select id="license" required><option value="">Choose a rights statement…</option><option value="All rights reserved">All rights reserved</option><option value="CC-BY-4.0">Creative Commons Attribution 4.0</option><option value="CC0-1.0">CC0 public domain dedication</option></select>
+        <label id="partial-label" class="check-label warning" hidden><input id="partial-confirm" type="checkbox"><span>I understand that this capture is partial or its completeness is unverified. Its limitations will appear on the record.</span></label>
+        <label class="check-label"><input id="publish-confirm" type="checkbox" required><span>I have reviewed this snapshot, have permission to publish it, and understand that its contents and the details above will be public.</span></label>
+        <p class="field-hint">Published content is frozen. Corrections need a new record; withdrawal is handled by the archive administrator.</p><button id="publish-button" class="button primary full" type="submit">Publish frozen record <span aria-hidden="true">↗</span></button><p id="draft-size" class="field-hint size-hint"></p>
+      </form></aside></div>
+    </section>
+    <section id="success-stage" class="success-layout" hidden><div class="success-symbol">✓</div><div class="eyebrow">PUBLISHED & FROZEN</div><h1>A reference you can return to.</h1><p>Your approved snapshot is stored independently of the original share link.</p><a id="success-url" class="permalink" href="/"></a><div class="success-actions"><a id="open-record" class="button primary" href="/">Open your record ↗</a><button id="copy-url" class="button secondary">Copy link</button></div><p id="success-message" class="muted" role="status"></p><a href="/" class="back-link">Archive another conversation →</a></section>
+    <section id="how-it-works" class="how-it-works"><div class="how-label">FROM EXCHANGE<br>TO EVIDENCE</div><article><span class="how-number">01 / CAPTURE</span><h3>Save the shared snapshot.</h3><p>Preserve its text and code, with a clear record of where it came from.</p></article><article><span class="how-number">02 / REVIEW</span><h3>Keep what belongs.</h3><p>Check the transcript, redact sensitive details, and add your reference information.</p></article><article><span class="how-number">03 / REFERENCE</span><h3>Give it a stable home.</h3><p>Get a readable record, a lasting URL, and files you can download and verify.</p></article></section>
+  </main>
+  <footer class="site-footer"><span>AIRef · A reference that stays with the conversation.</span><a href="/about.html">What this archive preserves ↗</a></footer>
+  <script type="module" src="/src/main.ts"></script>
+</body></html>
